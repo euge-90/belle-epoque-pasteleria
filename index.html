@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belle Époque - Pastelería Francesa Artesanal</title>
+    <meta name="description" content="Belle Époque - Pastelería francesa artesanal en el corazón de la galería. Macarons, croissants y pasteles franceses auténticos.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo">Belle Époque</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="inicio" class="hero">
+            <h1 class="fade-in">Belle Époque</h1>
+            <p class="fade-in">Auténtica pastelería francesa en el corazón de la galería.<br>
+            Tradición, elegancia y sabores que transportan a París.</p>
+            <a href="#productos" class="cta-button fade-in">Descubrir Nuestros Pasteles</a>
+        </section>
+
+        <!-- Sección de presentación -->
+        <section class="section bg-cream">
+            <div class="text-center">
+                <h2 class="text-gold">Bienvenidos a Belle Époque</h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                    En el corazón de nuestra galería comercial, Belle Époque es más que una pastelería: 
+                    es un pedacito de Francia que despierta todos los sentidos. Cada día elaboramos 
+                    artesanalmente nuestros croissants, macarons y pasteles siguiendo recetas 
+                    tradicionales francesas transmitidas de generación en generación.
+                </p>
+            </div>
+            
+            <div class="cards-container mt-3">
+                <div class="card fade-in">
+                    <h3>🥐 Tradición Francesa</h3>
+                    <p>Recetas auténticas traídas directamente de las panaderías parisinas. 
+                    Cada producto es elaborado con técnicas tradicionales y ingredientes premium.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3>🍰 Arte Culinario</h3>
+                    <p>Nuestros pasteles son verdaderas obras de arte. Cada creación combina 
+                    sabores exquisitos con presentaciones que deleitan la vista.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3>☕ Experiencia Única</h3>
+                    <p>Más que una compra, ofrecemos una experiencia. Disfruta de nuestro 
+                    ambiente íntimo y elegante en el corazón de la galería.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>
+                        Belle Époque nació del sueño de traer la auténtica pastelería francesa 
+                        a nuestra querida galería comercial. Fundada en 2020 por Marie Dubois, 
+                        una chef pastelera formada en Lyon, nuestra pequeña boutique se ha 
+                        convertido en el refugio perfecto para los amantes de la repostería fina.
+                    </p>
+                    <p>
+                        En Belle Époque, cada día comenzamos antes del amanecer, amasando 
+                        croissants, preparando cremas y decorando macarons con la misma 
+                        dedicación que se haría en una pastelería del Marais parisino. 
+                        Nuestra propuesta dentro de la galería es única: ofrecer productos 
+                        franceses auténticos en un ambiente íntimo y sofisticado.
+                    </p>
+                    <p class="text-gold" style="font-style: italic; font-size: 1.1rem;">
+                        "Cada pastel cuenta una historia, cada bocado es un viaje a Francia."
+                        <br>- Marie Dubois, Chef Pastelera
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(45deg, var(--accent-color), var(--primary-color)); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--secondary-color); box-shadow: 0 5px 20px var(--shadow);">
+                        👩‍🍳
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview de Productos -->
+        <section class="section bg-cream">
+            <div class="text-center">
+                <h2 class="text-gold">Nuestras Especialidades</h2>
+                <p class="mb-2">Un adelanto de nuestras creaciones más populares</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f0c747, #d4af37); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🥐
+                    </div>
+                    <div class="product-info">
+                        <h3>Croissants Artesanales</h3>
+                        <p>Hojaldre dorado y crujiente, elaborado con manteca francesa. 
+                        Disponibles clásicos, de almendras y chocolate.</p>
+                        <div class="product-price">$850 - $950</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b4513, #d4af37); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">
+                        🍰
+                    </div>
+                    <div class="product-info">
+                        <h3>Macarons Parisinos</h3>
+                        <p>Delicados macarons en sabores tradicionales: vainilla, chocolate, 
+                        frambuesa, pistacho y lavanda.</p>
+                        <div class="product-price">$450 c/u</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f5f5dc, #8b4513); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🎂
+                    </div>
+                    <div class="product-info">
+                        <h3>Pasteles de Ocasión</h3>
+                        <p>Tartas personalizadas para celebraciones especiales. 
+                        Ópera, Saint-Honoré, Mille-feuille y más.</p>
+                        <div class="product-price">Desde $3.500</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="#productos" class="cta-button">Ver Todos Nuestros Productos</a>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <div class="text-center">
+                <h2 class="text-gold">Visitanos en la Galería</h2>
+                <p class="mb-2">Te esperamos para una experiencia gastronómica única</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>📍 Ubicación</h3>
+                    <p><strong>Galería del Centro</strong></p>
+                    <p>Local 15, Planta Baja</p>
+                    <p>Av. Principal 1234</p>
+                    <p>Ciudad Autónoma de Buenos Aires</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>🕒 Horarios</h3>
+                    <p><strong>Lunes a Viernes:</strong><br>8:00 - 20:00</p>
+                    <p><strong>Sábados:</strong><br>9:00 - 21:00</p>
+                    <p><strong>Domingos:</strong><br>10:00 - 18:00</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>📞 Contacto</h3>
+                    <p><strong>Teléfono:</strong><br>+54 11 4567-8900</p>
+                    <p><strong>WhatsApp:</strong><br>+54 9 11 4567-8900</p>
+                    <p><strong>Email:</strong><br>info@belleepoque.com.ar</p>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/belleepoque.arg" target="_blank">📷</a>
+                        <a href="https://facebook.com/belleepoque.arg" target="_blank">📘</a>
+                        <a href="mailto:info@belleepoque.com.ar">✉️</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.</p>
+        <p>Galería del Centro, Local 15 - CABA | Teléfono: +54 11 4567-8900</p>
+    </footer>
+
+    <!-- JavaScript para navegación móvil -->
+    <script>
+        // Toggle menu móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer click en un link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card, .product-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

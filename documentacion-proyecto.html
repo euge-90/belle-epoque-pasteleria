@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación del Proyecto - Belle Époque</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c1810;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fefefe;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .header p {
+            color: #8b4513;
+            font-size: 1.2rem;
+            margin: 5px 0 0 0;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #faf8f3;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .section h2 {
+            color: #8b4513;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 5px;
+        }
+        
+        .datos-estudiante {
+            background-color: #f5f5dc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .mapa-sitio {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+        }
+        
+        .colores-paleta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .color-muestra {
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .color-dorado { background-color: #d4af37; color: #2c1810; }
+        .color-chocolate { background-color: #8b4513; }
+        .color-crema { background-color: #f5f5dc; color: #2c1810; }
+        .color-oscuro { background-color: #2c1810; }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background-color: #d4af37;
+            color: #2c1810;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #d4af37;
+            color: #8b4513;
+        }
+        
+        @media print {
+            body { font-size: 12px; }
+            .section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🥐 Belle Époque</h1>
+        <p>Pastelería Francesa Artesanal - Documentación del Proyecto Web</p>
+    </div>
+
+    <div class="datos-estudiante">
+        <h2>📋 Datos del Proyecto</h2>
+        <p><strong>Nombre del Estudiante:</strong> [Completar con tu nombre]</p>
+        <p><strong>Legajo:</strong> [Completar con tu legajo]</p>
+        <p><strong>Curso:</strong> [Completar con tu curso]</p>
+        <p><strong>Fecha de Entrega:</strong> Septiembre 2024</p>
+        <p><strong>Materia:</strong> Diseño Web / Programación Web</p>
+    </div>
+
+    <div class="section">
+        <h2>🏪 Información del Local Comercial</h2>
+        <p><strong>Nombre del Local:</strong> Belle Époque</p>
+        <p><strong>Tipo de Negocio:</strong> Pastelería Francesa Artesanal</p>
+        <p><strong>Ubicación:</strong> Galería del Centro, Local 15, Planta Baja</p>
+        <p><strong>Dirección:</strong> Av. Principal 1234, Ciudad Autónoma de Buenos Aires</p>
+        <p><strong>Concepto:</strong> Pastelería especializada en productos franceses auténticos, elaborados artesanalmente con técnicas tradicionales y ingredientes premium importados.</p>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Público Objetivo</h2>
+        <ul>
+            <li><strong>Perfil Principal:</strong> Adultos de 25-55 años con poder adquisitivo medio-alto</li>
+            <li><strong>Intereses:</strong> Gastronomía de calidad, productos artesanales, experiencias culinarias sofisticadas</li>
+            <li><strong>Comportamiento:</strong> Valoran la autenticidad, la calidad sobre el precio, buscan productos únicos</li>
+            <li><strong>Ocasiones de Compra:</strong> Celebraciones especiales, regalos corporativos, caprichos personales, eventos sociales</li>
+            <li><strong>Ubicación:</strong> Residentes y trabajadores del área, visitantes de la galería comercial</li>
+        </ul>
+    </div>
+
+    <div class="section mapa-sitio">
+        <h2>🗺️ Mapa del Sitio Web</h2>
+        <h3>Estructura de Navegación:</h3>
+        <ul>
+            <li><strong>INICIO (index.html)</strong>
+                <ul>
+                    <li>Hero Section - Presentación principal</li>
+                    <li>Bienvenida - Propuesta de valor</li>
+                    <li>Cards de Características (Tradición, Arte, Experiencia)</li>
+                    <li>Preview de Productos Destacados</li>
+                </ul>
+            </li>
+            <li><strong>NOSOTROS (#nosotros)</strong>
+                <ul>
+                    <li>Historia de Belle Époque</li>
+                    <li>Filosofía y Propuesta Única</li>
+                    <li>Presentación de Marie Dubois (Chef Pastelera)</li>
+                </ul>
+            </li>
+            <li><strong>PRODUCTOS (productos.html)</strong>
+                <ul>
+                    <li>Croissants & Viennoiseries</li>
+                    <li>Macarons Parisinos (6 variedades)</li>
+                    <li>Pasteles & Tartas Clásicas</li>
+                    <li>Pedidos Especiales y Tortas Personalizadas</li>
+                </ul>
+            </li>
+            <li><strong>CONTACTO (#contacto)</strong>
+                <ul>
+                    <li>Ubicación Exacta en la Galería</li>
+                    <li>Horarios de Atención</li>
+                    <li>Datos de Contacto Completos</li>
+                    <li>Enlaces a Redes Sociales</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🎨 Justificación del Diseño</h2>
+        
+        <h3>Paleta de Colores:</h3>
+        <p>Inspirada en las pastelerías francesas de lujo y los tonos naturales de los ingredientes premium:</p>
+        <div class="colores-paleta">
+            <div class="color-muestra color-dorado">Dorado #d4af37</div>
+            <div class="color-muestra color-chocolate">Chocolate #8b4513</div>
+            <div class="color-muestra color-crema">Crema #f5f5dc</div>
+            <div class="color-muestra color-oscuro">Oscuro #2c1810</div>
+        </div>
+        
+        <h3>Significado de los Colores:</h3>
+        <ul>
+            <li><strong>Dorado:</strong> Lujo, calidad premium, tradición francesa, manteca dorada</li>
+            <li><strong>Marrón Chocolate:</strong> Productos de cacao, calidez, sofisticación</li>
+            <li><strong>Beige Crema:</strong> Ingredientes naturales, elegancia sutil, limpieza</li>
+            <li><strong>Marrón Oscuro:</strong> Profesionalismo, legibilidad, contraste</li>
+        </ul>
+
+        <h3>Tipografía:</h3>
+        <ul>
+            <li><strong>Playfair Display:</strong> Títulos elegantes con estilo clásico francés</li>
+            <li><strong>Georgia:</strong> Texto de cuerpo legible y sofisticado</li>
+        </ul>
+
+        <h3>Estilo Visual:</h3>
+        <ul>
+            <li><strong>Elegancia Francesa:</strong> Diseño sofisticado que refleja la alta repostería</li>
+            <li><strong>Modernidad Funcional:</strong> Interface intuitiva sin perder la elegancia</li>
+            <li><strong>Calidez Artesanal:</strong> Elementos que transmiten trabajo manual y dedicación</li>
+            <li><strong>Limpieza Visual:</strong> Espacios en blanco que permiten que el contenido respire</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Aspectos Técnicos Implementados</h2>
+        
+        <h3>Tecnologías Utilizadas:</h3>
+        <div class="tecnologias">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Flexbox</span>
+            <span class="tech-tag">CSS Grid</span>
+            <span class="tech-tag">Responsive Design</span>
+        </div>
+
+        <h3>Características Técnicas:</h3>
+        <ul>
+            <li>✅ <strong>HTML5 Semántico:</strong> Estructura clara con etiquetas apropiadas</li>
+            <li>✅ <strong>CSS3 Avanzado:</strong> Variables CSS, gradientes, animaciones</li>
+            <li>✅ <strong>Flexbox Layout:</strong> Diseño flexible y moderno</li>
+            <li>✅ <strong>Responsive Design:</strong> Adaptación completa móvil/desktop</li>
+            <li>✅ <strong>JavaScript Vanilla:</strong> Interactividad sin frameworks</li>
+            <li>✅ <strong>Media Queries:</strong> Breakpoints para diferentes dispositivos</li>
+            <li>✅ <strong>Animaciones CSS:</strong> Transiciones y efectos suaves</li>
+            <li>✅ <strong>Navegación Fluida:</strong> Smooth scrolling, menú hamburguesa</li>
+        </ul>
+
+        <h3>Optimizaciones:</h3>
+        <ul>
+            <li>SEO básico con meta tags apropiados</li>
+            <li>Carga rápida sin dependencias externas pesadas</li>
+            <li>Código limpio y bien comentado</li>
+            <li>Accesibilidad básica implementada</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📱 Diseño Responsivo</h2>
+        <h3>Breakpoints Implementados:</h3>
+        <ul>
+            <li><strong>Desktop (>768px):</strong> Layout completo con navegación horizontal</li>
+            <li><strong>Tablet (481px-768px):</strong> Adaptación de grillas y espaciados</li>
+            <li><strong>Mobile (≤480px):</strong> Menú hamburguesa, layouts verticales</li>
+        </ul>
+
+        <h3>Adaptaciones por Dispositivo:</h3>
+        <ul>
+            <li>Navegación: Menú horizontal → Menú hamburguesa</li>
+            <li>Grillas: Multi-columna → Columna única</li>
+            <li>Tipografía: Escalado apropiado para cada pantalla</li>
+            <li>Espaciados: Ajustes de padding y margins</li>
+            <li>Interacciones: Touch-friendly en móviles</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Enlaces del Proyecto</h2>
+        <p><strong>Repositorio GitHub:</strong> [Agregar URL del repositorio]</p>
+        <p><strong>GitHub Pages:</strong> [Agregar URL del sitio publicado]</p>
+        <p><strong>Archivos Principales:</strong></p>
+        <ul>
+            <li>index.html - Página principal</li>
+            <li>productos.html - Catálogo de productos</li>
+            <li>css/styles.css - Estilos principales</li>
+            <li>README.md - Documentación técnica</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>Belle Époque - Pastelería Francesa Artesanal</strong></p>
+        <p>Proyecto académico de Diseño Web - 2024</p>
+        <p>🥐 "Cada pastel cuenta una historia, cada bocado es un viaje a Francia" 🥐</p>
+    </div>
+</body>
+</html>
