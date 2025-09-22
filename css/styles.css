@@ -537,7 +537,7 @@ main {
 .contact-logo-img { transition: transform .2s ease; cursor: pointer; }
 
 /* === Mapa de ubicación === */
-.map-card { padding: 0; overflow: hidden; }
+.map-card { padding: 0; overflow: visible; }
 .map-card h3 { padding: 1.25rem 1.25rem 0; }
 .map-wrapper {
     width: 100%;
@@ -555,6 +555,9 @@ main {
 }
 .map-actions {
     padding: 1rem 1.25rem 1.25rem;
+    background: var(--background-cream);
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.06);
 }
 .map-static-fallback {
     padding: 0 1.25rem 0.75rem;
