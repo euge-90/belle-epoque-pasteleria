@@ -140,3 +140,8 @@ El sitio está optimizado para:
 ---
 
 *Desarrollado con amor por la pastelería francesa y la excelencia digital* ✨🥐
+
+## 🔗 Enlaces
+
+- Repositorio: https://github.com/euge-90/belle-epoque-pasteleria
+- GitHub Pages: https://euge-90.github.io/belle-epoque-pasteleria/
