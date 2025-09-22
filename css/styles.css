@@ -537,13 +537,14 @@ main {
 .contact-logo-img { transition: transform .2s ease; cursor: pointer; }
 
 /* === Mapa de ubicación === */
-.map-card { padding: 0; overflow: visible; }
+.map-card { padding: 0; overflow: hidden; }
 .map-card h3 { padding: 1.25rem 1.25rem 0; }
 .map-wrapper {
     width: 100%;
     aspect-ratio: 16/9;
     background: #f7f7f7;
-    border-radius: 0 0 15px 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     overflow: hidden;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
 }
@@ -558,6 +559,8 @@ main {
     background: var(--background-cream);
     text-align: center;
     border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .map-static-fallback {
     padding: 0 1.25rem 0.75rem;
@@ -567,7 +570,8 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0 0 15px 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 .map-static-note {
     display: block;
