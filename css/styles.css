@@ -25,87 +25,96 @@ html {
 
 /* === Tipografía global: Avenir (con fallbacks seguros) === */
 :root {
-        --font-avenir: "Avenir Next LT Pro", "Avenir Next", "Avenir", "Avenir LT Std", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-avenir: 'Avenir', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Fuentes auto-hospedadas: Avenir (coloca los archivos en /fonts/avenir) */
+/* Fuentes auto-hospedadas: Avenir (archivos en /fonts/avenir) */
+/* Light (300) */
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-Regular.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-It.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-It.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-Light.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-Light.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-Light.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-LightIt.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-LightIt.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-LightOblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-LightOblique.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
 }
+/* Regular (400) */
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-Demi.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-Demi.woff') format('woff');
-    font-weight: 600;
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-Book.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Book.woff') format('woff'),
+         url('../fonts/avenir/Avenir-Roman.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Roman.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-DemiIt.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-DemiIt.woff') format('woff');
-    font-weight: 600;
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-BookOblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-BookOblique.woff') format('woff'),
+         url('../fonts/avenir/Avenir-Oblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Oblique.woff') format('woff');
+    font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
+/* Medium (500) */
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-Medium.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-Medium.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-Medium.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-MediumIt.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-MediumIt.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-MediumOblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-MediumOblique.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
 }
+/* Bold (700) – usando Heavy como bold */
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-Bold.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-Bold.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-Heavy.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Heavy.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/avenir/AvenirNextLTPro-BoldIt.woff2') format('woff2'),
-             url('../fonts/avenir/AvenirNextLTPro-BoldIt.woff') format('woff');
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-HeavyOblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-HeavyOblique.woff') format('woff');
     font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+/* Black (900) */
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-Black.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenir/Avenir-BlackOblique.woff2') format('woff2'),
+         url('../fonts/avenir/Avenir-BlackOblique.woff') format('woff');
+    font-weight: 900;
     font-style: italic;
     font-display: swap;
 }
