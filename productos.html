@@ -6,23 +6,24 @@
     <title>Productos - Belle Époque Pastelería Francesa</title>
     <meta name="description" content="Descubre nuestra selección completa de pasteles franceses: croissants, macarons, tartas y postres artesanales.">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navegación -->
     <nav class="navbar">
         <a href="index.html" class="logo">Belle Époque</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#nosotros">Nosotros</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
-        <div class="menu-toggle" id="menuToggle">
+        <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </label>
     </nav>
 
     <main>
@@ -42,8 +43,8 @@
             
             <div class="product-grid">
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f0c747, #d4af37); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🥐
+                    <div class="product-image">
+                        <img src="images/croissants.png" alt="Croissant clásico">
                     </div>
                     <div class="product-info">
                         <h3>Croissant Clásico</h3>
@@ -54,8 +55,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b4513, #d4af37); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">
-                        🍫
+                    <div class="product-image">
+                        <img src="images/croissants_2.png" alt="Pain au chocolat">
                     </div>
                     <div class="product-info">
                         <h3>Pain au Chocolat</h3>
@@ -66,8 +67,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f5f5dc, #deb887); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🌰
+                    <div class="product-image">
+                        <img src="images/hojaldre.png" alt="Croissant de almendras">
                     </div>
                     <div class="product-info">
                         <h3>Croissant aux Amandes</h3>
@@ -88,8 +89,8 @@
             
             <div class="product-grid">
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #ffb6c1, #ff69b4); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🌸
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Rosa">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Rosa</h3>
@@ -100,8 +101,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #90ee90, #32cd32); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🌿
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Pistacho">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Pistacho</h3>
@@ -112,8 +113,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #dda0dd, #9370db); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        💜
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Lavanda">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Lavanda</h3>
@@ -124,8 +125,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b4513, #654321); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">
-                        🍫
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Chocolate">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Chocolate</h3>
@@ -136,8 +137,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #fff8dc, #f5deb3); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🍦
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Vainilla">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Vainilla</h3>
@@ -148,8 +149,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #ffd700, #ffed4e); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🍋
+                    <div class="product-image">
+                        <img src="images/macarons.png" alt="Macaron Limón">
                     </div>
                     <div class="product-info">
                         <h3>Macaron Limón</h3>
@@ -179,8 +180,8 @@
             
             <div class="product-grid">
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #8b4513, #d4af37); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">
-                        🎭
+                    <div class="product-image">
+                        <img src="images/torta.png" alt="Torta Ópera">
                     </div>
                     <div class="product-info">
                         <h3>Ópera</h3>
@@ -191,8 +192,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #fff8dc, #f0c747); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        👑
+                    <div class="product-image">
+                        <img src="images/productos.png" alt="Saint-Honoré">
                     </div>
                     <div class="product-info">
                         <h3>Saint-Honoré</h3>
@@ -203,8 +204,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f5f5dc, #deb887); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🥞
+                    <div class="product-image">
+                        <img src="images/hojaldre.png" alt="Mille-feuille">
                     </div>
                     <div class="product-info">
                         <h3>Mille-feuille</h3>
@@ -215,8 +216,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #ff6b6b, #ff8e53); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🍓
+                    <div class="product-image">
+                        <img src="images/manzanita.png" alt="Tarte aux Fraises">
                     </div>
                     <div class="product-info">
                         <h3>Tarte aux Fraises</h3>
@@ -227,8 +228,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #dda0dd, #ba55d3); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🫐
+                    <div class="product-image">
+                        <img src="images/productos.png" alt="Tarte Myrtille">
                     </div>
                     <div class="product-info">
                         <h3>Tarte Myrtille</h3>
@@ -239,8 +240,8 @@
                 </div>
                 
                 <div class="product-card">
-                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #f4a460, #daa520); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-                        🍮
+                    <div class="product-image">
+                        <img src="images/productos.png" alt="Crème Brûlée">
                     </div>
                     <div class="product-info">
                         <h3>Crème Brûlée</h3>
@@ -283,41 +284,6 @@
         <p>Galería del Centro, Local 15 - CABA | Teléfono: +54 11 4567-8900</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Toggle menu móvil
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Cerrar menú al hacer click en un link
-        navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                navLinks.classList.remove('active');
-            }
-        });
-        
-        // Animaciones al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-        
-        // Observar elementos para animaciones
-        document.querySelectorAll('.product-card').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    
 </body>
 </html>
