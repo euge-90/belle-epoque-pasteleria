@@ -608,8 +608,8 @@ main {
 
 .social-links a {
     display: inline-flex;
-    width: 40px;
-    height: 40px;
+    width: 50px; /* +25% */
+    height: 50px; /* +25% */
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -628,8 +628,8 @@ main {
 }
 
 /* Ajuste del icono */
-.social-links i { font-size: 1.1rem; line-height: 1; }
-.social-links img { display: block; width: 18px; height: 18px; }
+.social-links i { font-size: 1.375rem; /* +25% */ line-height: 1; }
+.social-links img { display: block; width: 22px; height: 22px; /* ~+22-25% */ }
 /* Asegurar familia de fuente de marcas de Font Awesome (por si el cascade la pisa) */
 .social-links i.fa-brands { font-family: "Font Awesome 6 Brands" !important; font-weight: 400; }
 
