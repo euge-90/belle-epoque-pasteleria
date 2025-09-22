@@ -1,5 +1,7 @@
 # Belle Époque - Pastelería Francesa Artesanal
 
+Demo en vivo: https://euge-90.github.io/belle-epoque-pasteleria/
+
 ## 📋 Descripción del Proyecto
 
 Belle Époque es un sitio web desarrollado para una pastelería francesa artesanal ubicada en el corazón de una galería comercial. El sitio web presenta la identidad única del local, sus productos auténticos y toda la información necesaria para que los clientes puedan conocer y contactar la pastelería.
@@ -145,3 +147,42 @@ El sitio está optimizado para:
 
 - Repositorio: https://github.com/euge-90/belle-epoque-pasteleria
 - GitHub Pages: https://euge-90.github.io/belle-epoque-pasteleria/
+
+## 🆕 Cambios recientes (2025-09-22)
+
+- Sección "Nuestro Local": ahora muestra 2 fotos del interior (`interior.png` e `interiorr.png`) en diseño responsive.
+- Galería "Ver todos nuestros productos": ampliada a 10 items, se agregó "Macarons" y se reordenó para dejar "Selección de productos" al final.
+- Documentación: se agregaron los enlaces de repositorio y GitHub Pages en `README.md` y `documentacion-proyecto.html`.
+
+## 📁 Estructura de Archivos Actualizada
+
+```
+pasteleriafrancesa/
+├── index.html                 # Página principal (Inicio/Nosotros/Contacto)
+├── productos.html             # Catálogo completo de productos
+├── documentacion-proyecto.html# Documento de referencia del proyecto
+├── INSTRUCCIONES-GITHUB.md    # Guía paso a paso para publicar en GitHub Pages
+├── css/
+│   └── styles.css             # Estilos principales
+├── images/
+│   ├── interior.png
+│   ├── interiorr.png
+│   ├── macarons.png
+│   ├── croissants.png
+│   ├── croissants_2.png
+│   ├── ... (resto de imágenes)
+│   └── .gitkeep
+├── .gitignore
+└── README.md
+```
+
+## 🚀 Publicar / Actualizar el sitio
+
+- Guía completa: ver `INSTRUCCIONES-GITHUB.md`.
+- Actualización rápida (ya con remoto configurado):
+
+```powershell
+git add .
+git commit -m "docs: actualizar README y documentación"
+git push
+```
