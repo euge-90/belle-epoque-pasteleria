@@ -39,6 +39,30 @@ html {
 }
 @font-face {
     font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-It.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-It.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-Light.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-LightIt.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-LightIt.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
     src: url('../fonts/avenir/AvenirNextLTPro-Demi.woff2') format('woff2'),
              url('../fonts/avenir/AvenirNextLTPro-Demi.woff') format('woff');
     font-weight: 600;
@@ -47,10 +71,42 @@ html {
 }
 @font-face {
     font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-DemiIt.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-DemiIt.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-Medium.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-MediumIt.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-MediumIt.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
     src: url('../fonts/avenir/AvenirNextLTPro-Bold.woff2') format('woff2'),
              url('../fonts/avenir/AvenirNextLTPro-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-BoldIt.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-BoldIt.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
     font-display: swap;
 }
 
