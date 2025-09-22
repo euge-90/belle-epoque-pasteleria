@@ -647,12 +647,23 @@ footer {
 
 /* ===== NOS ELIGEN (Trusted by) ===== */
 .trusted-section {
-    background: linear-gradient(135deg, var(--background-cream) 0%, var(--accent-color) 100%);
+    /* Fondo sectorizado: el color va en el contenedor, no a pantalla completa */
+    background: transparent;
     color: var(--text-dark);
     padding: 3rem 5% 2.5rem;
     margin-top: 3rem;
 }
-.trusted-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+.trusted-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, var(--background-cream) 0%, var(--accent-color) 100%);
+    color: var(--text-dark);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 1px solid rgba(139, 69, 19, 0.15);
+}
 .trusted-title { font-size: 2rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .trusted-subtitle { color: #5a4a42; margin-top: 0.25rem; margin-bottom: 1.25rem; }
 .trusted-logos {
@@ -696,6 +707,7 @@ footer {
 @media (max-width: 600px) {
     .trusted-logos { grid-template-columns: 1fr; }
     .trusted-title { font-size: 1.6rem; }
+    .trusted-container { padding: 1.25rem 1rem; border-radius: 12px; }
 }
 
 /* Título de marca en footer estilo Belle Époque */
@@ -733,8 +745,9 @@ footer {
     .card, .product-card, .product-thumb { background: #1a1a1a; }
     .product-image { background: #222; }
     footer { background: linear-gradient(135deg, #121212 0%, #33251b 100%); }
-    /* Modo oscuro para "Nos Eligen" */
-    .trusted-section { background: linear-gradient(135deg, #121212 0%, #33251b 100%); color: var(--text-light); }
+    /* Modo oscuro para "Nos Eligen" (sectorizado en el contenedor) */
+    .trusted-section { background: transparent; }
+    .trusted-container { background: linear-gradient(135deg, #121212 0%, #33251b 100%); color: var(--text-light); }
     .trusted-subtitle { color: #e7dcc8; }
     .trusted-logo { background: rgba(255,255,255,0.06); border-color: rgba(212,175,55,0.25); box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
 }
