@@ -974,7 +974,9 @@ footer {
 /* === Galería: Ver todos nuestros productos === */
 .product-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* Columnas de ancho controlado para evitar que la última fila estire tarjetas en exceso */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+    justify-content: center; /* centrar la grilla cuando haya espacio libre */
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -1009,6 +1011,8 @@ footer {
     .local-section .local-image-wrapper img { height: 300px; }
     .local-section .local-grid { grid-template-columns: 1fr; }
     .product-thumb img { height: 140px; }
+    /* En pantallas medianas/pequeñas las tarjetas pueden aprovechar el ancho completo */
+    .product-gallery { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); justify-content: stretch; }
 }
 @media (max-width: 480px) {
     .local-section .local-image-wrapper img { height: 220px; }
