@@ -79,12 +79,23 @@ p {
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
+    gap: 0.5rem;
 }
 
-.logo::before {
-    content: "🥐";
-    margin-right: 0.5rem;
-    font-size: 2rem;
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .nav-links {
@@ -166,6 +177,27 @@ main {
     margin-bottom: 2rem;
     max-width: 600px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Estilos para el logo en la sección hero */
+.hero-logo {
+    margin-bottom: 2rem;
+}
+
+.hero-logo-img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.5));
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.hero-logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.6));
 }
 
 .cta-button {
@@ -292,7 +324,7 @@ main {
 
 .about-img {
   width: 100%;
-  height: 400px;
+    height: 480px;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,.12);
@@ -300,9 +332,54 @@ main {
 
 .about-image img {
     width: 100%;
-    max-width: 400px;
+        max-width: 100%;
     border-radius: 15px;
     box-shadow: 0 5px 20px var(--shadow);
+}
+
+/* Cita destacada en "Nosotros" */
+.highlight-quote {
+    font-style: italic;
+    background: rgba(245, 245, 220, 0.6); /* var(--accent-color) suavizado */
+    border-left: 2px solid var(--primary-color);
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0 1.25rem;
+    border-radius: 8px;
+    color: var(--text-dark);
+    position: relative;
+    text-align: center;
+    /* Líneas doradas superior e inferior */
+    background-image: 
+        linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent),
+        linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent);
+    background-size: 100% 1px, 100% 1px;
+    background-position: top center, bottom center;
+    background-repeat: no-repeat;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+}
+
+.highlight-quote::before {
+    content: "🥐";
+    position: absolute;
+    top: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    background: var(--background-light);
+    padding: 0 0.5rem;
+    border-radius: 999px;
+}
+
+/* === Tipografía destacada para sección "Nosotros" === */
+#nosotros h2 {
+    font-size: 2.75rem; /* ligeramente más grande que el h2 global */
+}
+#nosotros .about-text p {
+    font-size: 1.2rem; /* subir desde 1.1rem */
+    line-height: 1.9;   /* mayor legibilidad */
+    margin-bottom: 1.15rem;
 }
 
 /* ===== CONTACTO ===== */
@@ -330,6 +407,73 @@ main {
 
 .contact-card p {
     margin-bottom: 0.5rem;
+}
+
+.contact-logo-img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    margin: 0.25rem auto 0.75rem;
+    display: block;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+}
+.contact-logo-link { display: inline-block; }
+.contact-logo-link:hover .contact-logo-img { transform: scale(1.03); }
+.contact-logo-img { transition: transform .2s ease; cursor: pointer; }
+
+/* === Mapa de ubicación === */
+.map-card { padding: 0; overflow: hidden; }
+.map-card h3 { padding: 1.25rem 1.25rem 0; }
+.map-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #f7f7f7;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+.map-actions {
+    padding: 1rem 1.25rem 1.25rem;
+}
+.map-static-fallback {
+    padding: 0 1.25rem 0.75rem;
+    display: none; /* oculto por defecto, se muestra si el iframe falla */
+}
+.map-static {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 0 15px 15px;
+}
+.map-static-note {
+    display: block;
+    margin-top: 0.35rem;
+    color: #6b645f;
+}
+
+/* Estados del mapa */
+.map-error .map-wrapper { display: none; }
+.map-error .map-static-fallback { display: block; }
+.btn-map {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-color), #f0c747);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.25);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-map:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212,175,55,0.35);
 }
 
 .social-links {
@@ -367,6 +511,18 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 3%;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .hero-logo-img {
+        height: 100px;
     }
     
     .nav-links {
@@ -412,6 +568,11 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+    .about-img { height: 360px; }
+    #nosotros h2 { font-size: 2.2rem; }
+    #nosotros .about-text p { font-size: 1.1rem; line-height: 1.8; }
+    .highlight-quote { padding: 1.1rem 1rem; }
+    .highlight-quote::before { top: -0.7rem; font-size: 1.1rem; }
     
     .cards-container {
         flex-direction: column;
@@ -421,6 +582,7 @@ footer {
     .contact-info {
         flex-direction: column;
     }
+    .map-wrapper { aspect-ratio: 4/3; }
 }
 
 @media (max-width: 480px) {
@@ -440,6 +602,25 @@ footer {
         min-width: auto;
         margin: 0 1rem;
     }
+    .about-img { height: 260px; }
+    #nosotros h2 { font-size: 1.9rem; }
+    #nosotros .about-text p { font-size: 1.05rem; line-height: 1.75; }
+    .highlight-quote { padding: 1rem 0.9rem; }
+    .highlight-quote::before { top: -0.65rem; font-size: 1rem; }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .hero-logo-img {
+        height: 80px;
+        padding: 0.5rem;
+    }
+    .contact-logo-img { width: 120px; }
 }
 
 /* ===== ANIMACIONES ===== */

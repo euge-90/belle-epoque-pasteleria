@@ -11,7 +11,10 @@
 <body>
     <!-- Navegación -->
     <nav class="navbar">
-        <a href="#inicio" class="logo">Belle Époque</a>
+        <a href="#inicio" class="logo">
+            <img src="images/logo.png" alt="Belle Époque Logo" class="logo-img">
+            <span class="logo-text">Belle Époque</span>
+        </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
@@ -59,10 +62,17 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Nosotros</h2>
-                    <p>Pastelería francesa artesanal en la galería.</p>
+                    <p>En el vibrante corazón del centro porteño, donde convergen Florida y San Martín, nació <strong>Belle Époque</strong> con la misión de traer la auténtica tradición pastelera francesa a Buenos Aires.</p>
+                    <blockquote class="highlight-quote">“Cada mañana horneamos recuerdos: el aroma de la manteca, el crujir del hojaldre y un café que invita a quedarse.”</blockquote>
+                    
+                    <p>Desde nuestra apertura, hemos sido testigos del ritmo incesante de la ciudad. Cada mañana, mientras Buenos Aires despierta, nuestros maestros pasteleros ya están creando con sus manos las delicias que acompañarán los momentos especiales de porteños y visitantes.</p>
+                    
+                    <p>Ubicados estratégicamente en <strong>Florida 165 y San Martín 170</strong>, somos parte de la historia de estas emblemáticas calles. Aquí, entre el bullicio de oficinistas, turistas y vecinos del barrio, ofrecemos un refugio de sabores auténticos donde cada croissant cuenta una historia y cada macaron es una pequeña obra de arte.</p>
+                    
+                    <p>Nuestra pasión por la pastelería francesa se combina con el cálido espíritu argentino, creando una experiencia única que conecta tradiciones y culturas en cada bocado.</p>
                 </div>
                 <div class="about-image">
-                    <img class="about-img" src="images/local.png" alt="Nuestro local">
+                    <img class="about-img" src="images/local.png" alt="Nuestro local en el corazón de Buenos Aires">
                 </div>
             </div>
         </section>
@@ -170,7 +180,48 @@
             <div class="contact-info">
                 <div class="contact-card">
                     <h3>Ubicación</h3>
-                    <p>Galería del Centro · Local 15</p>
+                    <a href="#inicio" class="contact-logo-link" aria-label="Ir al inicio">
+                        <img src="images/logo.png" alt="Belle Époque Logo" class="contact-logo-img" />
+                    </a>
+                    <p>Florida 165, San Martín 170</p>
+                    <p>1005 Buenos Aires</p>
+                </div>
+
+                                <div class="contact-card map-card" id="mapCard">
+                    <h3>Cómo llegar</h3>
+                                        <div class="map-wrapper" id="mapWrapper">
+                        <iframe
+                                                    class="map-iframe"
+                                                    id="mapIframe"
+                          src="https://www.google.com/maps?q=Florida+165,+San+Mart%C3%ADn+170,+1005+Buenos+Aires&output=embed"
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade"
+                          allowfullscreen
+                          aria-label="Mapa de ubicación Belle Époque en Florida 165 y San Martín 170, 1005 Buenos Aires">
+                        </iframe>
+                    </div>
+                                        <div class="map-static-fallback" id="mapFallback">
+                        <img
+                          class="map-static"
+                          src="https://staticmap.openstreetmap.de/staticmap.php?center=-34.6035,-58.3765&zoom=17&size=640x360&maptype=mapnik&markers=-34.6035,-58.3765,red-pushpin"
+                          alt="Mapa de referencia cerca de Florida 165 y San Martín 170, Buenos Aires (vista estática)"
+                          loading="lazy"
+                        />
+                        <small class="map-static-note">Imagen de referencia. Para navegación en tiempo real, usa el botón de Google Maps.</small>
+                    </div>
+                                        <noscript>
+                                                <div class="map-static-fallback">
+                                                        <img
+                                                            class="map-static"
+                                                            src="https://staticmap.openstreetmap.de/staticmap.php?center=-34.6035,-58.3765&zoom=17&size=640x360&maptype=mapnik&markers=-34.6035,-58.3765,red-pushpin"
+                                                            alt="Mapa de referencia cerca de Florida 165 y San Martín 170, Buenos Aires (vista estática)"
+                                                        />
+                                                        <small class="map-static-note">JavaScript deshabilitado: mostrando mapa estático.</small>
+                                                </div>
+                                        </noscript>
+                    <div class="map-actions">
+                        <a class="btn-map" href="https://www.google.com/maps?q=Florida+165,+San+Mart%C3%ADn+170,+1005+Buenos+Aires" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -179,7 +230,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.</p>
-        <p>Galería del Centro, Local 15 - CABA | Teléfono: +54 11 4567-8900</p>
+        <p>Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900</p>
     </footer>
 
     <!-- JavaScript (reparado) -->
@@ -194,6 +245,23 @@
           if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
         });
       });
+
+            // Mapa: fallback si el iframe no carga (timeout de 6s)
+            (function(){
+                const mapCard = document.getElementById('mapCard');
+                const iframe = document.getElementById('mapIframe');
+                if(!mapCard || !iframe) return;
+
+                let done = false;
+                const markLoaded = () => { if (done) return; done = true; };
+                const markError = () => { if (done) return; done = true; mapCard.classList.add('map-error'); };
+
+                iframe.addEventListener('load', markLoaded, { once: true });
+                iframe.addEventListener('error', markError, { once: true });
+
+                // Timeout por si el load nunca dispara (bloqueadores o CSP)
+                setTimeout(() => { if (!done) markError(); }, 6000);
+            })();
     </script>
 </body>
 </html>
