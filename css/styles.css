@@ -235,6 +235,15 @@ p {
     transition: 0.3s;
 }
 
+/* Ocultar siempre el checkbox del menú (se controla con el label) */
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
 /* ===== SECCIONES PRINCIPALES ===== */
 main {
     margin-top: 80px;
