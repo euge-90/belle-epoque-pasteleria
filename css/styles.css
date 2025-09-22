@@ -25,7 +25,33 @@ html {
 
 /* === Tipografía global: Avenir (con fallbacks seguros) === */
 :root {
-    --font-avenir: "Avenir", "Avenir Next", "Avenir Next LT Pro", "Avenir LT Std", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        --font-avenir: "Avenir Next LT Pro", "Avenir Next", "Avenir", "Avenir LT Std", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Fuentes auto-hospedadas: Avenir (coloca los archivos en /fonts/avenir) */
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-Regular.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-Demi.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-Demi.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('../fonts/avenir/AvenirNextLTPro-Bold.woff2') format('woff2'),
+             url('../fonts/avenir/AvenirNextLTPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
