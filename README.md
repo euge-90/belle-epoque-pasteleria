@@ -65,11 +65,11 @@ La paleta elegida se inspira en los colores tradicionales de las pastelerías fr
 ### Tecnologías Utilizadas:
 - **HTML5:** Estructura semántica y accesible
 - **CSS3:** Estilos avanzados con variables CSS, Flexbox y Grid
-- **JavaScript Vanilla:** Funcionalidades interactivas sin dependencias externas
+- **Sin JavaScript:** Interacciones resueltas con CSS puro (toggle del menú móvil con checkbox)
 
 ### Características Implementadas:
 - ✅ **Diseño Responsivo:** Adaptación completa a móviles, tablets y desktop
-- ✅ **Navegación Fluida:** Smooth scrolling y menú hamburguesa para móviles
+- ✅ **Navegación Fluida:** Menú hamburguesa responsive sin JavaScript
 - ✅ **Flexbox Layout:** Diseño flexible y moderno
 - ✅ **Animaciones CSS:** Transiciones suaves y efectos hover
 - ✅ **Optimización SEO:** Meta tags, estructura semántica y contenido optimizado

@@ -15,17 +15,18 @@
             <img src="images/logo.png" alt="Belle Époque Logo" class="logo-img">
             <span class="logo-text">Belle Époque</span>
         </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <div class="menu-toggle" id="menuToggle">
+        <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </label>
     </nav>
 
     <main>
@@ -226,35 +227,6 @@
         <p>Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900</p>
     </footer>
 
-    <!-- JavaScript (reparado) -->
-    <script>
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      menuToggle?.addEventListener('click', () => navLinks.classList.toggle('active'));
-      navLinks?.addEventListener('click', (e) => { if (e.target.tagName === 'A') navLinks.classList.remove('active'); });
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', e=>{
-          const t = document.querySelector(a.getAttribute('href'));
-          if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-        });
-      });
-
-            // Mapa: fallback si el iframe no carga (timeout de 6s)
-            (function(){
-                const mapCard = document.getElementById('mapCard');
-                const iframe = document.getElementById('mapIframe');
-                if(!mapCard || !iframe) return;
-
-                let done = false;
-                const markLoaded = () => { if (done) return; done = true; };
-                const markError = () => { if (done) return; done = true; mapCard.classList.add('map-error'); };
-
-                iframe.addEventListener('load', markLoaded, { once: true });
-                iframe.addEventListener('error', markError, { once: true });
-
-                // Timeout por si el load nunca dispara (bloqueadores o CSP)
-                setTimeout(() => { if (!done) markError(); }, 6000);
-            })();
-    </script>
+    
 </body>
 </html>

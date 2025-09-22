@@ -543,10 +543,9 @@ footer {
         box-shadow: 0 2px 10px var(--shadow);
         padding: 1rem 0;
     }
-    
-    .nav-links.active {
-        display: flex;
-    }
+    /* Mostrar menú cuando el checkbox está activo (sin JS) */
+    .nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+    .nav-toggle:checked + .nav-links { display: flex; }
     
     .menu-toggle {
         display: flex;
