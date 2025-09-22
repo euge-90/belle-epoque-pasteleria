@@ -10,7 +10,7 @@ Belle Époque es un sitio web desarrollado para una pastelería francesa artesan
 
 - **Nombre del Local:** Belle Époque
 - **Tipo de Negocio:** Pastelería Francesa Artesanal
-- **Ubicación:** Galería del Centro, Local 15, CABA
+- **Ubicación:** Florida 165, San Martín 170, 1005 Buenos Aires
 - **Público Objetivo:** Amantes de la repostería fina, personas que buscan productos franceses auténticos, clientes que valoran la calidad artesanal y la experiencia gastronómica sofisticada.
 
 ## 🗺️ Mapa del Sitio
@@ -125,7 +125,7 @@ El sitio está optimizado para:
 
 ## 📞 Información de Contacto del Negocio
 
-- **Dirección:** Galería del Centro, Local 15, Av. Principal 1234, CABA
+- **Dirección:** Florida 165, San Martín 170, 1005 Buenos Aires
 - **Teléfono:** +54 11 4567-8900
 - **WhatsApp:** +54 9 11 4567-8900
 - **Email:** info@belleepoque.com.ar
