@@ -409,6 +409,11 @@ main {
     margin-bottom: 0.5rem;
 }
 
+/* Lista de horarios en Contacto */
+.hours-list { margin-top: 0.5rem; }
+.hours-list p { margin: 0.25rem 0; }
+.hours-time { color: #5a4a42; font-size: 0.98rem; }
+
 .contact-logo-img {
     width: 140px;
     height: auto;
