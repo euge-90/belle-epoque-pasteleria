@@ -23,8 +23,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* === Tipografía global: Avenir (con fallbacks seguros) === */
+:root {
+    --font-avenir: "Avenir", "Avenir Next", "Avenir Next LT Pro", "Avenir LT Std", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: var(--font-avenir);
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background-light);
@@ -32,8 +37,8 @@ body {
 
 /* ===== TIPOGRAFÍA ===== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-weight: 400;
+    font-family: var(--font-avenir);
+    font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-dark);
 }
@@ -94,7 +99,7 @@ p {
 }
 
 .logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-avenir);
     font-weight: 700;
 }
 
@@ -276,24 +281,25 @@ main {
 }
 
 .product-image {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  background: #f7f7f7;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #f7f7f7;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
 }
 .product-card:hover .product-image img {
   transform: scale(1.05);
 }
 
+/* (Se mantiene el estilo de .nav-links a definido arriba) */
 .product-info {
     padding: 1.5rem;
 }
@@ -306,6 +312,21 @@ main {
 }
 
 /* ===== SECCIÓN NOSOTROS ===== */
+    .cta-button {
+        background: var(--ui-brown);
+        color: #fff;
+        padding: 0.9rem 1.6rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-family: var(--font-ui);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        font-size: 1rem; /* fallback */
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(75, 58, 42, 0.25);
+    }
 .about-content {
     display: flex;
     align-items: center;
@@ -317,17 +338,21 @@ main {
     flex: 1;
 }
 
+    #nosotros h2 {
+        font-size: 2.2rem; /* fallback */
+        font-size: clamp(1.6rem, 3.6vw, 2.75rem);
+    }
 .about-image {
     flex: 1;
     text-align: center;
 }
 
 .about-img {
-  width: 100%;
+    width: 100%;
     height: 480px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.12);
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
 }
 
 .about-image img {
@@ -510,6 +535,43 @@ footer {
     text-align: center;
     padding: 2rem 5%;
     margin-top: 4rem;
+}
+
+/* Título de marca en footer estilo Belle Époque */
+.footer-brand {
+    background: #1a1a1a;
+    margin: 0 auto 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: inset 0 0 0 1px rgba(212,175,55,0.25), 0 6px 18px rgba(0,0,0,0.25);
+}
+.footer-brand-title {
+    font-family: var(--font-avenir);
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: inline-block;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    transition: filter .25s ease, text-shadow .25s ease;
+}
+.footer-brand-title:hover {
+    filter: brightness(1.12) saturate(1.05);
+    text-shadow: 0 0 6px rgba(212,175,55,0.45), 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-dark: #f0f0f0;
+        --background-light: #121212;
+    }
+    body { background-color: var(--background-light); color: var(--text-dark); }
+    .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    .card, .product-card, .product-thumb { background: #1a1a1a; }
+    .product-image { background: #222; }
+    footer { background: linear-gradient(135deg, #121212 0%, #33251b 100%); }
 }
 
 /* ===== HORARIOS ===== */
