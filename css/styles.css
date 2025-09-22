@@ -629,6 +629,7 @@ main {
 
 /* Ajuste del icono */
 .social-links i { font-size: 1.1rem; line-height: 1; }
+.social-links img { display: block; width: 18px; height: 18px; }
 /* Asegurar familia de fuente de marcas de Font Awesome (por si el cascade la pisa) */
 .social-links i.fa-brands { font-family: "Font Awesome 6 Brands" !important; font-weight: 400; }
 
