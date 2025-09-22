@@ -493,6 +493,16 @@ footer {
     display: block;
 }
 
+/* Grid para dos fotos en "Nuestro Local" */
+.local-section .local-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.local-section .local-grid img {
+    height: 420px;
+}
+
 /* === Galería: Ver todos nuestros productos === */
 .product-gallery {
     display: grid;
@@ -529,6 +539,7 @@ footer {
 /* Responsive ajustes */
 @media (max-width: 768px) {
     .local-section .local-image-wrapper img { height: 300px; }
+    .local-section .local-grid { grid-template-columns: 1fr; }
     .product-thumb img { height: 140px; }
 }
 @media (max-width: 480px) {
