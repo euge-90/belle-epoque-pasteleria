@@ -112,6 +112,7 @@ html {
 
 body {
     font-family: var(--font-avenir);
+    font-weight: 400; /* Regular */
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background-light);
@@ -120,7 +121,7 @@ body {
 /* ===== TIPOGRAFÍA ===== */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-avenir);
-    font-weight: 600;
+    font-weight: 600; /* default Demi for headings */
     margin-bottom: 1rem;
     color: var(--text-dark);
 }
@@ -129,6 +130,7 @@ h1 {
     font-size: 3rem;
     color: var(--primary-color);
     text-shadow: 1px 1px 2px var(--shadow);
+    font-weight: 700; /* Bold for main title */
 }
 
 h2 {
@@ -143,6 +145,7 @@ h3 {
 p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    font-weight: 400; /* Regular */
 }
 
 /* ===== NAVEGACIÓN ===== */
@@ -194,7 +197,10 @@ p {
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 500;
+    font-family: var(--font-avenir);
+    text-transform: uppercase;
+    font-weight: 600; /* Medium/Demi */
+    letter-spacing: 0.5px;
     transition: color 0.3s ease, transform 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -293,7 +299,10 @@ main {
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: bold;
+    font-family: var(--font-avenir);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.6px;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
@@ -394,21 +403,6 @@ main {
 }
 
 /* ===== SECCIÓN NOSOTROS ===== */
-    .cta-button {
-        background: var(--ui-brown);
-        color: #fff;
-        padding: 0.9rem 1.6rem;
-        text-decoration: none;
-        border-radius: 50px;
-        font-family: var(--font-ui);
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.6px;
-        font-size: 1rem; /* fallback */
-        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(75, 58, 42, 0.25);
-    }
 .about-content {
     display: flex;
     align-items: center;
