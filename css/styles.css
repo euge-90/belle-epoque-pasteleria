@@ -601,24 +601,37 @@ main {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0 1rem;
 }
 
 .social-links a {
-    display: inline-block;
-    padding: 0.5rem;
-    background: var(--primary-color);
-    color: var(--text-light);
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid rgba(212, 175, 55, 0.5);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
 .social-links a:hover {
-    background: var(--secondary-color);
-    transform: scale(1.1);
+    color: var(--text-dark);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(212,175,55,0.25);
 }
+
+/* Ajuste del icono */
+.social-links i { font-size: 1rem; line-height: 1; }
+
+/* Footer social wrapper (espaciado) */
+.footer-social { margin-bottom: 0.5rem; }
 
 /* ===== FOOTER ===== */
 footer {
