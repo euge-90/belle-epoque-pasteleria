@@ -115,9 +115,9 @@ const puppeteer = require('puppeteer');
         await page.waitForSelector('.product-gallery', { timeout: 30000 })
           .catch(() => console.warn('.product-gallery no encontrado antes del timeout, se continúa de todas formas.'));
 
-        // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
+  // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
         await autoScroll();
-        await page.waitForTimeout(30000);
+  await new Promise(res => setTimeout(res, 30000));
 
   const srcTag = /^(file:\/\/)/.test(usedUrl) ? 'local' : 'remote';
   const file = path.join(outDir, `home-${vp.name}-${cs.name}-${srcTag}.png`);
