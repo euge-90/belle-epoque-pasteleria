@@ -1037,9 +1037,14 @@ footer {
     /* === Overrides finales para asegurar contraste en Modo Oscuro === */
     @media (prefers-color-scheme: dark) {
         /* Forzar que las descripciones de productos (figcaption) se vean claras */
-        .product-thumb { background: #161616; }
+        .product-thumb { background: #111111; }
         .product-thumb figcaption {
-            color: var(--text-light) !important;
-            text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 1.02rem;
+            letter-spacing: 0.2px;
+            padding: 0.85rem 0.75rem;
+            text-shadow: 0 1px 1.5px rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
     }
