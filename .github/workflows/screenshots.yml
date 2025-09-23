@@ -36,7 +36,9 @@ jobs:
       - name: Capture screenshots with Puppeteer
         env:
           SITE_URL: https://euge-90.github.io/belle-epoque-pasteleria/
-        run: npm run screenshots
+        run: |
+          set -e
+          npm run screenshots || (echo "First attempt failed, retrying in 10s..." && sleep 10 && npm run screenshots)
 
       - name: Commit and push screenshots
         run: |
