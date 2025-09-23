@@ -768,9 +768,17 @@ footer {
         --background-light: #121212;
     }
     body { background-color: var(--background-light); color: var(--text-dark); }
-    .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    .navbar {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        background: linear-gradient(135deg, #0f0f0f 0%, #1b1b1b 100%);
+    }
+    /* Links del menú en modo oscuro */
+    .nav-links a { color: var(--text-light); }
+    .nav-links a:hover { color: var(--primary-color); background-color: rgba(212,175,55,0.12); }
     .card, .product-card, .product-thumb { background: #1a1a1a; }
     .product-image { background: #222; }
+    /* Texto de productos (galería simple) */
+    .product-thumb figcaption { color: var(--text-light); }
     footer {
         background:
             linear-gradient(to right, var(--primary-color), var(--primary-color)) top/100% 3px no-repeat,
@@ -785,6 +793,13 @@ footer {
     .trusted-logo { background: rgba(255,255,255,0.06); border-color: rgba(212,175,55,0.25); box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
     /* Iconos sociales: mantener botones dorados para alto contraste en fondo oscuro */
     .social-links a { background: var(--primary-color); color: #2c1810; border-color: var(--primary-color); }
+    /* Tarjetas de contacto y acciones del mapa en oscuro */
+    .contact-card { background: #1a1a1a; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .map-actions { background: #171717; border-top: 1px solid rgba(255,255,255,0.06); }
+    .map-static-note { color: #c8c3bc; }
+    .hours-time { color: #d7d2cd; }
+    /* Menú móvil desplegable en oscuro: forzar fondo oscuro por encima del estilo responsive claro */
+    .nav-links { background: #1a1a1a !important; box-shadow: 0 2px 10px rgba(0,0,0,0.6) !important; }
 }
 
 /* ===== HORARIOS ===== */
