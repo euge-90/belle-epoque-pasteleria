@@ -1,5 +1,8 @@
 name: Capture Screenshots
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
   push:
@@ -13,9 +16,14 @@ on:
 jobs:
   capture:
     runs-on: ubuntu-latest
+    concurrency:
+      group: screenshots-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4

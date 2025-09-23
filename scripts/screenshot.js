@@ -25,14 +25,29 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   await page.setCacheEnabled(false);
 
+  const gotoWithRetry = async (page, url, attempts = 3) => {
+    let lastErr;
+    for (let i = 0; i < attempts; i++) {
+      try {
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 120000 });
+        return;
+      } catch (e) {
+        lastErr = e;
+        console.warn(`Navegación fallida (intento ${i+1}/${attempts}). Reintentando...`);
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    }
+    throw lastErr;
+  };
+
   for (const vp of viewports) {
     await page.setViewport({ width: vp.width, height: vp.height, deviceScaleFactor: 1 });
     for (const cs of colorSchemes) {
       await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: cs.media }]);
-      await page.goto(baseUrl, { waitUntil: 'networkidle2', timeout: 120000 });
+  await gotoWithRetry(page, baseUrl, 3);
       // Esperar a que la navbar y la galería de productos estén listas
-      await page.waitForSelector('nav.navbar', { timeout: 20000 });
-      await page.waitForSelector('.product-gallery', { timeout: 20000 }).catch(() => {});
+  await page.waitForSelector('nav.navbar', { timeout: 30000 });
+  await page.waitForSelector('.product-gallery', { timeout: 30000 }).catch(() => {});
       const file = path.join(outDir, `home-${vp.name}-${cs.name}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log('Saved', file);
