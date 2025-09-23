@@ -1,0 +1,43 @@
+name: Capture Screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'index.html'
+      - 'css/**'
+      - 'scripts/screenshot.js'
+      - '.github/workflows/screenshots.yml'
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Capture screenshots with Puppeteer
+        env:
+          SITE_URL: https://euge-90.github.io/belle-epoque-pasteleria/
+        run: npm run screenshots
+
+      - name: Commit and push screenshots
+        run: |
+          if [ -n "$(git status --porcelain images/screenshots/*.png 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add images/screenshots/*.png
+            git commit -m "chore: actualizar capturas automáticas"
+            git push
+          else
+            echo "No hay cambios de capturas para commitear"
+          fi

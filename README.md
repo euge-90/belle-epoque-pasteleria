@@ -124,3 +124,21 @@ Para más detalles, ver `INSTRUCCIONES-GITHUB.md`.
 ---
 
 Entrega final — Belle Époque · Pastelería Francesa Artesanal ✨🥐
+
+## Capturas (automáticas)
+
+Este repositorio incluye una automatización que captura capturas reales del sitio con Puppeteer y las guarda en `images/screenshots/` como PNG:
+
+- `images/screenshots/home-desktop-light.png`
+- `images/screenshots/home-desktop-dark.png`
+- `images/screenshots/home-mobile-light.png`
+- `images/screenshots/home-mobile-dark.png`
+
+Cómo funciona:
+- GitHub Action: `.github/workflows/screenshots.yml` corre en cada push a `main` (cambios en HTML/CSS) o manualmente (Workflow Dispatch).
+- Script: `scripts/screenshot.js` usa Puppeteer para visitar `https://euge-90.github.io/belle-epoque-pasteleria/` y guardar capturas en light/dark y desktop/mobile.
+
+Ejecución manual desde la pestaña Actions:
+1. Ir a “Actions” en GitHub.
+2. Elegir “Capture Screenshots”.
+3. Click en “Run workflow”.
