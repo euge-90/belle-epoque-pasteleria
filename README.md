@@ -1,188 +1,126 @@
-# Belle Époque - Pastelería Francesa Artesanal
+# Belle Époque — Pastelería Francesa Artesanal (Entrega Final)
 
 Demo en vivo: https://euge-90.github.io/belle-epoque-pasteleria/
 
-## 📋 Descripción del Proyecto
+## Descripción
 
-Belle Époque es un sitio web desarrollado para una pastelería francesa artesanal ubicada en el corazón de una galería comercial. El sitio web presenta la identidad única del local, sus productos auténticos y toda la información necesaria para que los clientes puedan conocer y contactar la pastelería.
+Sitio web estático para Belle Époque, una pastelería francesa artesanal ubicada en una galería del microcentro. La web comunica la identidad de marca, presenta productos, muestra referencias de clientes (“Nos Eligen”) y facilita la ubicación y horarios, todo con un enfoque accesible, rápido y sin JavaScript.
 
-## 🎯 Datos del Proyecto
+## Características clave
 
-- **Nombre del Local:** Belle Époque
-- **Tipo de Negocio:** Pastelería Francesa Artesanal
-- **Ubicación:** Florida 165, San Martín 170, 1005 Buenos Aires
-- **Público Objetivo:** Amantes de la repostería fina, personas que buscan productos franceses auténticos, clientes que valoran la calidad artesanal y la experiencia gastronómica sofisticada.
+- 100% HTML + CSS (sin JavaScript): menú móvil resuelto con checkbox + label (el input está oculto visualmente).
+- Responsive completo (mobile-first) con Flexbox y CSS Grid.
+- Modo oscuro automático con `prefers-color-scheme`, contrastes reforzados en:
+  - enlaces del menú (navbar),
+  - descripciones/títulos de productos (figcaption),
+  - tarjetas de contacto y acciones del mapa.
+- Tipografía Avenir auto-hospedada (con fallbacks seguros) y variables CSS para paleta/temas.
+- Sección “Nosotros” con historia, cita destacada y foto del local.
+- Sección “Nuestro Local” con 2 fotos del interior en grilla responsive.
+- Galería “Ver todos nuestros productos” unificada en la home, con grilla equilibrada (última fila no estira tarjetas en exceso).
+- Sección “Nos Eligen” con logos provistos (Mercado Libre, Santander, FarmaPlus, L’Occitane, Lucullus, CCI France) en un contenedor sectorizado.
+- Mapa de ubicación (Google Maps iframe) con fallback estático (OpenStreetMap) y bloque <noscript>.
+- Footer renovado: gradiente crema/beige en claro y neutral en oscuro, franja dorada superior, marca “Belle Époque” con subrayado dorado de ancho completo y redes sociales en botones dorados.
+- Redes sociales: Facebook, Instagram, TripAdvisor (via Simple Icons), TikTok, X (Twitter), Threads.
 
-## 🗺️ Mapa del Sitio
+## Secciones del sitio (index.html)
 
-### Estructura de Navegación:
-1. **Inicio** (`index.html`)
-   - Hero section con presentación
-   - Bienvenida y propuesta de valor
-   - Preview de productos destacados
-   - Información de contacto
+- Inicio (Hero): imagen del local de fondo con superposición, título y CTA a productos.
+- Nosotros: historia breve, cita con detalles dorados, y foto del frente del local.
+- Nuestro Local: dos imágenes del interior en grilla responsive.
+- Productos: galería de productos en tarjetas simples con imagen + título.
+- Nos Eligen: grilla de marcas que confían en Belle Époque dentro de un contenedor con fondo sectorizado.
+- Contacto: tarjetas de Ubicación (con mapa embebido + botón “Ver en Google Maps” dentro de la tarjeta) y Horarios.
+- Footer: bloque de marca + redes + datos.
 
-2. **Nosotros/Historia** (sección en `index.html#nosotros`)
-   - Historia de la pastelería
-   - Filosofía y propuesta dentro de la galería
-   - Presentación de la chef Marie Dubois
+## Tecnologías
 
-3. **Productos** (`productos.html`)
-   - Croissants & Viennoiseries
-   - Macarons Parisinos
-   - Pasteles & Tartas clásicas
-   - Pedidos especiales y tortas personalizadas
+- HTML5 semántico.
+- CSS3 con variables, Flexbox, Grid y media queries.
+- Preferencias de color del sistema (`prefers-color-scheme`) para el modo oscuro.
+- Iconografía: Font Awesome (brands) + Simple Icons (TripAdvisor SVG).
 
-4. **Contacto** (sección en `index.html#contacto`)
-   - Ubicación exacta en la galería
-   - Horarios de atención
-   - Datos de contacto (teléfono, email, redes sociales)
-
-## 🎨 Justificación del Diseño
-
-### Paleta de Colores:
-La paleta elegida se inspira en los colores tradicionales de las pastelerías francesas de lujo:
-
-- **Dorado Elegante (#d4af37):** Color principal que evoca lujo, calidad premium y la tradición dorada de la repostería francesa
-- **Marrón Chocolate (#8b4513):** Representa los productos de chocolate y aporta calidez y sofisticación
-- **Beige Crema (#f5f5dc):** Simula los tonos de la masa, la manteca francesa y aporta elegancia sutil
-- **Marrón Oscuro (#2c1810):** Para textos, garantiza legibilidad y profesionalismo
-- **Blanco y Crema de Fondo:** Transmite limpieza, pureza y permite que los productos destaquen
-
-### Tipografía:
-- **Playfair Display:** Para títulos y encabezados, una fuente serif elegante que evoca el estilo clásico francés
-- **Georgia:** Para el cuerpo del texto, garantiza excelente legibilidad y mantiene la elegancia serif
-
-### Estilo Visual:
-- **Diseño Elegante y Sofisticado:** Refleja la alta calidad de los productos franceses artesanales
-- **Uso de Emojis como Íconos:** Aporta calidez y hace el sitio más accesible sin perder elegancia
-- **Gradientes Suaves:** Crean profundidad y modernidad manteniendo la sofisticación
-- **Sombras y Efectos:** Añaden dimensión y hacen que los elementos se destaquen
-- **Animaciones Sutiles:** Mejoran la experiencia de usuario sin ser distractivas
-
-## 🛠️ Aspectos Técnicos
-
-### Tecnologías Utilizadas:
-- **HTML5:** Estructura semántica y accesible
-- **CSS3:** Estilos avanzados con variables CSS, Flexbox y Grid
-- **Sin JavaScript:** Interacciones resueltas con CSS puro (toggle del menú móvil con checkbox)
-
-### Características Implementadas:
-- ✅ **Diseño Responsivo:** Adaptación completa a móviles, tablets y desktop
-- ✅ **Navegación Fluida:** Menú hamburguesa responsive sin JavaScript
-- ✅ **Flexbox Layout:** Diseño flexible y moderno
-- ✅ **Animaciones CSS:** Transiciones suaves y efectos hover
-- ✅ **Optimización SEO:** Meta tags, estructura semántica y contenido optimizado
-- ✅ **Accesibilidad:** Contraste adecuado, navegación por teclado y estructura clara
-
-### Estructura de Archivos:
-```
-pasteleriafrancesa/
-├── index.html          # Página principal
-├── productos.html      # Catálogo completo de productos
-├── css/
-│   └── styles.css     # Estilos principales
-├── images/            # Carpeta para imágenes (preparada para uso futuro)
-└── README.md          # Documentación del proyecto
-```
-
-## 📱 Diseño Responsivo
-
-El sitio está optimizado para:
-- **Desktop:** Experiencia completa con navegación horizontal
-- **Tablet:** Adaptación de grillas y espaciados
-- **Mobile:** Menú hamburguesa, layouts verticales y touch-friendly
-
-### Breakpoints:
-- Móviles: hasta 768px
-- Móviles pequeños: hasta 480px
-
-## 🚀 Funcionalidades
-
-### Navegación:
-- Menú fijo superior con scroll suave
-- Menú hamburguesa responsive
-- Enlaces internos entre secciones
-
-### Interactividad:
-- Efectos hover en botones y cards
-- Animaciones de entrada al hacer scroll
-- Transiciones suaves en toda la interfaz
-
-### Contenido:
-- Información completa de productos con precios
-- Historia y filosofía de la marca
-- Datos de contacto y ubicación detallados
-- Call-to-actions estratégicamente ubicados
-
-## 🎯 Objetivos del Sitio
-
-1. **Presentar la Identidad:** Mostrar Belle Époque como una pastelería francesa auténtica y premium
-2. **Exhibir Productos:** Catálogo visual atractivo con descripciones detalladas y precios
-3. **Generar Confianza:** Historia, filosofía y profesionalismo transmitidos a través del diseño
-4. **Facilitar Contacto:** Información clara para visitas y pedidos especiales
-5. **Destacar en la Galería:** Diferenciarse como un local único y sofisticado
-
-## 📞 Información de Contacto del Negocio
-
-- **Dirección:** Florida 165, San Martín 170, 1005 Buenos Aires
-- **Teléfono:** +54 11 4567-8900
-- **WhatsApp:** +54 9 11 4567-8900
-- **Email:** info@belleepoque.com.ar
-- **Instagram:** @belleepoque.arg
-- **Facebook:** Belle Époque Pastelería
-
-## 💻 Instrucciones para Visualizar
-
-1. Abrir `index.html` en cualquier navegador web moderno
-2. Navegar entre las secciones usando el menú superior
-3. Visitar `productos.html` para ver el catálogo completo
-4. El sitio es completamente funcional sin necesidad de servidor
-
----
-
-*Desarrollado con amor por la pastelería francesa y la excelencia digital* ✨🥐
-
-## 🔗 Enlaces
-
-- Repositorio: https://github.com/euge-90/belle-epoque-pasteleria
-- GitHub Pages: https://euge-90.github.io/belle-epoque-pasteleria/
-
-## 🆕 Cambios recientes (2025-09-22)
-
-- Sección "Nuestro Local": ahora muestra 2 fotos del interior (`interior.png` e `interiorr.png`) en diseño responsive.
-- Galería "Ver todos nuestros productos": ampliada a 10 items, se agregó "Macarons" y se reordenó para dejar "Selección de productos" al final.
-- Documentación: se agregaron los enlaces de repositorio y GitHub Pages en `README.md` y `documentacion-proyecto.html`.
-
-## 📁 Estructura de Archivos Actualizada
+## Estructura del proyecto
 
 ```
-pasteleriafrancesa/
-├── index.html                 # Página principal (Inicio/Nosotros/Contacto)
-├── productos.html             # Catálogo completo de productos
-├── documentacion-proyecto.html# Documento de referencia del proyecto
-├── INSTRUCCIONES-GITHUB.md    # Guía paso a paso para publicar en GitHub Pages
-├── css/
-│   └── styles.css             # Estilos principales
-├── images/
-│   ├── interior.png
-│   ├── interiorr.png
-│   ├── macarons.png
-│   ├── croissants.png
-│   ├── croissants_2.png
-│   ├── ... (resto de imágenes)
-│   └── .gitkeep
-├── .gitignore
-└── README.md
+belle-epoque-pasteleria/
+├─ index.html
+├─ productos.html               # (Referencia histórica; la galería final está en index.html)
+├─ documentacion-proyecto.html
+├─ INSTRUCCIONES-GITHUB.md
+├─ css/
+│  └─ styles.css
+├─ images/
+│  ├─ logo.png
+│  ├─ local.png
+│  ├─ interior.png
+│  ├─ interiorr.png
+│  ├─ eclairs.png
+│  ├─ cookies.png
+│  ├─ profiterol-de-banana.png
+│  ├─ croissants.png
+│  ├─ croissants_2.png
+│  ├─ medialuna.png
+│  ├─ danesa.png
+│  ├─ hojaldre.png
+│  ├─ manzanita.png
+│  ├─ desayuno.png
+│  ├─ torta.png
+│  ├─ macarons.png
+│  ├─ mercado_libre.png
+│  ├─ santander.png
+│  ├─ farmaplus.png
+│  ├─ loccitane.png
+│  ├─ LUCULLUS.png
+│  └─ CCI_FRANCE.png
+└─ README.md
 ```
 
-## 🚀 Publicar / Actualizar el sitio
+Nota: Las fuentes Avenir se referencian desde `css/styles.css` en `fonts/avenir/`. Si no estuvieran en el repo público, el sitio usa fallbacks seguros.
 
-- Guía completa: ver `INSTRUCCIONES-GITHUB.md`.
-- Actualización rápida (ya con remoto configurado):
+## Paleta y tipografía
+
+- Paleta base: dorado (`#d4af37`), crema/beige, marrón oscuro de texto; en oscuro, gradientes neutros con dorado como acento.
+- Tipografía: Avenir (300–900, normal e italic) auto-hospedada con fallbacks: `Avenir, Avenir Next, Segoe UI, Helvetica Neue, Arial, sans-serif`.
+
+## Accesibilidad y rendimiento
+
+- Contraste reforzado en modo oscuro para navegación, productos y contacto.
+- Imágenes con `loading="lazy"` cuando aplica.
+- Menú móvil sin JS y checkbox oculto correctamente (sólo label visible).
+- Estructura semántica y navegación por teclado.
+
+## Publicación (GitHub Pages)
+
+- Sitio en vivo: https://euge-90.github.io/belle-epoque-pasteleria/
+- Actualización rápida:
 
 ```powershell
 git add .
-git commit -m "docs: actualizar README y documentación"
+git commit -m "docs: actualizar README (entrega final)"
 git push
 ```
+
+Para más detalles, ver `INSTRUCCIONES-GITHUB.md`.
+
+## Cambios destacados (2025-09-22)
+
+- Eliminación total de JavaScript y adopción de patrones CSS puros (menú móvil con checkbox + label).
+- Restauración de la sección “Nosotros” con narrativa, cita y foto del local.
+- Mapa embebido (Google Maps) con imagen estática de fallback y botón visible en mobile dentro de la tarjeta.
+- Integración de tipografía Avenir auto-hospedada y uso de variables CSS.
+- Galería de productos unificada en la home; se quitó la tarjeta “Selección de productos” y se equilibró la grilla.
+- Sección “Nos Eligen” agregada, movida sobre “Contacto” y con fondo sectorizado; logos reales provistos por el cliente.
+- Footer renovado: gradiente claro, franja dorada superior, bloque de marca “Belle Époque” con subrayado dorado de ancho completo, íconos en botones dorados y mayor contraste.
+- Redes sociales ampliadas: Facebook, Instagram, TripAdvisor (SVG vía Simple Icons), TikTok, X, Threads; íconos +25% de tamaño.
+- Modo oscuro: ajustes de contraste en navbar, descripciones/títulos de productos y tarjetas de contacto/mapa.
+
+## Créditos
+
+- Iconos de marcas: Font Awesome y Simple Icons (TripAdvisor).
+- Logos de “Nos Eligen”: provistos por el cliente.
+- Imágenes del local y productos: provistas para el proyecto.
+
+---
+
+Entrega final — Belle Époque · Pastelería Francesa Artesanal ✨🥐
