@@ -1033,3 +1033,13 @@ footer {
     .local-section .local-image-wrapper img { height: 220px; }
     .product-thumb img { height: 130px; }
 }
+
+    /* === Overrides finales para asegurar contraste en Modo Oscuro === */
+    @media (prefers-color-scheme: dark) {
+        /* Forzar que las descripciones de productos (figcaption) se vean claras */
+        .product-thumb { background: #161616; }
+        .product-thumb figcaption {
+            color: var(--text-light) !important;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+        }
+    }
