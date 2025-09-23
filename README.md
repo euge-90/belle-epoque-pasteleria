@@ -124,3 +124,16 @@ Para más detalles, ver `INSTRUCCIONES-GITHUB.md`.
 ---
 
 Entrega final — Belle Époque · Pastelería Francesa Artesanal ✨🥐
+
+## Capturas (placeholder)
+
+Las siguientes imágenes son de ejemplo para documentar estados light/dark y desktop/mobile. Podés reemplazarlas por capturas reales (PNG/JPG) manteniendo los mismos nombres.
+
+- `images/screenshots/home-desktop-light.svg`
+- `images/screenshots/home-desktop-dark.svg`
+- `images/screenshots/home-mobile-light.svg`
+- `images/screenshots/home-mobile-dark.svg`
+
+Instrucciones rápidas para reemplazar:
+- Guardá tus capturas como PNG/JPG con esos mismos nombres en `images/screenshots/`.
+- Git add/commit/push y se verán en GitHub.
