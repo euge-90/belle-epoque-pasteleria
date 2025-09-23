@@ -25,6 +25,23 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   await page.setCacheEnabled(false);
 
+  // Simple auto-scroll to trigger lazy content
+  const autoScroll = async () => {
+    try {
+      await page.evaluate(async () => {
+        const delay = (ms) => new Promise(r => setTimeout(r, ms));
+        const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        let y = 0;
+        while (y + vh < document.body.scrollHeight) {
+          y += Math.floor(vh * 0.8);
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          await delay(300);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    } catch {}
+  };
+
   const gotoWithRetry = async (page, url, attempts = 3) => {
     let lastErr;
     for (let i = 0; i < attempts; i++) {
@@ -48,6 +65,9 @@ const puppeteer = require('puppeteer');
       // Esperar a que la navbar y la galería de productos estén listas
   await page.waitForSelector('nav.navbar', { timeout: 30000 });
   await page.waitForSelector('.product-gallery', { timeout: 30000 }).catch(() => {});
+  // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
+  await autoScroll();
+  await page.waitForTimeout(30000);
       const file = path.join(outDir, `home-${vp.name}-${cs.name}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log('Saved', file);
