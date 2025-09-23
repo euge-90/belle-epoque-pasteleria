@@ -24,6 +24,12 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
   await page.setCacheEnabled(false);
+  // Log de consola del navegador en el workflow
+  page.on('console', (msg) => {
+    try {
+      console.log('[browser]', msg.type().toUpperCase(), msg.text());
+    } catch {}
+  });
 
   // Simple auto-scroll to trigger lazy content
   const autoScroll = async () => {
@@ -46,7 +52,8 @@ const puppeteer = require('puppeteer');
     let lastErr;
     for (let i = 0; i < attempts; i++) {
       try {
-        await page.goto(url, { waitUntil: 'networkidle2', timeout: 120000 });
+        // Usar domcontentloaded para evitar bloqueos por recursos externos
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
         return;
       } catch (e) {
         lastErr = e;
@@ -62,9 +69,12 @@ const puppeteer = require('puppeteer');
     for (const cs of colorSchemes) {
       await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: cs.media }]);
   await gotoWithRetry(page, baseUrl, 3);
-      // Esperar a que la navbar y la galería de productos estén listas
-  await page.waitForSelector('nav.navbar', { timeout: 30000 });
-  await page.waitForSelector('.product-gallery', { timeout: 30000 }).catch(() => {});
+      // Esperar a que el body esté presente y luego intentar encontrar elementos clave (sin fallar si no aparecen)
+      await page.waitForSelector('body', { timeout: 15000 }).catch(() => {});
+      await page.waitForSelector('nav.navbar', { timeout: 30000 })
+        .catch(() => console.warn('nav.navbar no encontrado antes del timeout, se continúa de todas formas.'));
+      await page.waitForSelector('.product-gallery', { timeout: 30000 })
+        .catch(() => console.warn('.product-gallery no encontrado antes del timeout, se continúa de todas formas.'));
   // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
   await autoScroll();
   await page.waitForTimeout(30000);
