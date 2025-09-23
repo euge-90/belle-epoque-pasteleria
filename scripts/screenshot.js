@@ -6,6 +6,7 @@ const puppeteer = require('puppeteer');
   const baseUrl = process.env.SITE_URL || 'https://euge-90.github.io/belle-epoque-pasteleria/';
   const outDir = path.join(__dirname, '..', 'images', 'screenshots');
   fs.mkdirSync(outDir, { recursive: true });
+  const localIndexUrl = 'file://' + path.resolve(__dirname, '..', 'index.html').replace(/\\/g, '/');
 
   let browser;
   try {
@@ -45,6 +46,9 @@ const puppeteer = require('puppeteer');
       console.log('[browser]', msg.type().toUpperCase(), msg.text());
     } catch {}
   });
+  page.on('pageerror', (err) => {
+    console.error('[browser] PAGEERROR', err && err.message ? err.message : err);
+  });
 
   // Simple auto-scroll to trigger lazy content
   const autoScroll = async () => {
@@ -82,6 +86,19 @@ const puppeteer = require('puppeteer');
     throw lastErr;
   };
 
+  const navigateWithFallback = async () => {
+    try {
+      await gotoWithRetry(page, baseUrl, 5);
+      console.log(`[nav] Usando URL remota: ${baseUrl}`);
+      return baseUrl;
+    } catch (e) {
+      console.warn(`[nav] Falló URL remota (${baseUrl}). Probando local file://`);
+      await gotoWithRetry(page, localIndexUrl, 3);
+      console.log(`[nav] Usando URL local: ${localIndexUrl}`);
+      return localIndexUrl;
+    }
+  };
+
   let savedCount = 0;
   const failures = [];
 
@@ -90,7 +107,7 @@ const puppeteer = require('puppeteer');
     for (const cs of colorSchemes) {
       try {
         await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: cs.media }]);
-        await gotoWithRetry(page, baseUrl, 5);
+  const usedUrl = await navigateWithFallback();
 
         // Intentar encontrar elementos clave (sin fallar si no aparecen)
         await page.waitForSelector('nav.navbar', { timeout: 30000 })
@@ -102,7 +119,8 @@ const puppeteer = require('puppeteer');
         await autoScroll();
         await page.waitForTimeout(30000);
 
-        const file = path.join(outDir, `home-${vp.name}-${cs.name}.png`);
+  const srcTag = /^(file:\/\/)/.test(usedUrl) ? 'local' : 'remote';
+  const file = path.join(outDir, `home-${vp.name}-${cs.name}-${srcTag}.png`);
         // Intentar captura fullPage, si falla, caer a viewport-only
         try {
           await page.screenshot({ path: file, fullPage: true });
