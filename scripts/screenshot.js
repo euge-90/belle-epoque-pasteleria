@@ -63,42 +63,74 @@ const puppeteer = require('puppeteer');
     } catch {}
   };
 
-  const gotoWithRetry = async (page, url, attempts = 3) => {
+  const gotoWithRetry = async (page, url, attempts = 5) => {
     let lastErr;
     for (let i = 0; i < attempts; i++) {
       try {
         // Usar domcontentloaded para evitar bloqueos por recursos externos
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 120000 });
+        // Asegurar que al menos el body esté listo
+        await page.waitForSelector('body', { timeout: 15000 }).catch(() => {});
         return;
       } catch (e) {
         lastErr = e;
         console.warn(`Navegación fallida (intento ${i+1}/${attempts}). Reintentando...`);
-        await new Promise(r => setTimeout(r, 2000));
+        const backoff = 1000 * Math.pow(2, i); // 1s,2s,4s,8s,16s
+        await new Promise(r => setTimeout(r, backoff));
       }
     }
     throw lastErr;
   };
 
+  let savedCount = 0;
+  const failures = [];
+
   for (const vp of viewports) {
     await page.setViewport({ width: vp.width, height: vp.height, deviceScaleFactor: 1 });
     for (const cs of colorSchemes) {
-      await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: cs.media }]);
-  await gotoWithRetry(page, baseUrl, 3);
-      // Esperar a que el body esté presente y luego intentar encontrar elementos clave (sin fallar si no aparecen)
-      await page.waitForSelector('body', { timeout: 15000 }).catch(() => {});
-      await page.waitForSelector('nav.navbar', { timeout: 30000 })
-        .catch(() => console.warn('nav.navbar no encontrado antes del timeout, se continúa de todas formas.'));
-      await page.waitForSelector('.product-gallery', { timeout: 30000 })
-        .catch(() => console.warn('.product-gallery no encontrado antes del timeout, se continúa de todas formas.'));
-  // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
-  await autoScroll();
-  await page.waitForTimeout(30000);
-      const file = path.join(outDir, `home-${vp.name}-${cs.name}.png`);
-      await page.screenshot({ path: file, fullPage: true });
-      console.log('Saved', file);
+      try {
+        await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: cs.media }]);
+        await gotoWithRetry(page, baseUrl, 5);
+
+        // Intentar encontrar elementos clave (sin fallar si no aparecen)
+        await page.waitForSelector('nav.navbar', { timeout: 30000 })
+          .catch(() => console.warn('nav.navbar no encontrado antes del timeout, se continúa de todas formas.'));
+        await page.waitForSelector('.product-gallery', { timeout: 30000 })
+          .catch(() => console.warn('.product-gallery no encontrado antes del timeout, se continúa de todas formas.'));
+
+        // Desplazar para activar cargas perezosas y esperar 30s antes de capturar
+        await autoScroll();
+        await page.waitForTimeout(30000);
+
+        const file = path.join(outDir, `home-${vp.name}-${cs.name}.png`);
+        // Intentar captura fullPage, si falla, caer a viewport-only
+        try {
+          await page.screenshot({ path: file, fullPage: true });
+        } catch (capErr) {
+          console.warn(`Fallo captura fullPage para ${vp.name}/${cs.name}, intentando viewport-only.`, capErr && capErr.message ? capErr.message : capErr);
+          await page.screenshot({ path: file, fullPage: false });
+        }
+        console.log('Saved', file);
+        savedCount++;
+      } catch (err) {
+        const msg = `Fallo capturando ${vp.name}/${cs.name}: ${err && err.message ? err.message : err}`;
+        failures.push(msg);
+        console.error(msg);
+        // Continuar con el siguiente combo sin abortar todo el proceso
+      }
     }
   }
+
   await browser.close();
+
+  if (savedCount === 0) {
+    // Si no se guardó ninguna captura, marcar fallo total
+    throw new Error(`No se pudo generar ninguna captura. Detalles: ${failures.join(' | ')}`);
+  } else if (failures.length > 0) {
+    console.warn(`Capturas completadas parcialmente: ${savedCount} ok, ${failures.length} fallidas.`);
+  } else {
+    console.log(`Todas las capturas completadas: ${savedCount} imágenes.`);
+  }
 })().catch((err) => {
   console.error('Fallo general en el script de capturas:', err && err.stack ? err.stack : err);
   process.exit(1);
