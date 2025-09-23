@@ -7,10 +7,23 @@ const puppeteer = require('puppeteer');
   const outDir = path.join(__dirname, '..', 'images', 'screenshots');
   fs.mkdirSync(outDir, { recursive: true });
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox','--disable-setuid-sandbox']
-  });
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-gpu',
+        '--no-zygote',
+        '--disable-dev-shm-usage',
+        '--window-size=1280,800'
+      ]
+    });
+  } catch (e) {
+    console.error('Error lanzando Puppeteer/Chromium:', e && e.stack ? e.stack : e);
+    process.exit(1);
+  }
 
   const viewports = [
     { name: 'desktop', width: 1280, height: 800 },
@@ -24,6 +37,8 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
   await page.setCacheEnabled(false);
+  page.setDefaultNavigationTimeout(120000);
+  page.setDefaultTimeout(60000);
   // Log de consola del navegador en el workflow
   page.on('console', (msg) => {
     try {
@@ -83,6 +98,8 @@ const puppeteer = require('puppeteer');
       console.log('Saved', file);
     }
   }
-
   await browser.close();
-})();
+})().catch((err) => {
+  console.error('Fallo general en el script de capturas:', err && err.stack ? err.stack : err);
+  process.exit(1);
+});
