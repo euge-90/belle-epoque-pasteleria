@@ -176,7 +176,7 @@ Para más detalles sobre el flujo de trabajo con Git, consultar `INSTRUCCIONES-G
 
 ## Nota sobre el desarrollo
 
-Este proyecto fue desarrollado utilizando [Claude Code](https://claude.com/claude-code) en Visual Studio Code como herramienta de asistencia para optimizar el flujo de trabajo. Claude Code se empleó exclusivamente para agilizar tareas repetitivas como la automatización de commits, formateo de código y gestión de cambios en el repositorio, permitiendo reducir significativamente el tiempo de desarrollo sin comprometer la calidad del código ni las decisiones de diseño del proyecto.
+Este proyecto fue desarrollado utilizando [Claude Code](https://claude.com/claude-code) en Visual Studio Code como herramienta de asistencia para optimizar el flujo de trabajo. Claude Code se empleó exclusivamente para agilizar tareas repetitivas como la automatización de commits y gestión de cambios en el repositorio, permitiendo reducir significativamente el tiempo de desarrollo sin comprometer la calidad del código ni las decisiones de diseño del proyecto.
 
 ---
 
