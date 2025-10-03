@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Belle Époque Pastelería Francesa</title>
-    <meta name="description" content="Descubre nuestra selección completa de pasteles franceses: croissants, macarons, tartas y postres artesanales.">
+    <title>Productos - Belle Époque</title>
+    <meta name="description" content="Descubre nuestros croissants artesanales, macarons parisinos, pasteles y tartas francesas auténticas.">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="productos-page">
     <!-- Navegación -->
     <nav class="navbar">
-        <a href="index.html#inicio" class="logo">
+        <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Belle Époque Logo" class="logo-img">
             <span class="logo-text">Belle Époque</span>
         </a>
@@ -19,7 +20,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#nosotros">Nosotros</a></li>
-            <li><a href="productos.html">Productos</a></li>
+            <li><a href="productos.html" class="active">Productos</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
         <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
@@ -30,263 +31,375 @@
     </nav>
 
     <main>
-        <!-- Hero de Productos -->
-        <section class="hero" style="min-height: 50vh;">
+        <!-- Banner Promocional -->
+        <div class="banner-promocional">
+            <p>🚚 Pedidos con 24hs de anticipación - Envíos a domicilio 📦</p>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero hero-productos">
             <h1 class="fade-in">Nuestros Productos</h1>
-            <p class="fade-in">Cada creación es una obra de arte culinaria<br>
-            elaborada con ingredientes premium y técnicas tradicionales francesas.</p>
+            <p class="fade-in">Sabores auténticos de la pastelería francesa artesanal</p>
         </section>
 
-        <!-- Croissants y Viennoiseries -->
-        <section class="section">
+        <!-- Sección: Croissants & Viennoiseries -->
+        <section id="croissants" class="section">
             <div class="text-center">
                 <h2 class="text-gold">🥐 Croissants & Viennoiseries</h2>
-                <p class="mb-2">Hojaldre artesanal elaborado cada mañana con manteca francesa</p>
+                <p class="mb-2">Hojaldre artesanal elaborado con manteca francesa</p>
             </div>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/croissants.png" alt="Croissant clásico">
-                    </div>
-                    <div class="product-info">
-                        <h3>Croissant Clásico</h3>
-                        <p>El auténtico croissant parisino. Hojaldre dorado y crujiente por fuera, 
-                        suave y aireado por dentro. Elaborado con manteca francesa AOP.</p>
-                        <div class="product-price">$6.300</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/croissants_2.png" alt="Pain au chocolat">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pain au Chocolat</h3>
-                        <p>Croissant relleno con barras de chocolate belga premium. 
-                        El equilibrio perfecto entre hojaldre mantecoso y chocolate intenso.</p>
-                        <div class="product-price">$7.200</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/hojaldre.png" alt="Croissant de almendras">
-                    </div>
-                    <div class="product-info">
-                        <h3>Croissant aux Amandes</h3>
-                        <p>Croissant relleno con crema de almendras, cubierto con almendras 
-                        laminadas y azúcar glasé. Un clásico de las pastelerías francesas.</p>
-                        <div class="product-price">$1.200</div>
-                    </div>
-                </div>
+            <div class="product-gallery">
+                <figure class="product-thumb">
+                    <img src="images/products_images/croissant.jpg"
+                         alt="Croissant Tradicional francés dorado y crujiente"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Croissant Tradicional</strong><br>
+                        <span class="precio">$4.000</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/pain_au_chocolat.png"
+                         alt="Pain au Chocolat con chocolate belga"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Pain au Chocolat</strong><br>
+                        <span class="precio">$4.700</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/croissant_almendras.png"
+                         alt="Croissant de Almendra con almendras laminadas"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Croissant de Almendra</strong><br>
+                        <span class="precio">$5.700</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/Pain_aux_Raisins.png"
+                         alt="Pain aux Raisins con pasas y crema pastelera"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Pain aux Raisins</strong><br>
+                        <span class="precio">$5.400</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/pan_brioche.jpg"
+                         alt="Brioche francés esponjoso"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Brioche</strong><br>
+                        <span class="precio">$7.700</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/ChaussonauxPommes.png"
+                         alt="Chausson aux Pommes con manzanas caramelizadas"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Chausson aux Pommes</strong><br>
+                        <span class="precio">$4.500</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <!-- Macarons -->
-        <section class="section bg-cream">
+        <!-- Sección: Macarons Parisinos -->
+        <section id="macarons" class="section bg-cream">
             <div class="text-center">
                 <h2 class="text-gold">🍪 Macarons Parisinos</h2>
-                <p class="mb-2">Delicadas galletas de almendra con rellenos exquisitos</p>
+                <p class="mb-2">Delicadas galletas de almendra rellenas con ganache artesanal</p>
             </div>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Rosa">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Rosa</h3>
-                        <p>Sabor frambuesa con ganache de chocolate blanco y mermelada 
-                        de frambuesas frescas. Un clásico romántico y delicado.</p>
-                        <div class="product-price">$450 c/u</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Pistacho">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Pistacho</h3>
-                        <p>Elaborado con pistachos de Sicilia. Ganache cremoso con 
-                        el sabor intenso y característico del mejor pistacho.</p>
-                        <div class="product-price">$480 c/u</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Lavanda">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Lavanda</h3>
-                        <p>Sabor único con flores de lavanda de Provenza. 
-                        Una experiencia aromática que transporta a los campos franceses.</p>
-                        <div class="product-price">$520 c/u</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Chocolate">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Chocolate</h3>
-                        <p>Intenso sabor a cacao con ganache de chocolate negro 70%. 
-                        Para los verdaderos amantes del chocolate.</p>
-                        <div class="product-price">$450 c/u</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Vainilla">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Vainilla</h3>
-                        <p>El clásico elegante con vainilla de Madagascar. 
-                        Ganache suave y aromático, perfecto para iniciarse en los macarons.</p>
-                        <div class="product-price">$420 c/u</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/macarons.png" alt="Macaron Limón">
-                    </div>
-                    <div class="product-info">
-                        <h3>Macaron Limón</h3>
-                        <p>Refrescante sabor cítrico con curd de limón natural. 
-                        El equilibrio perfecto entre dulce y ácido.</p>
-                        <div class="product-price">$450 c/u</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-3">
-                <div class="card" style="max-width: 600px; margin: 0 auto;">
-                    <h3>🎁 Cajas de Macarons</h3>
-                    <p><strong>Caja de 6 macarons:</strong> $2.400 (ahorrás $300)</p>
-                    <p><strong>Caja de 12 macarons:</strong> $4.500 (ahorrás $900)</p>
-                    <p><strong>Caja regalo deluxe:</strong> $5.200 (incluye caja premium y lazo)</p>
-                </div>
+            <div class="product-gallery">
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_frambuesa.png"
+                         alt="Macaron de Frambuesa rosa"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Frambuesa</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_pistacho.png"
+                         alt="Macaron de Pistacho verde"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Pistacho</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_chocolate.png"
+                         alt="Macaron de Chocolate oscuro"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Chocolate</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_vainilla.png"
+                         alt="Macaron de Vainilla clásico"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Vainilla</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_lavanda.png"
+                         alt="Macaron de Lavanda morado"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Lavanda</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_limon.png"
+                         alt="Macaron de Limón amarillo"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Limón</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_rosa.png"
+                         alt="Macaron de Rosa romántico"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Rosa</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/macaron_caramel.png"
+                         alt="Macaron de Caramelo dorado"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Macaron de Caramelo</strong><br>
+                        <span class="precio">$2.500</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <!-- Pasteles y Tartas -->
-        <section class="section">
+        <!-- Sección: Pasteles & Tartas -->
+        <section id="pasteles" class="section">
             <div class="text-center">
                 <h2 class="text-gold">🎂 Pasteles & Tartas</h2>
-                <p class="mb-2">Creaciones artesanales para ocasiones especiales</p>
+                <p class="mb-2">Creaciones clásicas de la alta pastelería francesa</p>
             </div>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/torta.png" alt="Torta Ópera">
+            <div class="product-gallery">
+                <figure class="product-thumb">
+                    <img src="images/products_images/opera_cake.png"
+                         alt="Opera Cake con capas de chocolate y café"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Opera Cake</strong><br>
+                        <span class="precio">$7.200</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/Tarte_Tatin.png"
+                         alt="Tarte Tatin de manzanas caramelizadas"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Tarte Tatin</strong><br>
+                        <span class="precio">$4.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/Fraisier_cake.png"
+                         alt="Fraisier con fresas frescas"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Fraisier</strong><br>
+                        <span class="precio">$6.500</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/saint_honore.png"
+                         alt="Saint-Honoré con profiteroles"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Saint-Honoré</strong><br>
+                        <span class="precio">$7.200</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/mille_feuille.png"
+                         alt="Mille-feuille con hojaldre caramelizado"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Mille-feuille</strong><br>
+                        <span class="precio">$7.200</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-thumb">
+                    <img src="images/products_images/paris_brest.png"
+                         alt="Paris-Brest con crema de avellana"
+                         loading="lazy">
+                    <figcaption>
+                        <strong>Paris-Brest</strong><br>
+                        <span class="precio">$6.500</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Sección: Pedidos Especiales -->
+        <section id="pedidos-especiales" class="section bg-cream">
+            <div class="text-center">
+                <h2 class="text-gold">✨ Pedidos Especiales</h2>
+                <p class="mb-2">Creamos tortas y arreglos personalizados para tus eventos</p>
+            </div>
+            <div class="info-box">
+                <div class="info-box-content">
+                    <img src="images/pedido_especial.png" alt="Pedidos Especiales" class="info-imagen">
+                    <h3>¿Necesitas algo especial?</h3>
+                    <p>
+                        Creamos tortas personalizadas para cumpleaños, bodas, eventos corporativos y celebraciones especiales.
+                        Trabajamos con anticipación para diseñar el pastel perfecto según tus necesidades.
+                    </p>
+                    <div class="info-detalles">
+                        <p><strong>📧 Email:</strong> info@belleepoque.com.ar</p>
+                        <p><strong>📱 WhatsApp:</strong> +54 9 11 4567-8900</p>
+                        <p><strong>⏰ Tiempo mínimo:</strong> 72 horas de anticipación</p>
+                        <p><strong>💳 Seña requerida:</strong> 50% del total</p>
                     </div>
-                    <div class="product-info">
-                        <h3>Ópera</h3>
-                        <p>El clásico pastel parisino con capas de bizcocho de almendra, 
-                        ganache de chocolate y crema de café. Glaseado espejo dorado.</p>
-                        <div class="product-price">$4.200</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos.png" alt="Saint-Honoré">
-                    </div>
-                    <div class="product-info">
-                        <h3>Saint-Honoré</h3>
-                        <p>Tarta tradicional con base de hojaldre, profiteroles caramelizados 
-                        y crema chantilly. Una joya de la pastelería francesa.</p>
-                        <div class="product-price">$5.800</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/hojaldre.png" alt="Mille-feuille">
-                    </div>
-                    <div class="product-info">
-                        <h3>Mille-feuille</h3>
-                        <p>Milhojas clásico con hojaldre crujiente, crema pastelera 
-                        de vainilla y fondant blanco. Técnica y sabor en perfecta armonía.</p>
-                        <div class="product-price">$3.500</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/manzanita.png" alt="Tarte aux Fraises">
-                    </div>
-                    <div class="product-info">
-                        <h3>Tarte aux Fraises</h3>
-                        <p>Tarta de frutillas frescas sobre crema pastelera, 
-                        base de pasta sablé. Decorada con fresas de estación.</p>
-                        <div class="product-price">$4.800</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos.png" alt="Tarte Myrtille">
-                    </div>
-                    <div class="product-info">
-                        <h3>Tarte Myrtille</h3>
-                        <p>Tarta de arándanos con crema de almendras y pasta quebrada. 
-                        Un equilibrio perfecto entre lo dulce y lo ácido.</p>
-                        <div class="product-price">$4.600</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/productos.png" alt="Crème Brûlée">
-                    </div>
-                    <div class="product-info">
-                        <h3>Crème Brûlée</h3>
-                        <p>Postre individual con crema de vainilla y costra de azúcar 
-                        caramelizada. Servido en ramequines tradicionales.</p>
-                        <div class="product-price">$1.800 c/u</div>
-                    </div>
+                    <a href="index.html#contacto" class="cta-button">Contactanos</a>
                 </div>
             </div>
         </section>
 
-        <!-- Pedidos Especiales -->
-        <section class="section bg-cream">
+        <!-- Sección: Medios de Pago -->
+        <section id="medios-pago" class="section">
             <div class="text-center">
-                <h2 class="text-gold">✨ Pedidos Especiales</h2>
-                <div class="card" style="max-width: 800px; margin: 0 auto;">
-                    <h3>🎉 Tortas Personalizadas</h3>
-                    <p>Creamos tortas únicas para tus celebraciones especiales. 
-                    Cumpleaños, bodas, aniversarios y eventos corporativos.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li><strong>Tortas de 1kg:</strong> Desde $6.500</li>
-                        <li><strong>Tortas de 2kg:</strong> Desde $11.500</li>
-                        <li><strong>Tortas de 3kg:</strong> Desde $16.800</li>
-                        <li><strong>Wedding Cakes:</strong> Consultar presupuesto</li>
-                    </ul>
-                    <p style="margin-top: 1rem; font-style: italic;">
-                        ⏰ <strong>Pedidos con 48hs de anticipación mínima</strong>
-                    </p>
-                    <a href="index.html#contacto" class="cta-button" style="margin-top: 1rem; display: inline-block;">
-                        Solicitar Presupuesto
-                    </a>
+                <h2 class="text-gold">💳 Medios de Pago</h2>
+                <p class="mb-2">Aceptamos múltiples formas de pago para tu comodidad</p>
+            </div>
+            <div class="medios-pago-grid">
+                <div class="medio-pago-card">
+                    <div class="medio-pago-icono">💳</div>
+                    <h3>Tarjetas de Débito y Crédito</h3>
+                    <p>Visa, Mastercard, American Express y todas las tarjetas bancarias.</p>
                 </div>
+                <div class="medio-pago-card">
+                    <div class="medio-pago-icono">💵</div>
+                    <h3>Efectivo</h3>
+                    <p>Pesos argentinos en nuestro local.</p>
+                </div>
+                <div class="medio-pago-card">
+                    <div class="medio-pago-icono">📱</div>
+                    <h3>Transferencia Bancaria</h3>
+                    <p>CBU y Alias disponibles. Consultá por WhatsApp.</p>
+                </div>
+                <div class="medio-pago-card">
+                    <div class="medio-pago-icono">🏪</div>
+                    <h3>Mercado Pago</h3>
+                    <p>Pagá con QR o link de pago.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Información de Alérgenos -->
+        <section id="alergenos" class="section alergenos-section">
+            <div class="text-center">
+                <h2 class="text-gold">⚠️ Información de Alérgenos</h2>
+                <p class="mb-2">Tu seguridad es nuestra prioridad. Conocé los alérgenos presentes en nuestros productos.</p>
+            </div>
+            <div class="alergenos-grid">
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🌾</div>
+                    <h3>Gluten</h3>
+                    <p>Presente en todos nuestros productos de hojaldre, croissants y tartas.</p>
+                </div>
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🥚</div>
+                    <h3>Huevo</h3>
+                    <p>Utilizado en bizcochos, cremas y masa de macarons.</p>
+                </div>
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🥛</div>
+                    <h3>Lácteos</h3>
+                    <p>Manteca francesa, crema y leche en la mayoría de nuestras preparaciones.</p>
+                </div>
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🌰</div>
+                    <h3>Frutos Secos</h3>
+                    <p>Almendras, pistachos y avellanas. Riesgo de contaminación cruzada.</p>
+                </div>
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🍫</div>
+                    <h3>Cacao</h3>
+                    <p>Presente en productos de chocolate. Puede contener trazas de leche.</p>
+                </div>
+                <div class="alergeno-card">
+                    <div class="alergeno-icono">🌾</div>
+                    <h3>Soja</h3>
+                    <p>Lecitina de soja presente en algunos chocolates importados.</p>
+                </div>
+            </div>
+            <div class="alergenos-nota">
+                <p><strong>⚠️ Nota Importante:</strong> Nuestros productos se elaboran en un espacio donde se manipulan todos los alérgenos mencionados.
+                Si tenés alergias alimentarias, consultá con nuestro personal antes de realizar tu pedido.
+                Podemos brindarte información detallada sobre cada producto específico.</p>
+                <p><strong>📞 Consultas:</strong> +54 11 4567-8900 | <strong>📧</strong> info@belleepoque.com.ar</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
+        <div class="footer-brand">
+            <span class="footer-brand-title">Belle Époque</span>
+        </div>
+        <div class="footer-social">
+            <div class="social-links" aria-label="Redes sociales">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Belle Époque">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Belle Époque">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer" aria-label="Tripadvisor de Belle Époque">
+                    <img src="https://cdn.simpleicons.org/tripadvisor/2c1810" alt="Tripadvisor" width="18" height="18" loading="lazy" />
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Belle Époque">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) de Belle Époque">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" aria-label="Threads de Belle Époque">
+                    <i class="fa-brands fa-threads" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
         <p>&copy; 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.</p>
         <p>Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900</p>
     </footer>
-
-    
 </body>
 </html>

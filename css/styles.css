@@ -1034,6 +1034,241 @@ footer {
     .product-thumb img { height: 130px; }
 }
 
+/* Sección de info-box para pedidos especiales */
+.info-box {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.info-box-content {
+    background: var(--background-light);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px var(--shadow);
+    text-align: center;
+}
+
+.info-imagen {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-box-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.info-box-content p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.info-detalles {
+    background: var(--background-cream);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.info-detalles p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.info-detalles p:last-child {
+    margin-bottom: 0;
+}
+
+/* Grid de medios de pago */
+.medios-pago-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.medio-pago-card {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.medio-pago-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.medio-pago-icono {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.medio-pago-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.medio-pago-card p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Grid de alérgenos */
+.alergenos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.alergeno-card {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.alergeno-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.alergeno-icono {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.alergeno-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.alergeno-card p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Nota importante de alérgenos */
+.alergenos-nota {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto 0;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+}
+
+.alergenos-nota p {
+    color: #78350f;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.alergenos-nota p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.alergenos-section {
+    background: var(--background-cream);
+    padding: 4rem 5%;
+}
+
+/* Banner promocional */
+.banner-promocional {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    animation: shimmer 3s infinite;
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Hero productos con imagen de fondo */
+.hero-productos {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/interior.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+}
+
+/* Responsive para info-box */
+@media (max-width: 768px) {
+    .info-imagen {
+        width: 100px;
+        height: 100px;
+    }
+
+    .info-box-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .info-box-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .medios-pago-grid,
+    .alergenos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .medio-pago-icono,
+    .alergeno-icono {
+        font-size: 2.5rem;
+    }
+
+    .medio-pago-card,
+    .alergeno-card {
+        padding: 1.5rem;
+    }
+
+    .alergenos-nota {
+        padding: 1.25rem;
+    }
+
+    .alergenos-nota p {
+        font-size: 0.9rem;
+    }
+}
+
     /* === Overrides finales para asegurar contraste en Modo Oscuro === */
     @media (prefers-color-scheme: dark) {
         /* Forzar que las descripciones de productos (figcaption) se vean claras */
@@ -1046,5 +1281,56 @@ footer {
             padding: 0.85rem 0.75rem;
             text-shadow: 0 1px 1.5px rgba(0,0,0,0.6);
             border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .info-box-content {
+            background: #1a1a1a;
+        }
+
+        .info-box-content h3 {
+            color: var(--primary-color);
+        }
+
+        .info-box-content p {
+            color: var(--text-light);
+        }
+
+        .info-detalles {
+            background: #121212;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .medio-pago-card,
+        .alergeno-card {
+            background: #1a1a1a;
+            border-color: transparent;
+        }
+
+        .medio-pago-card:hover,
+        .alergeno-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .medio-pago-card h3,
+        .alergeno-card h3 {
+            color: var(--primary-color);
+        }
+
+        .medio-pago-card p,
+        .alergeno-card p {
+            color: var(--text-light);
+        }
+
+        .alergenos-section {
+            background: #121212;
+        }
+
+        .alergenos-nota {
+            background: linear-gradient(135deg, #2c1810 0%, #3d2415 100%);
+            border-color: var(--primary-color);
+        }
+
+        .alergenos-nota p {
+            color: #fde68a;
         }
     }
