@@ -3,37 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Promociones exclusivas Belle Époque - Descuentos especiales en pastelería francesa artesanal">
-    <meta name="keywords" content="promociones, descuentos, pastelería francesa, Belle Époque, ofertas">
-    <title>Promociones | Belle Époque - Pastelería Francesa</title>
+    <title>Belle Époque - Pastelería Francesa Artesanal</title>
+    <meta name="description" content="Belle Époque - Pastelería francesa artesanal en el corazón de la galería. Macarons, croissants y pasteles franceses auténticos.">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/promociones.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos: Font Awesome para redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- Header - Igual que en index.html y productos.html -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <h1>Belle Époque</h1>
-                    <span class="subtitle">Pastelería Francesa</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#nosotros">Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="promociones.html" class="active">Promociones</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo">
+            <img src="images/logo.png" alt="Belle Époque Logo" class="logo-img">
+            <span class="logo-text">Belle Époque</span>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </nav>
+
+    
 
     <main>
         <!-- Hero Section - Estilo consistente con productos.html -->
