@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Promociones exclusivas en Belle Époque - Pastelería Francesa Artesanal. Descuentos especiales en croissants, macarons y más.">
-    <meta name="keywords" content="promociones, descuentos, pastelería francesa, ofertas, Belle Époque, macarons, croissants">
-    <title>Promociones Exclusivas | Belle Époque - Pastelería Francesa</title>
+    <meta name="description" content="Promociones exclusivas Belle Époque - Descuentos especiales en pastelería francesa artesanal">
+    <meta name="keywords" content="promociones, descuentos, pastelería francesa, Belle Époque, ofertas">
+    <title>Promociones | Belle Époque - Pastelería Francesa</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/promociones.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header con navegación -->
+    <!-- Header - Igual que en index.html y productos.html -->
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -19,200 +19,234 @@
                     <h1>Belle Époque</h1>
                     <span class="subtitle">Pastelería Francesa</span>
                 </div>
-                <button class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="promociones.html" class="active">Promociones</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section de Promociones -->
-        <section class="promo-hero">
+        <!-- Hero Section - Estilo consistente con productos.html -->
+        <section class="hero-section" style="background: linear-gradient(rgba(44, 24, 16, 0.8), rgba(44, 24, 16, 0.8)), url('images/promo-hero.jpg') center/cover;">
             <div class="hero-content">
-                <h2 class="hero-title">🎉 Promociones Exclusivas</h2>
-                <p class="hero-subtitle">Descubrí nuestras ofertas especiales y ahorrá en los mejores productos franceses artesanales</p>
+                <h1 class="hero-title">Promociones Especiales</h1>
+                <p class="hero-description">Disfrutá de ofertas exclusivas en nuestra selección de productos artesanales</p>
             </div>
         </section>
 
-        <!-- Sección de Promociones Disponibles -->
-        <section class="promotions-grid">
+        <!-- Sección de Promociones -->
+        <section class="promotions-section">
             <div class="container">
                 <h2 class="section-title">Ofertas Vigentes</h2>
-                <div class="promo-cards">
-                    <div class="promo-card" data-promo="2x1">
-                        <div class="promo-icon">🥐</div>
-                        <h3>Promo Duo Francés</h3>
-                        <p class="promo-desc">Llevá 2 productos y obtené <strong>50% de descuento</strong> en el segundo</p>
-                        <span class="promo-tag">¡Más vendido!</span>
-                    </div>
-                    <div class="promo-card" data-promo="3x2">
-                        <div class="promo-icon">🍰</div>
-                        <h3>Festival de Dulces</h3>
-                        <p class="promo-desc"><strong>3x2</strong> en productos seleccionados de nuestra vitrina</p>
-                        <span class="promo-tag">Oferta limitada</span>
-                    </div>
-                    <div class="promo-card" data-promo="descuento10">
-                        <div class="promo-icon">💎</div>
-                        <h3>Cliente Premium</h3>
-                        <p class="promo-desc"><strong>10% de descuento</strong> en compras superiores a $30,000</p>
-                        <span class="promo-tag">Exclusivo</span>
-                    </div>
+                
+                <div class="promotions-grid">
+                    <!-- Promoción 1 -->
+                    <article class="promotion-card" data-promo="2x1">
+                        <div class="promo-image">
+                            <img src="images/promo-croissants.jpg" alt="Promoción en Croissants">
+                            <span class="promo-tag">50% OFF</span>
+                        </div>
+                        <div class="promo-content">
+                            <h3>Promo Mañana Francesa</h3>
+                            <p class="promo-description">Llevá 2 productos y obtené 50% de descuento en el segundo de menor o igual valor</p>
+                            <p class="promo-validity">Válido todos los días</p>
+                        </div>
+                    </article>
+
+                    <!-- Promoción 2 -->
+                    <article class="promotion-card" data-promo="3x2">
+                        <div class="promo-image">
+                            <img src="images/promo-macarons.jpg" alt="Promoción en Macarons">
+                            <span class="promo-tag">3x2</span>
+                        </div>
+                        <div class="promo-content">
+                            <h3>Festival de Macarons</h3>
+                            <p class="promo-description">Comprá 3 productos seleccionados y pagá solo 2</p>
+                            <p class="promo-validity">En productos participantes</p>
+                        </div>
+                    </article>
+
+                    <!-- Promoción 3 -->
+                    <article class="promotion-card" data-promo="10off">
+                        <div class="promo-image">
+                            <img src="images/promo-premium.jpg" alt="Descuento Premium">
+                            <span class="promo-tag">-10%</span>
+                        </div>
+                        <div class="promo-content">
+                            <h3>Cliente Premium</h3>
+                            <p class="promo-description">10% de descuento en compras superiores a $30,000</p>
+                            <p class="promo-validity">Acumulable con medios de pago</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Calculadora de Promociones -->
+        <!-- Calculadora de Descuentos -->
         <section class="calculator-section">
             <div class="container">
-                <h2 class="section-title">🧮 Calculá tu Ahorro</h2>
-                <p class="section-subtitle">Seleccioná tus productos favoritos y descubrí cuánto podés ahorrar</p>
+                <h2 class="section-title">Calculadora de Descuentos</h2>
+                <p class="section-subtitle">Calculá cuánto ahorrás con nuestras promociones</p>
 
                 <div class="calculator-container">
-                    <!-- Selector de Promoción -->
-                    <div class="promo-selector">
-                        <h3>1. Elegí tu promoción</h3>
-                        <div class="promo-buttons">
+                    <!-- Step 1: Seleccionar Promoción -->
+                    <div class="calc-step">
+                        <h3 class="step-title">1. Elegí tu promoción</h3>
+                        <div class="promo-selector">
                             <button class="promo-btn active" data-promo="2x1">
-                                <span class="btn-icon">🥐</span>
-                                <span class="btn-text">50% en el 2do</span>
+                                50% en el 2do producto
                             </button>
                             <button class="promo-btn" data-promo="3x2">
-                                <span class="btn-icon">🍰</span>
-                                <span class="btn-text">3x2</span>
+                                3x2 en seleccionados
                             </button>
-                            <button class="promo-btn" data-promo="descuento10">
-                                <span class="btn-icon">💎</span>
-                                <span class="btn-text">10% desc.</span>
+                            <button class="promo-btn" data-promo="10off">
+                                10% de descuento
                             </button>
                         </div>
                         <div class="promo-info" id="promo-info">
-                            <p>📌 <strong>Promo activa:</strong> Llevá 2 productos y obtené 50% de descuento en el segundo (se aplica al de menor valor)</p>
+                            <p>Llevá 2 productos y obtené 50% de descuento en el segundo de menor o igual valor.</p>
                         </div>
                     </div>
 
-                    <!-- Selector de Productos -->
-                    <div class="product-selector">
-                        <h3>2. Agregá tus productos</h3>
-                        <div class="add-product-form">
-                            <select id="product-select" class="product-input">
-                                <option value="">Seleccioná un producto...</option>
-                                <optgroup label="🥐 Viennoiseries">
-                                    <option value="3500" data-name="Croissant Clásico">Croissant Clásico - $3,500</option>
-                                    <option value="4200" data-name="Pain au Chocolat">Pain au Chocolat - $4,200</option>
-                                    <option value="3800" data-name="Croissant de Almendras">Croissant de Almendras - $3,800</option>
-                                </optgroup>
-                                <optgroup label="🍪 Macarons">
-                                    <option value="1200" data-name="Macaron (unidad)">Macaron (unidad) - $1,200</option>
-                                    <option value="13500" data-name="Caja de 12 Macarons">Caja de 12 Macarons - $13,500</option>
-                                    <option value="25000" data-name="Caja de 24 Macarons">Caja de 24 Macarons - $25,000</option>
-                                </optgroup>
-                                <optgroup label="🍰 Pasteles y Tartas">
-                                    <option value="18000" data-name="Tarta Tatin">Tarta Tatin - $18,000</option>
-                                    <option value="22000" data-name="Saint-Honoré">Saint-Honoré - $22,000</option>
-                                    <option value="16500" data-name="Tarta de Frutos Rojos">Tarta de Frutos Rojos - $16,500</option>
-                                    <option value="20000" data-name="Mil Hojas">Mil Hojas - $20,000</option>
-                                </optgroup>
-                                <optgroup label="🎂 Tortas Especiales">
-                                    <option value="35000" data-name="Torta Personalizada Chica">Torta Personalizada Chica - $35,000</option>
-                                    <option value="55000" data-name="Torta Personalizada Grande">Torta Personalizada Grande - $55,000</option>
-                                </optgroup>
-                            </select>
-                            <input type="number" id="quantity-input" class="quantity-input" min="1" max="20" value="1" placeholder="Cantidad">
-                            <button id="add-product-btn" class="add-btn">
-                                <span>Agregar</span>
-                                <span class="btn-icon">➕</span>
-                            </button>
-                        </div>
-
-                        <!-- Lista de productos agregados -->
-                        <div class="products-list" id="products-list">
-                            <h4>Tus productos:</h4>
-                            <div id="products-container" class="products-container">
-                                <p class="empty-message">Aún no agregaste productos. ¡Comenzá seleccionando tus favoritos! 🛒</p>
+                    <!-- Step 2: Agregar Productos -->
+                    <div class="calc-step">
+                        <h3 class="step-title">2. Agregá tus productos</h3>
+                        <form class="product-form" id="product-form">
+                            <div class="form-group">
+                                <select id="product-select" class="form-control" required>
+                                    <option value="">Seleccioná un producto...</option>
+                                    <optgroup label="Viennoiseries">
+                                        <option value="2800" data-name="Croissant Clásico">Croissant Clásico - $2,800</option>
+                                        <option value="3200" data-name="Pain au Chocolat">Pain au Chocolat - $3,200</option>
+                                        <option value="3500" data-name="Croissant de Almendras">Croissant de Almendras - $3,500</option>
+                                        <option value="2500" data-name="Brioche">Brioche - $2,500</option>
+                                        <option value="3000" data-name="Pain aux Raisins">Pain aux Raisins - $3,000</option>
+                                    </optgroup>
+                                    <optgroup label="Macarons">
+                                        <option value="800" data-name="Macaron Unidad">Macaron (unidad) - $800</option>
+                                        <option value="4500" data-name="Caja x6 Macarons">Caja x6 Macarons - $4,500</option>
+                                        <option value="8500" data-name="Caja x12 Macarons">Caja x12 Macarons - $8,500</option>
+                                        <option value="16000" data-name="Caja x24 Macarons">Caja x24 Macarons - $16,000</option>
+                                    </optgroup>
+                                    <optgroup label="Pasteles y Tartas">
+                                        <option value="15000" data-name="Tarta Tatin">Tarta Tatin - $15,000</option>
+                                        <option value="18000" data-name="Saint-Honoré">Saint-Honoré - $18,000</option>
+                                        <option value="14000" data-name="Tarta de Frutos Rojos">Tarta de Frutos Rojos - $14,000</option>
+                                        <option value="16000" data-name="Opera">Opera - $16,000</option>
+                                        <option value="17000" data-name="Mil Hojas">Mil Hojas - $17,000</option>
+                                        <option value="13000" data-name="Lemon Pie">Lemon Pie - $13,000</option>
+                                    </optgroup>
+                                    <optgroup label="Especialidades">
+                                        <option value="2200" data-name="Éclair de Chocolate">Éclair de Chocolate - $2,200</option>
+                                        <option value="2400" data-name="Éclair de Vainilla">Éclair de Vainilla - $2,400</option>
+                                        <option value="3800" data-name="Profiteroles">Profiteroles (porción) - $3,800</option>
+                                        <option value="4200" data-name="Crème Brûlée">Crème Brûlée - $4,200</option>
+                                        <option value="3500" data-name="Mousse de Chocolate">Mousse de Chocolate - $3,500</option>
+                                    </optgroup>
+                                    <optgroup label="Tortas Personalizadas">
+                                        <option value="28000" data-name="Torta Personalizada Chica">Torta Personalizada (10-15 porciones) - $28,000</option>
+                                        <option value="42000" data-name="Torta Personalizada Mediana">Torta Personalizada (20-25 porciones) - $42,000</option>
+                                        <option value="58000" data-name="Torta Personalizada Grande">Torta Personalizada (30-40 porciones) - $58,000</option>
+                                    </optgroup>
+                                </select>
                             </div>
-                        </div>
+                            <div class="form-group quantity-group">
+                                <input type="number" id="quantity" class="form-control" min="1" max="20" value="1" required>
+                                <label for="quantity">Cantidad</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+
+                        <!-- Lista de productos -->
+                        <div class="products-list" id="products-list"></div>
                     </div>
 
-                    <!-- Resultados del Cálculo -->
-                    <div class="results-section" id="results-section" style="display: none;">
-                        <h3>3. Tu ahorro</h3>
+                    <!-- Step 3: Ver Resultados -->
+                    <div class="calc-step results-step" id="results-section" style="display: none;">
+                        <h3 class="step-title">3. Tu ahorro</h3>
                         <div class="results-container">
-                            <div class="result-row">
-                                <span class="result-label">Subtotal sin descuento:</span>
+                            <div class="result-item">
+                                <span>Subtotal:</span>
                                 <span class="result-value" id="subtotal">$0</span>
                             </div>
-                            <div class="result-row discount-row">
-                                <span class="result-label">Tu ahorro:</span>
-                                <span class="result-value discount" id="discount">-$0</span>
+                            <div class="result-item discount">
+                                <span>Descuento:</span>
+                                <span class="result-value" id="discount">-$0</span>
                             </div>
-                            <div class="result-row total-row">
-                                <span class="result-label">Total a pagar:</span>
-                                <span class="result-value total" id="total">$0</span>
+                            <div class="result-item total">
+                                <span>Total a pagar:</span>
+                                <span class="result-value" id="total">$0</span>
                             </div>
-                            <div class="savings-message" id="savings-message">
-                                <p>¡Felicitaciones! 🎉 Ahorraste <strong id="savings-percentage">0%</strong> en tu compra</p>
+                            <div class="savings-badge" id="savings-badge" style="display: none;">
+                                <p>¡Ahorraste <span id="savings-percentage">0</span>% en tu compra!</p>
                             </div>
                         </div>
-                        <button id="clear-btn" class="clear-btn">
-                            <span>🔄</span>
-                            <span>Nueva compra</span>
-                        </button>
+                        <button class="btn btn-secondary" id="reset-btn">Nueva Compra</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Términos y Condiciones -->
+        <!-- Términos y Condiciones -->
         <section class="terms-section">
             <div class="container">
-                <h3>📋 Términos y Condiciones</h3>
+                <h3>Términos y Condiciones</h3>
                 <ul class="terms-list">
-                    <li>Promociones válidas únicamente para compras en el local</li>
-                    <li>No acumulables con otras ofertas o descuentos</li>
-                    <li>Sujetas a disponibilidad de stock</li>
-                    <li>La promoción 3x2 aplica en productos del mismo precio o se descuenta el de menor valor</li>
-                    <li>Vigencia hasta el 31/12/2025 o hasta agotar stock</li>
+                    <li>Promociones válidas únicamente para consumo en el local o take away</li>
+                    <li>No acumulables con otras ofertas o descuentos vigentes</li>
+                    <li>Sujeto a disponibilidad de stock diario</li>
+                    <li>En promociones 3x2 se descuenta el producto de menor valor</li>
+                    <li>Vigencia hasta el 31 de diciembre de 2025</li>
+                    <li>La empresa se reserva el derecho de modificar o cancelar las promociones sin previo aviso</li>
+                    <li>Válido únicamente en Belle Époque - Galería del Centro, Local 15</li>
+                    <li>Para pedidos especiales o tortas personalizadas, consultar condiciones particulares</li>
                 </ul>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Belle Époque</h3>
-                <p>Pastelería Francesa Artesanal</p>
-                <p>Desde 2020 en Buenos Aires</p>
-            </div>
-            <div class="footer-section">
-                <h4>Horarios</h4>
-                <p>Lun-Vie: 8:00 - 20:00</p>
-                <p>Sáb-Dom: 9:00 - 21:00</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contacto</h4>
-                <p>📍 Galería del Centro, Local 15</p>
-                <p>📞 +54 11 4567-8900</p>
-                <p>📧 info@belleepoque.com.ar</p>
+    <footer>
+        <div class="footer-brand">
+            <span class="footer-brand-title">Belle Époque</span>
+        </div>
+        <div class="footer-social">
+            <div class="social-links" aria-label="Redes sociales">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Belle Époque">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Belle Époque">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer" aria-label="Tripadvisor de Belle Époque">
+                    <img src="https://cdn.simpleicons.org/tripadvisor/2c1810" alt="Tripadvisor" width="18" height="18" loading="lazy" />
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Belle Époque">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) de Belle Époque">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" aria-label="Threads de Belle Époque">
+                    <i class="fa-brands fa-threads" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Belle Époque. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.</p>
+        <p>Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script src="js/promociones.js"></script>
 </body>
 </html>
