@@ -369,6 +369,186 @@
             </div>
         </section>
 
+        <!-- Calculadora Interactiva de Promociones -->
+        <section id="calculadora-promociones" class="section">
+            <div class="text-center">
+                <h2 class="text-gold">🧮 Calculadora de Promociones</h2>
+                <p class="mb-2">Descubrí cuánto podés ahorrar con nuestras ofertas especiales</p>
+            </div>
+
+            <div class="calculator-interactive">
+                <!-- Selector de Promoción -->
+                <div class="promo-selector-section">
+                    <h3 class="calc-step-title">1. Elegí tu promoción</h3>
+                    <div class="promo-buttons">
+                        <button class="promo-select-btn active" data-promo="mañana-francesa" data-discount="50">
+                            <div class="promo-btn-icon">🥐</div>
+                            <div class="promo-btn-content">
+                                <strong>Mañana Francesa</strong>
+                                <span>50% OFF en el 2do producto</span>
+                            </div>
+                            <div class="promo-btn-badge">50% OFF</div>
+                        </button>
+                        
+                        <button class="promo-select-btn" data-promo="festival-macarons" data-discount="33">
+                            <div class="promo-btn-icon">🍪</div>
+                            <div class="promo-btn-content">
+                                <strong>Festival de Macarons</strong>
+                                <span>3x2 en macarons</span>
+                            </div>
+                            <div class="promo-btn-badge">3x2</div>
+                        </button>
+                        
+                        <button class="promo-select-btn" data-promo="cliente-premium" data-discount="10">
+                            <div class="promo-btn-icon">⭐</div>
+                            <div class="promo-btn-content">
+                                <strong>Cliente Premium</strong>
+                                <span>10% en compras +$30.000</span>
+                            </div>
+                            <div class="promo-btn-badge">-10%</div>
+                        </button>
+                    </div>
+                    
+                    <div class="promo-explanation" id="promo-explanation">
+                        <div class="explanation-content">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="explanation-text">Agregá productos de viennoiserie y obtené 50% de descuento en el segundo producto de menor o igual valor.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selector de Productos -->
+                <div class="product-selector-section">
+                    <h3 class="calc-step-title">2. Seleccioná tus productos</h3>
+                    
+                    <div class="product-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product-select">Producto:</label>
+                                <select id="product-select" class="form-control">
+                                    <option value="">-- Seleccioná un producto --</option>
+                                    <optgroup label="🥐 Viennoiserie" data-category="viennoiserie">
+                                        <option value="4000" data-name="Croissant Tradicional" data-category="viennoiserie">Croissant Tradicional - $4.000</option>
+                                        <option value="4700" data-name="Pain au Chocolat" data-category="viennoiserie">Pain au Chocolat - $4.700</option>
+                                        <option value="5700" data-name="Croissant de Almendra" data-category="viennoiserie">Croissant de Almendra - $5.700</option>
+                                        <option value="5400" data-name="Pain aux Raisins" data-category="viennoiserie">Pain aux Raisins - $5.400</option>
+                                        <option value="7700" data-name="Brioche" data-category="viennoiserie">Brioche - $7.700</option>
+                                        <option value="4500" data-name="Chausson aux Pommes" data-category="viennoiserie">Chausson aux Pommes - $4.500</option>
+                                    </optgroup>
+                                    <optgroup label="🍪 Macarons" data-category="macarons">
+                                        <option value="2500" data-name="Macaron (unidad)" data-category="macarons">Macaron (unidad) - $2.500</option>
+                                        <option value="14000" data-name="Caja x6 Macarons" data-category="macarons">Caja x6 Macarons - $14.000</option>
+                                        <option value="27000" data-name="Caja x12 Macarons" data-category="macarons">Caja x12 Macarons - $27.000</option>
+                                    </optgroup>
+                                    <optgroup label="🎂 Pasteles y Tartas" data-category="pasteles">
+                                        <option value="7200" data-name="Opera Cake" data-category="pasteles">Opera Cake - $7.200</option>
+                                        <option value="4500" data-name="Tarte Tatin" data-category="pasteles">Tarte Tatin - $4.500</option>
+                                        <option value="6500" data-name="Fraisier" data-category="pasteles">Fraisier - $6.500</option>
+                                        <option value="7200" data-name="Saint-Honoré" data-category="pasteles">Saint-Honoré - $7.200</option>
+                                        <option value="7200" data-name="Mille-feuille" data-category="pasteles">Mille-feuille - $7.200</option>
+                                    </optgroup>
+                                    <optgroup label="✨ Especialidades" data-category="especialidades">
+                                        <option value="2200" data-name="Éclair de Chocolate" data-category="especialidades">Éclair de Chocolate - $2.200</option>
+                                        <option value="2400" data-name="Éclair de Vainilla" data-category="especialidades">Éclair de Vainilla - $2.400</option>
+                                        <option value="3800" data-name="Profiteroles" data-category="especialidades">Profiteroles - $3.800</option>
+                                        <option value="4200" data-name="Crème Brûlée" data-category="especialidades">Crème Brûlée - $4.200</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group quantity-group">
+                                <label for="quantity-select">Cantidad:</label>
+                                <div class="quantity-controls">
+                                    <button type="button" class="qty-btn minus" id="qty-minus">-</button>
+                                    <input type="number" id="quantity-select" class="form-control qty-input" min="1" max="20" value="1">
+                                    <button type="button" class="qty-btn plus" id="qty-plus">+</button>
+                                </div>
+                            </div>
+                            
+                            <button type="button" id="add-product-btn" class="btn-add-product">
+                                <i class="fas fa-plus"></i>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lista de productos agregados -->
+                    <div class="products-added" id="products-added">
+                        <h4>Productos en tu carrito:</h4>
+                        <div class="products-list" id="products-list">
+                            <div class="empty-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>Aún no agregaste productos. ¡Comenzá seleccionando algo delicioso!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultados y Cálculos -->
+                <div class="results-section" id="results-section">
+                    <h3 class="calc-step-title">3. Tu resumen de compra</h3>
+                    
+                    <div class="calculation-results">
+                        <div class="results-grid">
+                            <div class="result-card subtotal-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <div class="result-content">
+                                    <span class="result-label">Subtotal</span>
+                                    <span class="result-value" id="subtotal-amount">$0</span>
+                                </div>
+                            </div>
+
+                            <div class="result-card discount-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="result-content">
+                                    <span class="result-label">Descuento</span>
+                                    <span class="result-value discount" id="discount-amount">-$0</span>
+                                </div>
+                            </div>
+
+                            <div class="result-card total-card">
+                                <div class="result-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <div class="result-content">
+                                    <span class="result-label">Total Final</span>
+                                    <span class="result-value final" id="final-amount">$0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="savings-summary" id="savings-summary" style="display: none;">
+                            <div class="savings-content">
+                                <div class="savings-icon">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <div class="savings-text">
+                                    <h4>¡Excelente elección!</h4>
+                                    <p>Estás ahorrando <strong id="savings-amount">$0</strong> (<span id="savings-percentage">0</span>%) con esta promoción.</p>
+                                    <div class="promo-applied" id="promo-applied"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn-action primary" id="whatsapp-order">
+                                <i class="fab fa-whatsapp"></i>
+                                Hacer Pedido por WhatsApp
+                            </button>
+                            <button class="btn-action secondary" id="reset-calculator">
+                                <i class="fas fa-refresh"></i>
+                                Nueva Calculación
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Información Importante y Contacto -->
         <section id="info-contacto" class="section info-section">
             <div class="info-container">
@@ -554,19 +734,342 @@
 
     <!-- JavaScript -->
     <script>
-        // JavaScript mejorado para promociones
+        // Estado global de la calculadora
+        const calculadoraState = {
+            promocionActiva: 'mañana-francesa',
+            productos: [],
+            subtotal: 0,
+            descuento: 0,
+            total: 0
+        };
+
+        // Configuración de promociones
+        const promociones = {
+            'mañana-francesa': {
+                nombre: 'Mañana Francesa',
+                explicacion: 'Agregá productos de viennoiserie y obtené 50% de descuento en el segundo producto de menor o igual valor.',
+                categorias: ['viennoiserie'],
+                calcular: (productos) => {
+                    const productosElegibles = productos.filter(p => p.categoria === 'viennoiserie');
+                    if (productosElegibles.length < 2) return 0;
+                    
+                    // Ordenar por precio descendente
+                    productosElegibles.sort((a, b) => (b.precio * b.cantidad) - (a.precio * a.cantidad));
+                    
+                    let descuento = 0;
+                    let productosRestantes = [...productosElegibles];
+                    
+                    while (productosRestantes.length >= 2) {
+                        const primero = productosRestantes.shift();
+                        const segundo = productosRestantes.shift();
+                        
+                        const precioMenor = Math.min(primero.precio, segundo.precio);
+                        descuento += precioMenor * 0.5;
+                    }
+                    
+                    return descuento;
+                }
+            },
+            'festival-macarons': {
+                nombre: 'Festival de Macarons',
+                explicacion: 'Comprá 3 macarons de cualquier sabor y pagá solo 2. El descuento se aplica al macaron de menor valor.',
+                categorias: ['macarons'],
+                calcular: (productos) => {
+                    const macarons = productos.filter(p => p.categoria === 'macarons');
+                    if (macarons.length < 3) return 0;
+                    
+                    let cantidadTotal = macarons.reduce((sum, p) => sum + p.cantidad, 0);
+                    let gruposDe3 = Math.floor(cantidadTotal / 3);
+                    
+                    // Ordenar por precio para descontar los más baratos
+                    const macaronsOrdenados = macarons.sort((a, b) => a.precio - b.precio);
+                    
+                    let descuento = 0;
+                    for (let i = 0; i < gruposDe3; i++) {
+                        // Descontar el más barato de cada grupo de 3
+                        if (macaronsOrdenados[0]) {
+                            descuento += macaronsOrdenados[0].precio;
+                        }
+                    }
+                    
+                    return descuento;
+                }
+            },
+            'cliente-premium': {
+                nombre: 'Cliente Premium',
+                explicacion: 'Obtené 10% de descuento en compras superiores a $30.000. Aplicable a todos nuestros productos.',
+                categorias: ['viennoiserie', 'macarons', 'pasteles', 'especialidades'],
+                calcular: (productos, subtotal) => {
+                    return subtotal > 30000 ? subtotal * 0.1 : 0;
+                }
+            }
+        };
+
+        // Inicializar cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', function() {
-            // Animaciones de entrada
+            initCalculadora();
             initScrollAnimations();
-            
-            // Navegación suave
             initSmoothScroll();
-            
-            // Efectos hover mejorados
             initHoverEffects();
         });
 
-        // Animaciones al hacer scroll
+        // Inicializar calculadora
+        function initCalculadora() {
+            // Event listeners para botones de promoción
+            document.querySelectorAll('.promo-select-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    seleccionarPromocion(this.dataset.promo);
+                });
+            });
+
+            // Event listeners para controles de cantidad
+            document.getElementById('qty-plus').addEventListener('click', () => {
+                const input = document.getElementById('quantity-select');
+                const valor = parseInt(input.value) + 1;
+                if (valor <= 20) input.value = valor;
+            });
+
+            document.getElementById('qty-minus').addEventListener('click', () => {
+                const input = document.getElementById('quantity-select');
+                const valor = parseInt(input.value) - 1;
+                if (valor >= 1) input.value = valor;
+            });
+
+            // Event listener para agregar producto
+            document.getElementById('add-product-btn').addEventListener('click', agregarProducto);
+
+            // Event listeners para botones de acción
+            document.getElementById('whatsapp-order').addEventListener('click', enviarPorWhatsApp);
+            document.getElementById('reset-calculator').addEventListener('click', resetearCalculadora);
+
+            // Validar formulario en tiempo real
+            document.getElementById('product-select').addEventListener('change', validarFormulario);
+            document.getElementById('quantity-select').addEventListener('input', validarFormulario);
+
+            // Inicializar estado
+            actualizarVisualizacion();
+            validarFormulario();
+        }
+
+        // Seleccionar promoción
+        function seleccionarPromocion(promo) {
+            // Actualizar botones
+            document.querySelectorAll('.promo-select-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-promo="${promo}"]`).classList.add('active');
+
+            // Actualizar estado
+            calculadoraState.promocionActiva = promo;
+
+            // Actualizar explicación
+            const explicacion = promociones[promo].explicacion;
+            document.getElementById('explanation-text').textContent = explicacion;
+
+            // Filtrar productos válidos en el select
+            filtrarProductosValidos();
+
+            // Recalcular
+            calcularTotales();
+        }
+
+        // Filtrar productos válidos según promoción
+        function filtrarProductosValidos() {
+            const promocion = promociones[calculadoraState.promocionActiva];
+            const select = document.getElementById('product-select');
+            const options = select.querySelectorAll('option');
+
+            options.forEach(option => {
+                if (option.value === '') return; // Skip default option
+
+                const categoria = option.dataset.category;
+                if (promocion.categorias.includes(categoria)) {
+                    option.style.display = 'block';
+                    option.disabled = false;
+                } else if (calculadoraState.promocionActiva === 'cliente-premium') {
+                    // Cliente premium aplica a todos
+                    option.style.display = 'block';
+                    option.disabled = false;
+                } else {
+                    option.style.display = 'none';
+                    option.disabled = true;
+                }
+            });
+
+            // Reset selección si no es válida
+            const selectedOption = select.selectedOptions[0];
+            if (selectedOption && selectedOption.disabled) {
+                select.value = '';
+                validarFormulario();
+            }
+        }
+
+        // Validar formulario
+        function validarFormulario() {
+            const producto = document.getElementById('product-select').value;
+            const cantidad = document.getElementById('quantity-select').value;
+            const btnAgregar = document.getElementById('add-product-btn');
+
+            const esValido = producto && cantidad && parseInt(cantidad) > 0;
+            btnAgregar.disabled = !esValido;
+        }
+
+        // Agregar producto al carrito
+        function agregarProducto() {
+            const select = document.getElementById('product-select');
+            const cantidadInput = document.getElementById('quantity-select');
+            
+            const selectedOption = select.selectedOptions[0];
+            if (!selectedOption || !selectedOption.value) return;
+
+            const producto = {
+                id: Date.now(), // ID único
+                nombre: selectedOption.dataset.name,
+                precio: parseInt(selectedOption.value),
+                cantidad: parseInt(cantidadInput.value),
+                categoria: selectedOption.dataset.category
+            };
+
+            calculadoraState.productos.push(producto);
+
+            // Reset formulario
+            select.value = '';
+            cantidadInput.value = 1;
+            validarFormulario();
+
+            // Actualizar visualización
+            actualizarListaProductos();
+            calcularTotales();
+            
+            // Animación de feedback
+            showPromoNotification(`${producto.nombre} agregado al carrito`);
+        }
+
+        // Actualizar lista de productos
+        function actualizarListaProductos() {
+            const lista = document.getElementById('products-list');
+            
+            if (calculadoraState.productos.length === 0) {
+                lista.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Aún no agregaste productos. ¡Comenzá seleccionando algo delicioso!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            lista.innerHTML = calculadoraState.productos.map(producto => `
+                <div class="product-item" data-id="${producto.id}">
+                    <div class="product-details">
+                        <div class="product-name">${producto.nombre}</div>
+                        <div class="product-info">Cantidad: ${producto.cantidad} | Precio unitario: $${producto.precio.toLocaleString()}</div>
+                    </div>
+                    <div class="product-price">$${(producto.precio * producto.cantidad).toLocaleString()}</div>
+                    <button class="remove-product" onclick="eliminarProducto(${producto.id})">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Eliminar producto del carrito
+        function eliminarProducto(id) {
+            calculadoraState.productos = calculadoraState.productos.filter(p => p.id !== id);
+            actualizarListaProductos();
+            calcularTotales();
+            showPromoNotification('Producto eliminado del carrito');
+        }
+
+        // Calcular totales
+        function calcularTotales() {
+            // Calcular subtotal
+            calculadoraState.subtotal = calculadoraState.productos.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
+
+            // Calcular descuento según promoción activa
+            const promocion = promociones[calculadoraState.promocionActiva];
+            calculadoraState.descuento = promocion.calcular(calculadoraState.productos, calculadoraState.subtotal);
+
+            // Calcular total
+            calculadoraState.total = calculadoraState.subtotal - calculadoraState.descuento;
+
+            // Actualizar visualización
+            actualizarResultados();
+        }
+
+        // Actualizar visualización de resultados
+        function actualizarResultados() {
+            document.getElementById('subtotal-amount').textContent = `$${calculadoraState.subtotal.toLocaleString()}`;
+            document.getElementById('discount-amount').textContent = `-$${calculadoraState.descuento.toLocaleString()}`;
+            document.getElementById('final-amount').textContent = `$${calculadoraState.total.toLocaleString()}`;
+
+            // Mostrar/ocultar resumen de ahorros
+            const savingsSummary = document.getElementById('savings-summary');
+            if (calculadoraState.descuento > 0) {
+                const porcentajeAhorro = ((calculadoraState.descuento / calculadoraState.subtotal) * 100).toFixed(1);
+                
+                document.getElementById('savings-amount').textContent = `$${calculadoraState.descuento.toLocaleString()}`;
+                document.getElementById('savings-percentage').textContent = porcentajeAhorro;
+                document.getElementById('promo-applied').textContent = `Promoción: ${promociones[calculadoraState.promocionActiva].nombre}`;
+                
+                savingsSummary.style.display = 'block';
+            } else {
+                savingsSummary.style.display = 'none';
+            }
+        }
+
+        // Actualizar visualización general
+        function actualizarVisualizacion() {
+            actualizarListaProductos();
+            actualizarResultados();
+        }
+
+        // Enviar pedido por WhatsApp
+        function enviarPorWhatsApp() {
+            if (calculadoraState.productos.length === 0) {
+                showPromoNotification('Agregá productos antes de hacer el pedido');
+                return;
+            }
+
+            let mensaje = `¡Hola! Me gustaría hacer este pedido:\n\n`;
+            
+            // Agregar productos
+            calculadoraState.productos.forEach(p => {
+                mensaje += `• ${p.nombre} (x${p.cantidad}) - $${(p.precio * p.cantidad).toLocaleString()}\n`;
+            });
+
+            // Agregar totales
+            mensaje += `\nSubtotal: $${calculadoraState.subtotal.toLocaleString()}\n`;
+            
+            if (calculadoraState.descuento > 0) {
+                mensaje += `Descuento (${promociones[calculadoraState.promocionActiva].nombre}): -$${calculadoraState.descuento.toLocaleString()}\n`;
+            }
+            
+            mensaje += `Total: $${calculadoraState.total.toLocaleString()}\n\n`;
+            mensaje += `¡Gracias!`;
+
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const url = `https://wa.me/5491145678900?text=${mensajeCodificado}`;
+            
+            window.open(url, '_blank');
+            showPromoNotification('Redirigiendo a WhatsApp...');
+        }
+
+        // Resetear calculadora
+        function resetearCalculadora() {
+            calculadoraState.productos = [];
+            calculadoraState.subtotal = 0;
+            calculadoraState.descuento = 0;
+            calculadoraState.total = 0;
+
+            document.getElementById('product-select').value = '';
+            document.getElementById('quantity-select').value = 1;
+
+            actualizarVisualizacion();
+            validarFormulario();
+            
+            showPromoNotification('Calculadora reiniciada');
+        }
+
+        // Funciones de animación y efectos (mantenidas del código anterior)
         function initScrollAnimations() {
             const observerOptions = {
                 threshold: 0.1,
@@ -582,8 +1085,7 @@
                 });
             }, observerOptions);
             
-            // Aplicar animación inicial
-            const elementsToAnimate = document.querySelectorAll('.promo-card, .combo-card, .tip-card, .popular-item');
+            const elementsToAnimate = document.querySelectorAll('.promo-card, .combo-card, .tip-card, .popular-item, .promo-selector-section, .product-selector-section, .results-section');
             elementsToAnimate.forEach((el, index) => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
@@ -592,59 +1094,45 @@
             });
         }
 
-        // Navegación suave
         function initSmoothScroll() {
             const navLinks = document.querySelectorAll('a[href^="#"]');
-            
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
                     if (targetElement) {
                         const headerOffset = 80;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                 });
             });
         }
 
-        // Efectos hover mejorados
         function initHoverEffects() {
-            // Efecto para cards de promoción
             const promoCards = document.querySelectorAll('.promo-card');
             promoCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-8px) scale(1.02)';
                 });
-                
                 card.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
 
-            // Efecto para botones de contacto
             const contactBtns = document.querySelectorAll('.contact-btn');
             contactBtns.forEach(btn => {
                 btn.addEventListener('mouseenter', function() {
                     this.style.transform = 'scale(1.1)';
                 });
-                
                 btn.addEventListener('mouseleave', function() {
                     this.style.transform = 'scale(1)';
                 });
             });
         }
 
-        // Función para mostrar notificación de promoción
         function showPromoNotification(promoText) {
             const notification = document.createElement('div');
             notification.className = 'promo-notification';
@@ -657,24 +1145,12 @@
             
             document.body.appendChild(notification);
             
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
+            setTimeout(() => notification.classList.add('show'), 100);
             setTimeout(() => {
                 notification.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 5000);
+                setTimeout(() => document.body.removeChild(notification), 300);
+            }, 3000);
         }
-
-        // Funcionalidad para botones de WhatsApp con mensaje personalizado
-        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-            link.addEventListener('click', function() {
-                showPromoNotification('¡Perfecto! Te redirigimos a WhatsApp para consultar sobre nuestras promociones.');
-            });
-        });
     </script>
 
     <!-- CSS adicional para notificaciones -->
