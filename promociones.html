@@ -59,7 +59,7 @@
                     <div class="search-box">
                         <i class="fas fa-search search-icon"></i>
                         <input type="text" id="promo-search" class="search-input" placeholder="Buscar promociones...">
-                        <button class="search-clear" id="search-clear" style="display: none;">
+                        <button class="search-clear" id="search-clear" title="Limpiar búsqueda">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="results-info" id="results-info" style="display: none;">
+            <div class="results-info" id="results-info">
                 <p><span id="results-count">0</span> promociones encontradas</p>
             </div>
 
@@ -101,7 +101,6 @@
                     <button class="favorite-btn" data-promo="manana-francesa" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
-                    <div class="promo-header"></div>
                     <div class="countdown-timer" data-end="2025-10-23"></div>
                     <div class="promo-image image-zoom-container">
                         <img src="images/croissants.png" alt="Promoción Mañana Francesa - Croissants" loading="lazy" class="lazy-load">
@@ -131,7 +130,7 @@
                         <!-- Indicador de Stock -->
                         <div class="stock-indicator" data-stock="35" data-total="50">
                             <div class="stock-bar-container">
-                                <div class="stock-bar" style="width: 70%"></div>
+                                <div class="stock-bar" data-width="70"></div>
                             </div>
                             <p class="stock-text">Solo quedan <strong>35 unidades</strong> disponibles hoy</p>
                         </div>
@@ -151,10 +150,10 @@
                             <span class="price-after">$6.700</span> <span class="savings">¡Ahorrás $2.000!</span>
                         </div>
                         <div class="promo-actions">
-                            <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('mañana-francesa')">
+                            <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('manana-francesa')">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span class="btn-text">¡Quiero esta promo!</span>
-                                <span class="btn-loader" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Mañana Francesa Perfecta')">
                                 <i class="fab fa-whatsapp"></i>
@@ -175,7 +174,6 @@
                     <button class="favorite-btn" data-promo="festival-macarons" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
-                    <div class="promo-header"></div>
                     <div class="countdown-timer" data-end="2025-10-20"></div>
                     <div class="promo-image image-zoom-container">
                         <img src="images/macarons.png" alt="Promoción Festival de Macarons" loading="lazy" class="lazy-load">
@@ -205,7 +203,7 @@
                         <!-- Indicador de Stock -->
                         <div class="stock-indicator" data-stock="28" data-total="60">
                             <div class="stock-bar-container">
-                                <div class="stock-bar" style="width: 47%"></div>
+                                <div class="stock-bar" data-width="47"></div>
                             </div>
                             <p class="stock-text">Solo quedan <strong>28 unidades</strong> disponibles hoy</p>
                         </div>
@@ -228,7 +226,7 @@
                             <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('festival-macarons')">
                                 <i class="fas fa-cookie"></i>
                                 <span class="btn-text">¡Elegir macarons!</span>
-                                <span class="btn-loader" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Festival de Macarons')">
                                 <i class="fab fa-whatsapp"></i>
@@ -249,7 +247,6 @@
                     <button class="favorite-btn" data-promo="cliente-premium" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
-                    <div class="promo-header"></div>
                     <div class="countdown-timer" data-end="2025-10-21"></div>
                     <div class="promo-image image-zoom-container">
                         <img src="images/torta.png" alt="Promoción Cliente Premium - Pasteles" loading="lazy" class="lazy-load">
@@ -299,7 +296,7 @@
                             <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('cliente-premium')">
                                 <i class="fas fa-crown"></i>
                                 <span class="btn-text">¡Ser Premium!</span>
-                                <span class="btn-loader" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Cliente Premium')">
                                 <i class="fab fa-whatsapp"></i>
@@ -591,7 +588,7 @@
                 <div class="promo-selector-section">
                     <h3 class="calc-step-title">1. Elegí tu promoción</h3>
                     <div class="promo-buttons">
-                        <button class="promo-select-btn active" data-promo="mañana-francesa" data-discount="50">
+                        <button class="promo-select-btn active" data-promo="manana-francesa" data-discount="50">
                             <div class="promo-btn-icon">🥐</div>
                             <div class="promo-btn-content">
                                 <strong>Mañana Francesa</strong>
@@ -731,7 +728,7 @@
                             </div>
                         </div>
 
-                        <div class="savings-summary" id="savings-summary" style="display: none;">
+                        <div class="savings-summary" id="savings-summary">
                             <div class="savings-content">
                                 <div class="savings-icon">
                                     <i class="fas fa-piggy-bank"></i>
@@ -853,7 +850,7 @@
                                     <small>Respuesta inmediata</small>
                                 </div>
                                 <a href="https://wa.me/5491145678900?text=Hola! Tengo una consulta sobre las promociones" 
-                                   class="contact-btn whatsapp" target="_blank">
+                                   class="contact-btn whatsapp" target="_blank" rel="noopener">
                                     <i class="fab fa-whatsapp"></i>
                                     Consultar
                                 </a>
@@ -1007,7 +1004,7 @@
     <script>
         // Estado global de la calculadora
         const calculadoraState = {
-            promocionActiva: 'mañana-francesa',
+            promocionActiva: 'manana-francesa',
             productos: [],
             subtotal: 0,
             descuento: 0,
@@ -1016,7 +1013,7 @@
 
         // Configuración de promociones
         const promociones = {
-            'mañana-francesa': {
+            'manana-francesa': {
                 nombre: 'Mañana Francesa',
                 explicacion: 'Agregá productos de viennoiserie y obtené 50% de descuento en el segundo producto de menor o igual valor.',
                 categorias: ['viennoiserie'],
@@ -1519,7 +1516,7 @@
                     } else if (tipoCombo === 'celebracion-elegante') {
                         seleccionarPromocion('cliente-premium');
                     } else {
-                        seleccionarPromocion('mañana-francesa');
+                        seleccionarPromocion('manana-francesa');
                     }
 
                     actualizarListaProductos();
@@ -3839,6 +3836,7 @@
             z-index: 25;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
         }
 
@@ -4038,6 +4036,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             animation: fadeIn 0.3s ease;
         }
@@ -4668,7 +4667,6 @@
                 overflow-x: auto;
                 justify-content: flex-start;
                 padding-bottom: 0.5rem;
-                -webkit-overflow-scrolling: touch;
             }
 
             .filter-btn {
