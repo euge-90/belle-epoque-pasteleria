@@ -50,7 +50,7 @@
         <section id="promociones-destacadas" class="section">
             <div class="text-center">
                 <h2 class="text-gold">🎉 Ofertas Vigentes</h2>
-                <p class="mb-2">Aprovechá nuestras promociones especiales y llevate lo mejor de la pastelería francesa</p>
+                <p class="mb-2">Aprovechá nuestras promociones especiales y llevate lo mejor de la pastelería francesa 🥐✨</p>
             </div>
 
             <div class="promotions-gallery">
@@ -83,6 +83,16 @@
                             <strong>Ejemplo:</strong> Croissant ($4.000) + Pain au Chocolat ($4.700) = <span class="price-before">$8.700</span> 
                             <span class="price-after">$6.700</span> <span class="savings">¡Ahorrás $2.000!</span>
                         </div>
+                        <div class="promo-actions">
+                            <button class="promo-btn primary" onclick="agregarPromocion('mañana-francesa')">
+                                <i class="fas fa-shopping-cart"></i>
+                                ¡Quiero esta promo!
+                            </button>
+                            <button class="promo-btn secondary" onclick="consultarPromocion('Mañana Francesa Perfecta')">
+                                <i class="fab fa-whatsapp"></i>
+                                Consultar
+                            </button>
+                        </div>
                     </div>
                 </article>
 
@@ -113,6 +123,16 @@
                         <div class="promo-example">
                             <strong>Ejemplo:</strong> 3 Macarons = <span class="price-before">$7.500</span> 
                             <span class="price-after">$5.000</span> <span class="savings">¡Ahorrás $2.500!</span>
+                        </div>
+                        <div class="promo-actions">
+                            <button class="promo-btn primary" onclick="agregarPromocion('festival-macarons')">
+                                <i class="fas fa-cookie"></i>
+                                ¡Elegir macarons!
+                            </button>
+                            <button class="promo-btn secondary" onclick="consultarPromocion('Festival de Macarons')">
+                                <i class="fab fa-whatsapp"></i>
+                                Consultar
+                            </button>
                         </div>
                     </div>
                 </article>
@@ -146,6 +166,16 @@
                             <strong>Ejemplo:</strong> Compra $35.000 = <span class="price-after">$31.500</span> 
                             <span class="savings">¡Ahorrás $3.500!</span>
                         </div>
+                        <div class="promo-actions">
+                            <button class="promo-btn primary" onclick="agregarPromocion('cliente-premium')">
+                                <i class="fas fa-crown"></i>
+                                ¡Ser Premium!
+                            </button>
+                            <button class="promo-btn secondary" onclick="consultarPromocion('Cliente Premium')">
+                                <i class="fab fa-whatsapp"></i>
+                                Consultar
+                            </button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -155,7 +185,7 @@
         <section id="combos-especiales" class="section bg-cream">
             <div class="text-center">
                 <h2 class="text-gold">🍽️ Combos Especiales</h2>
-                <p class="mb-2">Arma tu combo perfecto y ahorrá más</p>
+                <p class="mb-2">Arma tu combo perfecto y ahorrá más 💰🥖</p>
             </div>
 
             <div class="combos-grid">
@@ -1150,6 +1180,30 @@
                 notification.classList.remove('show');
                 setTimeout(() => document.body.removeChild(notification), 300);
             }, 3000);
+        }
+
+        // Funciones para los botones de promociones
+        function agregarPromocion(tipoPromocion) {
+            // Scroll hasta la calculadora
+            document.getElementById('calculadora-interactiva').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Esperar un poco y luego seleccionar la promoción
+            setTimeout(() => {
+                seleccionarPromocion(tipoPromocion);
+                showPromoNotification(`¡Promoción ${promociones[tipoPromocion].nombre} seleccionada! Ahora agregá tus productos.`);
+            }, 800);
+        }
+
+        function consultarPromocion(nombrePromocion) {
+            const mensaje = `¡Hola! Me interesa la promoción "${nombrePromocion}". ¿Podrían darme más información?`;
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const url = `https://wa.me/5491145678900?text=${mensajeCodificado}`;
+            
+            window.open(url, '_blank');
+            showPromoNotification('Te redirigimos a WhatsApp para consultar sobre esta promoción');
         }
     </script>
 

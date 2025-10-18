@@ -1,15 +1,24 @@
 /* ===== VARIABLES CSS ===== */
 :root {
-    /* Paleta de colores inspirada en pastelería francesa elegante */
+    /* Paleta de colores Belle Époque - Pastelería Francesa Elegante */
     --primary-color: #d4af37; /* Dorado elegante */
     --secondary-color: #8b4513; /* Marrón chocolate */
-    --accent-color: #f5f5dc; /* Beige crema */
+    --accent-color: #f5e6d3; /* Crema Belle Époque */
     --text-dark: #2c1810; /* Marrón oscuro */
     --text-light: #ffffff;
     --background-light: #fefefe;
-    --background-cream: #faf8f3;
+    --background-cream: #f5e6d3; /* Actualizado al crema correcto */
     --shadow: rgba(0, 0, 0, 0.1);
     --shadow-hover: rgba(0, 0, 0, 0.2);
+    --shadow-elegant: rgba(212, 175, 55, 0.15);
+    --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f1d26b 50%, #d4af37 100%);
+    --gradient-brown: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    --gradient-cream: linear-gradient(135deg, #f5e6d3 0%, #faf8f3 100%);
+    
+    /* Tipografías Belle Époque */
+    --font-title: 'Playfair Display', Georgia, serif; /* Para títulos elegantes */
+    --font-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Para texto general */
+    --font-accent: 'Cinzel', Georgia, serif; /* Para acentos especiales */
 }
 
 /* ===== RESET Y BASE ===== */
@@ -120,19 +129,44 @@ html {
 }
 
 body {
-    font-family: var(--font-avenir);
+    font-family: var(--font-body);
     font-weight: 400; /* Regular */
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background-light);
 }
 
-/* ===== TIPOGRAFÍA ===== */
+/* ===== TIPOGRAFÍA BELLE ÉPOQUE ===== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-avenir);
-    font-weight: 600; /* default Demi for headings */
+    font-family: var(--font-title);
+    font-weight: 600; /* Elegante y legible */
     margin-bottom: 1rem;
     color: var(--text-dark);
+}
+
+/* Mejoras específicas para promociones */
+.promociones-page .section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.promociones-page .section h2.text-gold {
+    background: var(--gradient-gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.promociones-page .section p.mb-2 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
 }
 
 h1 {
@@ -1963,15 +1997,55 @@ footer {
 
 /* Hero promociones */
 .hero-promociones {
-    background: linear-gradient(rgba(44, 24, 16, 0.8), rgba(44, 24, 16, 0.8)), 
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(139, 69, 19, 0.8)), 
                 url('images/interior.png') center/cover;
-    min-height: 60vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
+    overflow: hidden;
+}
+
+.hero-promociones::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(139, 69, 19, 0.3) 0%, transparent 50%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-promociones .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-promociones .hero-title {
+    font-size: 3.5rem;
+    font-family: var(--font-title);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.hero-promociones .hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Galería de promociones */
@@ -1986,24 +2060,46 @@ footer {
 
 .promo-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1), 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .promo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2), 0 8px 30px rgba(0,0,0,0.12);
+    border-color: var(--primary-color);
 }
 
 .promo-card.featured {
-    border: 2px solid var(--primary-color);
+    border: 3px solid var(--primary-color);
+    background: var(--gradient-cream);
+    position: relative;
+    overflow: visible;
+}
+
+.promo-card.featured::before {
+    content: "⭐ DESTACADA ⭐";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-gold);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    z-index: 10;
 }
 
 .promo-card.premium {
-    background: linear-gradient(135deg, #f8f9fa 0%, #fff8e7 100%);
+    background: var(--gradient-cream);
+    border: 2px solid var(--secondary-color);
 }
 
 .promo-header {
@@ -2015,32 +2111,45 @@ footer {
 }
 
 .promo-badge {
-    background: var(--primary-color);
+    background: var(--gradient-gold);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0 0 15px 0;
+    padding: 8px 16px;
+    border-radius: 0 0 20px 0;
+    font-family: var(--font-accent);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     position: absolute;
     top: 0;
     left: 0;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .premium-badge {
-    background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+    background: var(--gradient-brown);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
 }
 
 .promo-discount {
-    background: #dc2626;
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0 0 0 25px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 0 0 0 30px;
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 1.3rem;
     position: absolute;
     top: 0;
     right: 0;
-    box-shadow: -2px 2px 10px rgba(220, 38, 38, 0.3);
+    box-shadow: -4px 4px 20px rgba(220, 38, 38, 0.4);
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .promo-image {
@@ -2067,15 +2176,19 @@ footer {
 
 .promo-content h3 {
     color: var(--text-dark);
-    font-size: 1.4rem;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
 }
 
 .promo-description {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    color: #5a5a5a;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
 }
 
 .promo-details {
@@ -2100,30 +2213,95 @@ footer {
 }
 
 .promo-example {
-    background: var(--background-cream);
-    padding: 1rem;
-    border-radius: 8px;
+    background: var(--gradient-cream);
+    padding: 1.2rem;
+    border-radius: 12px;
     border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.1);
+    margin-top: 1rem;
 }
 
 .price-before {
     text-decoration: line-through;
     color: #999;
+    font-size: 0.95rem;
 }
 
 .price-after {
     color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-shadow: 0 1px 2px rgba(212, 175, 55, 0.2);
 }
 
 .savings {
-    background: #10b981;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 8px;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+    animation: sparkle 3s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3); }
+    50% { box-shadow: 0 5px 20px rgba(16, 185, 129, 0.5); }
+}
+
+/* Botones de acciones en promociones */
+.promo-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.promo-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
     font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.promo-btn.primary {
+    background: var(--gradient-gold);
+    color: white;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.promo-btn.primary:hover {
+    background: var(--gradient-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.promo-btn.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.promo-btn.secondary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Combos grid */
@@ -2371,39 +2549,54 @@ footer {
 
 .terms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Exactamente 2 columnas para mejor alineación */
     gap: 1.5rem;
     margin-bottom: 2rem;
+    align-items: start; /* Alinear elementos al inicio */
 }
 
 .term-item {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    padding: 1rem;
+    background: var(--gradient-cream);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.term-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 .term-icon {
     width: 50px;
     height: 50px;
-    background: var(--primary-color);
+    background: var(--gradient-gold);
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .term-text strong {
     display: block;
     color: var(--text-dark);
     margin-bottom: 0.5rem;
+    font-family: var(--font-title);
+    font-weight: 600;
 }
 
 .term-text p {
     color: #666;
     margin: 0;
     font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .important-note {
@@ -2638,6 +2831,11 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
     }
+    
+    .promo-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2674,6 +2872,23 @@ footer {
         order: 2;
         width: 100%;
         justify-content: center;
+    }
+    
+    .promo-actions {
+        gap: 8px;
+    }
+    
+    .promo-btn {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .hero-promociones .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-promociones .hero-description {
+        font-size: 1.1rem;
     }
 }
 
@@ -2715,45 +2930,60 @@ footer {
 
 .promo-select-btn {
     background: white;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 1rem;
+    border: 3px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     text-align: left;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
 }
 
 .promo-select-btn:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
+    transform: translateY(-4px) scale(1.02);
+    background: var(--gradient-cream);
 }
 
 .promo-select-btn.active {
     border-color: var(--primary-color);
-    background: linear-gradient(135deg, #fef9e7 0%, #fff8e1 100%);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    background: var(--gradient-gold);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+    transform: scale(1.05);
+}
+
+.promo-select-btn.active .promo-btn-content strong {
+    color: white;
+}
+
+.promo-select-btn.active .promo-btn-content span {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .promo-btn-icon {
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
+    font-size: 2.2rem;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--background-cream);
+    background: var(--gradient-cream);
     border-radius: 50%;
     flex-shrink: 0;
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
 }
 
 .promo-select-btn.active .promo-btn-icon {
-    background: var(--primary-color);
-    color: white;
+    background: white;
+    color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: rotate(10deg);
 }
 
 .promo-btn-content {
@@ -2763,13 +2993,16 @@ footer {
 .promo-btn-content strong {
     display: block;
     color: var(--text-dark);
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
 }
 
 .promo-btn-content span {
     color: #666;
     font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .promo-btn-badge {
@@ -2837,18 +3070,21 @@ footer {
 }
 
 .form-control {
-    padding: 0.75rem 1rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
     font-size: 1rem;
+    font-family: var(--font-body);
     transition: all 0.3s ease;
     background: white;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
 }
 
 .quantity-controls {
@@ -2857,24 +3093,27 @@ footer {
 }
 
 .qty-btn {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border: 2px solid var(--primary-color);
     background: white;
     color: var(--primary-color);
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
 }
 
 .qty-btn:hover {
-    background: var(--primary-color);
+    background: var(--gradient-gold);
     color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 .qty-input {
@@ -2885,30 +3124,35 @@ footer {
 }
 
 .btn-add-product {
-    background: var(--primary-color);
+    background: var(--gradient-gold);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
     white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    letter-spacing: 0.5px;
 }
 
 .btn-add-product:hover {
-    background: #b8941f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    background: var(--gradient-brown);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
 
 .btn-add-product:disabled {
-    background: #ccc;
+    background: linear-gradient(135deg, #ccc, #bbb);
     cursor: not-allowed;
     transform: none;
+    box-shadow: none;
 }
 
 /* Lista de productos */
