@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Belle Époque</title>
-    <meta name="description" content="Descubre nuestros croissants artesanales, macarons parisinos, pasteles y tartas francesas auténticas.">
+    <title>Productos - Belle Époque - Pastelería Francesa Artesanal</title>
+    <meta name="description" content="Descubre nuestros croissants artesanales, macarons parisinos, pasteles y tartas francesas auténticas. Belle Époque - Pastelería francesa en el corazón de Buenos Aires.">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos: Font Awesome para redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
 </head>
 <body class="productos-page">
     <!-- Navegación -->
@@ -40,258 +40,625 @@
 
         <!-- Hero Section -->
         <section class="hero hero-productos">
-            <h1 class="fade-in">Nuestros Productos</h1>
-            <p class="fade-in">Sabores auténticos de la pastelería francesa artesanal</p>
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">Nuestros Productos</h1>
+                <p class="hero-description fade-in">Sabores auténticos de la pastelería francesa artesanal</p>
+            </div>
+        </section>
+
+        <!-- Filtros de Productos -->
+        <section class="product-filters-section">
+            <div class="container">
+                <h2 class="text-center mb-2">Explora nuestras categorías</h2>
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large"></i>
+                        Todos los productos
+                    </button>
+                    <button class="filter-btn" data-filter="croissants">
+                        <i class="fas fa-bread-slice"></i>
+                        Croissants & Viennoiseries
+                    </button>
+                    <button class="filter-btn" data-filter="macarons">
+                        <i class="fas fa-cookie"></i>
+                        Macarons
+                    </button>
+                    <button class="filter-btn" data-filter="pasteles">
+                        <i class="fas fa-birthday-cake"></i>
+                        Pasteles & Tartas
+                    </button>
+                    <button class="filter-btn" data-filter="especiales">
+                        <i class="fas fa-star"></i>
+                        Pedidos Especiales
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- Sección: Croissants & Viennoiseries -->
-        <section id="croissants" class="section">
-            <div class="text-center">
-                <h2 class="text-gold">🥐 Croissants & Viennoiseries</h2>
-                <p class="mb-2">Hojaldre artesanal elaborado con manteca francesa</p>
-            </div>
-            <div class="product-gallery">
-                <figure class="product-thumb">
-                    <img src="images/products_images/croissant.jpg"
-                         alt="Croissant Tradicional francés dorado y crujiente"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Croissant Tradicional</strong><br>
-                        <span class="precio">$4.000</span>
-                    </figcaption>
-                </figure>
+        <section id="croissants" class="section product-category" data-category="croissants">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="text-gold">🥐 Croissants & Viennoiseries</h2>
+                    <p class="mb-2">Hojaldre artesanal elaborado con manteca francesa</p>
+                </div>
+                <div class="product-gallery">
+                    <article class="product-card" data-product="croissant-tradicional">
+                        <div class="product-image">
+                            <img src="images/products_images/croissant.jpg"
+                                 alt="Croissant Tradicional francés dorado y crujiente"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="croissant-tradicional">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Croissant Tradicional</h3>
+                            <p class="product-description">Hojaldre clásico con manteca francesa, crujiente por fuera y tierno por dentro.</p>
+                            <div class="product-price">
+                                <span class="precio">$4.000</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/pain_au_chocolat.png"
-                         alt="Pain au Chocolat con chocolate belga"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Pain au Chocolat</strong><br>
-                        <span class="precio">$4.700</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="pain-au-chocolat">
+                        <div class="product-image">
+                            <img src="images/products_images/pain_au_chocolat.png"
+                                 alt="Pain au Chocolat con chocolate belga"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="pain-au-chocolat">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Pain au Chocolat</h3>
+                            <p class="product-description">Hojaldre relleno de barritas de chocolate belga de alta calidad.</p>
+                            <div class="product-price">
+                                <span class="precio">$4.700</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/croissant_almendras.png"
-                         alt="Croissant de Almendra con almendras laminadas"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Croissant de Almendra</strong><br>
-                        <span class="precio">$5.700</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="croissant-almendras">
+                        <div class="product-image">
+                            <img src="images/products_images/croissant_almendras.png"
+                                 alt="Croissant de Almendra con almendras laminadas"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="croissant-almendras">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Croissant de Almendra</h3>
+                            <p class="product-description">Hojaldre relleno de crema de almendra y decorado con almendras laminadas.</p>
+                            <div class="product-price">
+                                <span class="precio">$5.700</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/Pain_aux_Raisins.png"
-                         alt="Pain aux Raisins con pasas y crema pastelera"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Pain aux Raisins</strong><br>
-                        <span class="precio">$5.400</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="pain-aux-raisins">
+                        <div class="product-image">
+                            <img src="images/products_images/Pain_aux_Raisins.png"
+                                 alt="Pain aux Raisins con pasas y crema pastelera"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="pain-aux-raisins">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Pain aux Raisins</h3>
+                            <p class="product-description">Espiral de hojaldre con crema pastelera y pasas de uva sultana.</p>
+                            <div class="product-price">
+                                <span class="precio">$5.400</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/pan_brioche.jpg"
-                         alt="Brioche francés esponjoso"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Brioche</strong><br>
-                        <span class="precio">$7.700</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="brioche">
+                        <div class="product-image">
+                            <img src="images/products_images/pan_brioche.jpg"
+                                 alt="Brioche francés esponjoso"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="brioche">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Brioche</h3>
+                            <p class="product-description">Pan enriquecido con manteca y huevos, de textura esponjosa y sabor delicado.</p>
+                            <div class="product-price">
+                                <span class="precio">$7.700</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/ChaussonauxPommes.png"
-                         alt="Chausson aux Pommes con manzanas caramelizadas"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Chausson aux Pommes</strong><br>
-                        <span class="precio">$4.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="chausson-aux-pommes">
+                        <div class="product-image">
+                            <img src="images/products_images/ChaussonauxPommes.png"
+                                 alt="Chausson aux Pommes con manzanas caramelizadas"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="chausson-aux-pommes">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Chausson aux Pommes</h3>
+                            <p class="product-description">Empanada de hojaldre rellena de manzanas caramelizadas con canela.</p>
+                            <div class="product-price">
+                                <span class="precio">$4.500</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- Sección: Macarons Parisinos -->
-        <section id="macarons" class="section bg-cream">
-            <div class="text-center">
-                <h2 class="text-gold">🍪 Macarons Parisinos</h2>
-                <p class="mb-2">Delicadas galletas de almendra rellenas con ganache artesanal</p>
-            </div>
-            <div class="product-gallery">
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_frambuesa.png"
-                         alt="Macaron de Frambuesa rosa"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Frambuesa</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+        <section id="macarons" class="section bg-cream product-category" data-category="macarons">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="text-gold">🍪 Macarons Parisinos</h2>
+                    <p class="mb-2">Delicadas galletas de almendra rellenas con ganache artesanal</p>
+                </div>
+                <div class="macarons-info">
+                    <div class="info-card">
+                        <h3>Presentaciones disponibles</h3>
+                        <ul class="presentations-list">
+                            <li><strong>Unidad:</strong> $2.500 c/u</li>
+                            <li><strong>Caja x6:</strong> $14.000 (ahorrás $1.000)</li>
+                            <li><strong>Caja x12:</strong> $27.000 (ahorrás $3.000)</li>
+                            <li><strong>Caja x24:</strong> $52.000 (ahorrás $8.000)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-gallery macarons-gallery">
+                    <article class="product-card macaron-card" data-product="macaron-frambuesa">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_frambuesa.png"
+                                 alt="Macaron de Frambuesa rosa"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-frambuesa">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Frambuesa</h3>
+                            <p class="product-description">Ganache de frambuesa fresca con toque cítrico.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_pistacho.png"
-                         alt="Macaron de Pistacho verde"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Pistacho</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-pistacho">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_pistacho.png"
+                                 alt="Macaron de Pistacho verde"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-pistacho">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Pistacho</h3>
+                            <p class="product-description">Pasta de pistacho siciliano con notas tostadas.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_chocolate.png"
-                         alt="Macaron de Chocolate oscuro"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Chocolate</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-chocolate">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_chocolate.png"
+                                 alt="Macaron de Chocolate oscuro"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-chocolate">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Chocolate</h3>
+                            <p class="product-description">Ganache de chocolate belga 70% cacao.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_vainilla.png"
-                         alt="Macaron de Vainilla clásico"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Vainilla</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-vainilla">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_vainilla.png"
+                                 alt="Macaron de Vainilla clásico"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-vainilla">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Vainilla</h3>
+                            <p class="product-description">Crema de vainilla de Madagascar premium.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_lavanda.png"
-                         alt="Macaron de Lavanda morado"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Lavanda</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-lavanda">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_lavanda.png"
+                                 alt="Macaron de Lavanda morado"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-lavanda">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Lavanda</h3>
+                            <p class="product-description">Delicada esencia de lavanda provenzal.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_limon.png"
-                         alt="Macaron de Limón amarillo"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Limón</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-limon">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_limon.png"
+                                 alt="Macaron de Limón amarillo"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-limon">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Limón</h3>
+                            <p class="product-description">Curd de limón fresco con ralladura natural.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_rosa.png"
-                         alt="Macaron de Rosa romántico"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Rosa</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-rosa">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_rosa.png"
+                                 alt="Macaron de Rosa romántico"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-rosa">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Rosa</h3>
+                            <p class="product-description">Agua de rosas turcas con pétalos cristalizados.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/macaron_caramel.png"
-                         alt="Macaron de Caramelo dorado"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Macaron de Caramelo</strong><br>
-                        <span class="precio">$2.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card macaron-card" data-product="macaron-caramelo">
+                        <div class="product-image">
+                            <img src="images/products_images/macaron_caramel.png"
+                                 alt="Macaron de Caramelo dorado"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="macaron-caramelo">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Caramelo</h3>
+                            <p class="product-description">Caramelo beurre salé con flor de sal de Guérande.</p>
+                            <div class="product-price">
+                                <span class="precio">$2.500</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- Sección: Pasteles & Tartas -->
-        <section id="pasteles" class="section">
-            <div class="text-center">
-                <h2 class="text-gold">🎂 Pasteles & Tartas</h2>
-                <p class="mb-2">Creaciones clásicas de la alta pastelería francesa</p>
-            </div>
-            <div class="product-gallery">
-                <figure class="product-thumb">
-                    <img src="images/products_images/opera_cake.png"
-                         alt="Opera Cake con capas de chocolate y café"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Opera Cake</strong><br>
-                        <span class="precio">$7.200</span>
-                    </figcaption>
-                </figure>
+        <section id="pasteles" class="section product-category" data-category="pasteles">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="text-gold">🎂 Pasteles & Tartas</h2>
+                    <p class="mb-2">Creaciones clásicas de la alta pastelería francesa</p>
+                </div>
+                <div class="product-gallery">
+                    <article class="product-card" data-product="opera-cake">
+                        <div class="product-image">
+                            <img src="images/products_images/opera_cake.png"
+                                 alt="Opera Cake con capas de chocolate y café"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="opera-cake">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Opera Cake</h3>
+                            <p class="product-description">Capas de bizcocho, ganache de chocolate y buttercream de café cubierto con glaseado espejo.</p>
+                            <div class="product-price">
+                                <span class="precio">$7.200</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/Tarte_Tatin.png"
-                         alt="Tarte Tatin de manzanas caramelizadas"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Tarte Tatin</strong><br>
-                        <span class="precio">$4.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="tarte-tatin">
+                        <div class="product-image">
+                            <img src="images/products_images/Tarte_Tatin.png"
+                                 alt="Tarte Tatin de manzanas caramelizadas"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="tarte-tatin">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Tarte Tatin</h3>
+                            <p class="product-description">Tarta invertida de manzanas caramelizadas sobre masa quebrada. Un clásico francés.</p>
+                            <div class="product-price">
+                                <span class="precio">$4.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/Fraisier_cake.png"
-                         alt="Fraisier con fresas frescas"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Fraisier</strong><br>
-                        <span class="precio">$6.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="fraisier">
+                        <div class="product-image">
+                            <img src="images/products_images/Fraisier_cake.png"
+                                 alt="Fraisier con fresas frescas"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="fraisier">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Fraisier</h3>
+                            <p class="product-description">Bizcocho genovés con crema mousseline y fresas frescas, cubierto con mazapán.</p>
+                            <div class="product-price">
+                                <span class="precio">$6.500</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/saint_honore.png"
-                         alt="Saint-Honoré con profiteroles"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Saint-Honoré</strong><br>
-                        <span class="precio">$7.200</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="saint-honore">
+                        <div class="product-image">
+                            <img src="images/products_images/saint_honore.png"
+                                 alt="Saint-Honoré con profiteroles"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="saint-honore">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Saint-Honoré</h3>
+                            <p class="product-description">Base de masa quebrada con profiteroles caramelizados y crema Chiboust.</p>
+                            <div class="product-price">
+                                <span class="precio">$7.200</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/mille_feuille.png"
-                         alt="Mille-feuille con hojaldre caramelizado"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Mille-feuille</strong><br>
-                        <span class="precio">$7.200</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="mille-feuille">
+                        <div class="product-image">
+                            <img src="images/products_images/mille_feuille.png"
+                                 alt="Mille-feuille con hojaldre caramelizado"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="mille-feuille">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Mille-feuille</h3>
+                            <p class="product-description">Tres capas de hojaldre crujiente con crema pastelera y glaseado fondant.</p>
+                            <div class="product-price">
+                                <span class="precio">$7.200</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <figure class="product-thumb">
-                    <img src="images/products_images/paris_brest.png"
-                         alt="Paris-Brest con crema de avellana"
-                         loading="lazy">
-                    <figcaption>
-                        <strong>Paris-Brest</strong><br>
-                        <span class="precio">$6.500</span>
-                    </figcaption>
-                </figure>
+                    <article class="product-card" data-product="paris-brest">
+                        <div class="product-image">
+                            <img src="images/products_images/paris_brest.png"
+                                 alt="Paris-Brest con crema de avellana"
+                                 loading="lazy">
+                            <div class="product-overlay">
+                                <button class="btn-quick-view" data-product="paris-brest">
+                                    <i class="fas fa-eye"></i>
+                                    Vista Rápida
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Paris-Brest</h3>
+                            <p class="product-description">Corona de masa choux rellena de crema de praline y avellanas tostadas.</p>
+                            <div class="product-price">
+                                <span class="precio">$6.500</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- Sección: Pedidos Especiales -->
-        <section id="pedidos-especiales" class="section bg-cream">
-            <div class="text-center">
-                <h2 class="text-gold">✨ Pedidos Especiales</h2>
-                <p class="mb-2">Creamos tortas y arreglos personalizados para tus eventos</p>
-            </div>
-            <div class="info-box">
-                <div class="info-box-content">
-                    <img src="images/pedido_especial.png" alt="Pedidos Especiales" class="info-imagen">
-                    <h3>¿Necesitas algo especial?</h3>
-                    <p>
-                        Creamos tortas personalizadas para cumpleaños, bodas, eventos corporativos y celebraciones especiales.
-                        Trabajamos con anticipación para diseñar el pastel perfecto según tus necesidades.
-                    </p>
-                    <div class="info-detalles">
-                        <p><strong>📧 Email:</strong> info@belleepoque.com.ar</p>
-                        <p><strong>📱 WhatsApp:</strong> +54 9 11 4567-8900</p>
-                        <p><strong>⏰ Tiempo mínimo:</strong> 72 horas de anticipación</p>
-                        <p><strong>💳 Seña requerida:</strong> 50% del total</p>
+        <section id="pedidos-especiales" class="section bg-cream product-category" data-category="especiales">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="text-gold">✨ Pedidos Especiales</h2>
+                    <p class="mb-2">Creamos tortas y arreglos personalizados para tus eventos</p>
+                </div>
+                <div class="special-orders-content">
+                    <div class="special-orders-grid">
+                        <div class="special-order-card">
+                            <div class="special-image">
+                                <img src="images/pedido_especial.png" alt="Tortas Personalizadas" loading="lazy">
+                            </div>
+                            <div class="special-content">
+                                <h3>Tortas Personalizadas</h3>
+                                <p>Diseñamos la torta perfecta para tu celebración especial. Cada creación es única y adaptada a tus gustos y necesidades.</p>
+                                <ul class="special-features">
+                                    <li><i class="fas fa-check"></i> Diseños exclusivos</li>
+                                    <li><i class="fas fa-check"></i> Sabores a elección</li>
+                                    <li><i class="fas fa-check"></i> Decoración temática</li>
+                                    <li><i class="fas fa-check"></i> Diferentes tamaños</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="special-order-card">
+                            <div class="special-image">
+                                <img src="images/eventos.png" alt="Eventos Corporativos" loading="lazy">
+                            </div>
+                            <div class="special-content">
+                                <h3>Eventos Corporativos</h3>
+                                <p>Catering de alta calidad para reuniones, lanzamientos y celebraciones empresariales con el toque francés que nos caracteriza.</p>
+                                <ul class="special-features">
+                                    <li><i class="fas fa-check"></i> Servicio completo</li>
+                                    <li><i class="fas fa-check"></i> Menús personalizados</li>
+                                    <li><i class="fas fa-check"></i> Presentación elegante</li>
+                                    <li><i class="fas fa-check"></i> Entrega puntual</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="special-order-card">
+                            <div class="special-image">
+                                <img src="images/bodas.png" alt="Bodas y Celebraciones" loading="lazy">
+                            </div>
+                            <div class="special-content">
+                                <h3>Bodas & Celebraciones</h3>
+                                <p>Hacemos realidad el pastel de tus sueños para el día más importante. Trabajamos contigo en cada detalle.</p>
+                                <ul class="special-features">
+                                    <li><i class="fas fa-check"></i> Consulta personalizada</li>
+                                    <li><i class="fas fa-check"></i> Degustación previa</li>
+                                    <li><i class="fas fa-check"></i> Múltiples niveles</li>
+                                    <li><i class="fas fa-check"></i> Decoración artística</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="index.html#contacto" class="cta-button">Contactanos</a>
+
+                    <div class="contact-special-orders">
+                        <h3>¿Cómo hacer tu pedido especial?</h3>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h4>Contactanos</h4>
+                                <p>Llámanos o escribinos para contarnos tu idea</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h4>Diseñamos juntos</h4>
+                                <p>Trabajamos contigo en el diseño y sabores</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h4>Confirmamos</h4>
+                                <p>Te enviamos el presupuesto y confirmás con seña</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <h4>Creamos tu pedido</h4>
+                                <p>Elaboramos tu encargo con amor y dedicación</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-special">
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <strong>Email</strong>
+                                        <p>info@belleepoque.com.ar</p>
+                                    </div>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <div>
+                                        <strong>WhatsApp</strong>
+                                        <p>+54 9 11 4567-8900</p>
+                                    </div>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <strong>Tiempo mínimo</strong>
+                                        <p>72 horas de anticipación</p>
+                                    </div>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>
+                                        <strong>Seña requerida</strong>
+                                        <p>50% del total del pedido</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cta-special">
+                                <a href="index.html#contacto" class="cta-button">Contactanos ahora</a>
+                                <a href="promociones.html" class="cta-button secondary">Ver promociones</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -371,6 +738,34 @@
                 <p><strong>📞 Consultas:</strong> +54 11 4567-8900 | <strong>📧</strong> info@belleepoque.com.ar</p>
             </div>
         </section>
+
+        <!-- Modal para Vista Rápida de Productos -->
+        <div id="productModal" class="product-modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-image">
+                        <img id="modalImage" src="" alt="">
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalDescription"></p>
+                        <div class="modal-details">
+                            <div class="modal-price" id="modalPrice"></div>
+                            <div class="modal-ingredients" id="modalIngredients"></div>
+                            <div class="modal-allergens" id="modalAllergens"></div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn btn-primary">Consultar disponibilidad</button>
+                            <button class="btn btn-secondary" onclick="window.open('https://wa.me/5491145678900?text=Hola! Me interesa el producto: ' + document.getElementById('modalTitle').textContent, '_blank')">
+                                <i class="fab fa-whatsapp"></i>
+                                Consultar por WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -403,5 +798,8 @@
         <p>&copy; 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.</p>
         <p>Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/productos.js"></script>
 </body>
 </html>
