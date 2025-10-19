@@ -402,8 +402,9 @@ class ShoppingCart {
     attachEventListeners() {
         // Eventos globales para botones "Agregar al carrito"
         document.addEventListener('click', (e) => {
-            if (e.target.closest('.add-to-cart')) {
-                const button = e.target.closest('.add-to-cart');
+            // Buscar tanto .add-to-cart como .add-to-cart-btn
+            const button = e.target.closest('.add-to-cart, .add-to-cart-btn');
+            if (button) {
                 const productData = {
                     id: button.getAttribute('data-id'),
                     name: button.getAttribute('data-name'),
