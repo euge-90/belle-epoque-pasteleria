@@ -87,6 +87,13 @@ body.promociones-page {
     margin: 0 auto;
 }
 
+@media (min-width: 1400px) {
+    .section {
+        max-width: 1600px;
+        padding: 4rem 3rem;
+    }
+}
+
 .section.bg-cream {
     background: var(--cream-bg);
 }
@@ -529,6 +536,13 @@ body.promociones-page {
     align-items: stretch;
 }
 
+@media (min-width: 1400px) {
+    .tips-grid {
+        justify-content: center;
+        transform: translateX(0) !important;
+    }
+}
+
 .tip-card {
     background: white;
     padding: 2rem;
@@ -608,6 +622,13 @@ body.promociones-page {
     transition: transform 0.5s ease;
     overflow: visible;
     align-items: stretch;
+}
+
+@media (min-width: 1400px) {
+    .popular-products {
+        justify-content: center;
+        transform: translateX(0) !important;
+    }
 }
 
 .popular-item {
@@ -2928,6 +2949,20 @@ select:focus {
 
 .carousel-dot:hover {
     background: var(--gold-dark);
+}
+
+/* Ocultar controles del carrusel en pantallas grandes (desktop) donde se ven las 4 opciones */
+@media (min-width: 1400px) {
+    .carousel-btn,
+    .carousel-dots {
+        display: none;
+    }
+
+    .carousel-container {
+        padding: 0;
+        max-width: 100%;
+        overflow: visible;
+    }
 }
 
 @media (max-width: 768px) {

@@ -73,19 +73,32 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
     loadSavedCart();
 
-    // Inicializar carruseles
+    // Inicializar carrusel de Productos Populares con breakpoints personalizados
+    // Para coincidir con el CSS: 768px->2 items, 1200px->3 items, 1400px->4 items
     new Carousel(
         '.popular-products',
         'popular-prev',
         'popular-next',
-        'popular-dots'
+        'popular-dots',
+        [
+            { width: 1400, items: 4 },
+            { width: 1200, items: 3 },
+            { width: 768, items: 2 }
+        ]
     );
 
+    // Inicializar carrusel de Tips con breakpoints por defecto
+    // 768px->2 items, 1024px->3 items, 1400px->4 items
     new Carousel(
         '.tips-grid',
         'tips-prev',
         'tips-next',
-        'tips-dots'
+        'tips-dots',
+        [
+            { width: 1400, items: 4 },
+            { width: 1024, items: 3 },
+            { width: 768, items: 2 }
+        ]
     );
 });
 
@@ -326,11 +339,12 @@ function loadSavedCart() {
  * Clase para gestionar carruseles
  */
 class Carousel {
-    constructor(trackSelector, prevBtnId, nextBtnId, dotsContainerId) {
+    constructor(trackSelector, prevBtnId, nextBtnId, dotsContainerId, customBreakpoints = null) {
         this.track = document.querySelector(trackSelector);
         this.prevBtn = document.getElementById(prevBtnId);
         this.nextBtn = document.getElementById(nextBtnId);
         this.dotsContainer = document.getElementById(dotsContainerId);
+        this.customBreakpoints = customBreakpoints;
 
         if (!this.track) {
             return;
@@ -343,6 +357,16 @@ class Carousel {
     }
 
     init() {
+        // En pantallas grandes (>= 1400px) donde se ven las 4 opciones, no inicializar carrusel
+        if (window.innerWidth >= 1400) {
+            return;
+        }
+
+        // Si hay breakpoints personalizados, ordenarlos de mayor a menor
+        if (this.customBreakpoints) {
+            this.customBreakpoints.sort((a, b) => b.width - a.width);
+        }
+
         this.createDots();
         this.updateCarousel();
         this.attachEventListeners();
@@ -380,6 +404,17 @@ class Carousel {
     getItemsPerView() {
         const width = window.innerWidth;
 
+        // Si hay breakpoints personalizados, usarlos
+        if (this.customBreakpoints) {
+            for (const bp of this.customBreakpoints) {
+                if (width >= bp.width) {
+                    return bp.items;
+                }
+            }
+            return 1; // Default para pantallas pequeñas
+        }
+
+        // Breakpoints por defecto
         if (width >= 1400) return 4;
         if (width >= 1024) return 3;
         if (width >= 768) return 2;
@@ -423,6 +458,9 @@ class Carousel {
     }
 
     next() {
+        // No hacer nada en pantallas >= 1400px
+        if (window.innerWidth >= 1400) return;
+
         const itemsPerView = this.getItemsPerView();
         const maxIndex = Math.max(0, this.items.length - itemsPerView);
 
@@ -433,6 +471,9 @@ class Carousel {
     }
 
     prev() {
+        // No hacer nada en pantallas >= 1400px
+        if (window.innerWidth >= 1400) return;
+
         if (this.currentIndex > 0) {
             this.currentIndex -= 1;
             this.updateCarousel();
@@ -453,6 +494,12 @@ class Carousel {
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
+                // En pantallas >= 1400px, resetear transform y no usar carrusel
+                if (window.innerWidth >= 1400) {
+                    this.track.style.transform = 'translateX(0px)';
+                    return;
+                }
+
                 this.createDots();
                 this.currentIndex = 0;
                 this.updateCarousel();
