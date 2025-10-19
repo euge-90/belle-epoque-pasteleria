@@ -26,13 +26,13 @@
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#nosotros">Nosotros</a></li>
-            <li><a href="productos.html" class="active">Productos</a></li>
-            <li><a href="promociones.html">Promociones</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="index.html" data-translate="nav.inicio">Inicio</a></li>
+            <li><a href="index.html#nosotros" data-translate="nav.nosotros">Nosotros</a></li>
+            <li><a href="productos.html" class="active" data-translate="nav.productos">Productos</a></li>
+            <li><a href="promociones.html" data-translate="nav.promociones">Promociones</a></li>
+            <li><a href="faq.html" data-translate="nav.faq">FAQ</a></li>
+            <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+            <li><a href="index.html#contacto" data-translate="nav.contacto">Contacto</a></li>
         </ul>
         <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
@@ -44,14 +44,14 @@
     <main>
         <!-- Banner Promocional -->
         <div class="banner-promocional">
-            <p>🚚 Pedidos con 24hs de anticipación - Envíos a domicilio 📦</p>
+            <p data-translate="productos.banner.promo">🚚 Pedidos con 24hs de anticipación - Envíos a domicilio 📦</p>
         </div>
 
         <!-- Hero Section -->
         <section class="hero hero-productos">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">Nuestros Productos</h1>
-                <p class="hero-description fade-in">Sabores auténticos de la pastelería francesa artesanal</p>
+                <h1 class="hero-title fade-in" data-translate="productos.hero.title">Nuestros Productos</h1>
+                <p class="hero-description fade-in" data-translate="productos.hero.subtitle">Sabores auténticos de la pastelería francesa artesanal</p>
             </div>
         </section>
 
@@ -63,11 +63,11 @@
                         <i class="fas fa-gift"></i>
                     </div>
                     <div class="promo-alert-text">
-                        <h3>¡Tenemos ofertas especiales!</h3>
-                        <p>Aprovechá descuentos de hasta 50% en productos seleccionados</p>
+                        <h3 data-translate="productos.alert.title">¡Tenemos ofertas especiales!</h3>
+                        <p data-translate="productos.alert.subtitle">Aprovechá descuentos de hasta 50% en productos seleccionados</p>
                     </div>
                     <a href="promociones.html" class="promo-alert-btn">
-                        Ver Promociones
+                        <span data-translate="productos.alert.btn">Ver Promociones</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -77,27 +77,27 @@
         <!-- Filtros de Productos -->
         <section class="product-filters-section">
             <div class="container">
-                <h2 class="text-center mb-2">Explora nuestras categorías</h2>
+                <h2 class="text-center mb-2" data-translate="productos.filtros.title">Explora nuestras categorías</h2>
                 <div class="product-filters">
                     <button class="filter-btn active" data-filter="all">
                         <i class="fas fa-th-large"></i>
-                        Todos los productos
+                        <span data-translate="productos.filtros.todos">Todos los productos</span>
                     </button>
                     <button class="filter-btn" data-filter="croissants">
                         <i class="fas fa-bread-slice"></i>
-                        Croissants & Viennoiseries
+                        <span data-translate="productos.filtros.croissants">Croissants & Viennoiseries</span>
                     </button>
                     <button class="filter-btn" data-filter="macarons">
                         <i class="fas fa-cookie"></i>
-                        Macarons
+                        <span data-translate="productos.filtros.macarons">Macarons</span>
                     </button>
                     <button class="filter-btn" data-filter="pasteles">
                         <i class="fas fa-birthday-cake"></i>
-                        Pasteles & Tartas
+                        <span data-translate="productos.filtros.pasteles">Pasteles & Tartas</span>
                     </button>
                     <button class="filter-btn" data-filter="especiales">
                         <i class="fas fa-star"></i>
-                        Pedidos Especiales
+                        <span data-translate="productos.filtros.especiales">Pedidos Especiales</span>
                     </button>
                 </div>
             </div>
@@ -107,8 +107,8 @@
         <section id="croissants" class="section product-category" data-category="croissants">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="text-gold">🥐 Croissants & Viennoiseries</h2>
-                    <p class="mb-2">Hojaldre artesanal elaborado con manteca francesa</p>
+                    <h2 class="text-gold" data-translate="categoria.croissants.title">🥐 Croissants & Viennoiseries</h2>
+                    <p class="mb-2" data-translate="categoria.croissants.subtitle">Hojaldre artesanal elaborado con manteca francesa</p>
                 </div>
                 <div class="product-gallery">
                     <article class="product-card" data-product="croissant-tradicional">
@@ -120,18 +120,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="croissant-tradicional">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Croissant Tradicional</h3>
                             <p class="product-description">Hojaldre clásico con manteca francesa, crujiente por fuera y tierno por dentro.</p>
-                            <div class="product-price">
-                                <span class="precio">$4.000</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$4.000</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (80g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="croissant-tradicional"
+                                    data-name="Croissant Tradicional"
+                                    data-price="4000"
+                                    data-image="images/products_images/croissant.jpg">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -145,18 +167,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="pain-au-chocolat">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Pain au Chocolat</h3>
                             <p class="product-description">Hojaldre relleno de barritas de chocolate belga de alta calidad.</p>
-                            <div class="product-price">
-                                <span class="precio">$4.700</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$4.700</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (90g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="pain-au-chocolat"
+                                    data-name="Pain au Chocolat"
+                                    data-price="4700"
+                                    data-image="images/products_images/pain_au_chocolat.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -170,18 +214,41 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="croissant-almendras">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Croissant de Almendra</h3>
                             <p class="product-description">Hojaldre relleno de crema de almendra y decorado con almendras laminadas.</p>
-                            <div class="product-price">
-                                <span class="precio">$5.700</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$5.700</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (95g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="croissant-almendras"
+                                    data-name="Croissant de Almendra"
+                                    data-price="5700"
+                                    data-image="images/products_images/croissant_almendras.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -195,18 +262,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="pain-aux-raisins">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Pain aux Raisins</h3>
                             <p class="product-description">Espiral de hojaldre con crema pastelera y pasas de uva sultana.</p>
-                            <div class="product-price">
-                                <span class="precio">$5.400</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$5.400</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (100g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="pain-aux-raisins"
+                                    data-name="Pain aux Raisins"
+                                    data-price="5400"
+                                    data-image="images/products_images/Pain_aux_Raisins.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -220,18 +309,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="brioche">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Brioche</h3>
                             <p class="product-description">Pan enriquecido con manteca y huevos, de textura esponjosa y sabor delicado.</p>
-                            <div class="product-price">
-                                <span class="precio">$7.700</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$7.700</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (110g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="brioche"
+                                    data-name="Brioche"
+                                    data-price="7700"
+                                    data-image="images/products_images/pan_brioche.jpg">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -245,18 +356,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="chausson-aux-pommes">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Chausson aux Pommes</h3>
                             <p class="product-description">Empanada de hojaldre rellena de manzanas caramelizadas con canela.</p>
-                            <div class="product-price">
-                                <span class="precio">$4.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$4.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (85g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="chausson-aux-pommes"
+                                    data-name="Chausson aux Pommes"
+                                    data-price="4500"
+                                    data-image="images/products_images/ChaussonauxPommes.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -268,8 +401,8 @@
         <section id="macarons" class="section bg-cream product-category" data-category="macarons">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="text-gold">🍪 Macarons Parisinos</h2>
-                    <p class="mb-2">Delicadas galletas de almendra rellenas con ganache artesanal</p>
+                    <h2 class="text-gold" data-translate="categoria.macarons.title">🍪 Macarons Parisinos</h2>
+                    <p class="mb-2" data-translate="categoria.macarons.subtitle">Delicadas galletas de almendra rellenas con ganache artesanal</p>
                 </div>
                 <div class="macarons-info">
                     <div class="info-card">
@@ -292,18 +425,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-frambuesa">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Frambuesa</h3>
                             <p class="product-description">Ganache de frambuesa fresca con toque cítrico.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-frambuesa"
+                                    data-name="Macaron de Frambuesa"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_frambuesa.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -317,18 +471,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-pistacho">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Pistacho</h3>
                             <p class="product-description">Pasta de pistacho siciliano con notas tostadas.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-pistacho"
+                                    data-name="Macaron de Pistacho"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_pistacho.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -342,18 +517,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-chocolate">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Chocolate</h3>
                             <p class="product-description">Ganache de chocolate belga 70% cacao.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-chocolate"
+                                    data-name="Macaron de Chocolate"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_chocolate.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -367,18 +564,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-vainilla">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Vainilla</h3>
                             <p class="product-description">Crema de vainilla de Madagascar premium.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-vainilla"
+                                    data-name="Macaron de Vainilla"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_vainilla.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -392,18 +611,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-lavanda">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Lavanda</h3>
                             <p class="product-description">Delicada esencia de lavanda provenzal.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-lavanda"
+                                    data-name="Macaron de Lavanda"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_lavanda.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -417,18 +657,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-limon">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Limón</h3>
                             <p class="product-description">Curd de limón fresco con ralladura natural.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-limon"
+                                    data-name="Macaron de Limón"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_limon.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -442,18 +703,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-rosa">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Rosa</h3>
                             <p class="product-description">Agua de rosas turcas con pétalos cristalizados.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-rosa"
+                                    data-name="Macaron de Rosa"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_rosa.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -467,18 +749,40 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="macaron-caramelo">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Caramelo</h3>
                             <p class="product-description">Caramelo beurre salé con flor de sal de Guérande.</p>
-                            <div class="product-price">
-                                <span class="precio">$2.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$2.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 unidad (25g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="macaron-caramelo"
+                                    data-name="Macaron de Caramelo"
+                                    data-price="2500"
+                                    data-image="images/products_images/macaron_caramel.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                             <a href="promociones.html" class="promo-link">
-                                <i class="fas fa-tags"></i> Ver promoción
+                                <i class="fas fa-tags"></i> <span data-translate="producto.ver.promo">Ver promoción</span>
                             </a>
                         </div>
                     </article>
@@ -490,8 +794,8 @@
         <section id="pasteles" class="section product-category" data-category="pasteles">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="text-gold">🎂 Pasteles & Tartas</h2>
-                    <p class="mb-2">Creaciones clásicas de la alta pastelería francesa</p>
+                    <h2 class="text-gold" data-translate="categoria.pasteles.title">🎂 Pasteles & Tartas</h2>
+                    <p class="mb-2" data-translate="categoria.pasteles.subtitle">Creaciones clásicas de la alta pastelería francesa</p>
                 </div>
                 <div class="product-gallery">
                     <article class="product-card" data-product="opera-cake">
@@ -502,16 +806,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="opera-cake">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Opera Cake</h3>
                             <p class="product-description">Capas de bizcocho, ganache de chocolate y buttercream de café cubierto con glaseado espejo.</p>
-                            <div class="product-price">
-                                <span class="precio">$7.200</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$7.200</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (120g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="opera-cake"
+                                    data-name="Opera Cake"
+                                    data-price="7200"
+                                    data-image="images/products_images/opera_cake.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
 
@@ -523,16 +850,38 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="tarte-tatin">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Tarte Tatin</h3>
                             <p class="product-description">Tarta invertida de manzanas caramelizadas sobre masa quebrada. Un clásico francés.</p>
-                            <div class="product-price">
-                                <span class="precio">$4.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$4.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (115g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="tarte-tatin"
+                                    data-name="Tarte Tatin"
+                                    data-price="4500"
+                                    data-image="images/products_images/Tarte_Tatin.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
 
@@ -544,16 +893,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="fraisier">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Fraisier</h3>
                             <p class="product-description">Bizcocho genovés con crema mousseline y fresas frescas, cubierto con mazapán.</p>
-                            <div class="product-price">
-                                <span class="precio">$6.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$6.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (130g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="fraisier"
+                                    data-name="Fraisier"
+                                    data-price="6500"
+                                    data-image="images/products_images/Fraisier_cake.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
 
@@ -565,16 +937,38 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="saint-honore">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Saint-Honoré</h3>
                             <p class="product-description">Base de masa quebrada con profiteroles caramelizados y crema Chiboust.</p>
-                            <div class="product-price">
-                                <span class="precio">$7.200</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$7.200</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (140g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="saint-honore"
+                                    data-name="Saint-Honoré"
+                                    data-price="7200"
+                                    data-image="images/products_images/saint_honore.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
 
@@ -586,16 +980,38 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="mille-feuille">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Mille-feuille</h3>
                             <p class="product-description">Tres capas de hojaldre crujiente con crema pastelera y glaseado fondant.</p>
-                            <div class="product-price">
-                                <span class="precio">$7.200</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$7.200</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (125g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="mille-feuille"
+                                    data-name="Mille-feuille"
+                                    data-price="7200"
+                                    data-image="images/products_images/mille_feuille.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
 
@@ -607,16 +1023,39 @@
                             <div class="product-overlay">
                                 <button class="btn-quick-view" data-product="paris-brest">
                                     <i class="fas fa-eye"></i>
-                                    Vista Rápida
+                                    <span data-translate="producto.vista.rapida">Vista Rápida</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Paris-Brest</h3>
                             <p class="product-description">Corona de masa choux rellena de crema de praline y avellanas tostadas.</p>
-                            <div class="product-price">
-                                <span class="precio">$6.500</span>
+                            <div class="product-details">
+                                <div class="price-portion">
+                                    <span class="precio">$6.500</span>
+                                    <span class="portion-separator"> • </span>
+                                    <span class="porcion">
+                                        <span data-translate="producto.porcion">Porción</span>: 1 porción (150g)
+                                    </span>
+                                </div>
+                                <div class="allergen-info">
+                                    <span class="allergen-label" data-translate="producto.contiene">Contiene</span>:
+                                    <div class="allergen-icons">
+                                        <span class="allergen-icon" title="Gluten" data-translate-title="producto.gluten">🌾</span>
+                                        <span class="allergen-icon" title="Huevo" data-translate-title="producto.huevo">🥚</span>
+                                        <span class="allergen-icon" title="Lácteos" data-translate-title="producto.lacteos">🥛</span>
+                                        <span class="allergen-icon" title="Frutos secos" data-translate-title="producto.frutos.secos">🌰</span>
+                                    </div>
+                                </div>
                             </div>
+                            <button class="add-to-cart-btn"
+                                    data-id="paris-brest"
+                                    data-name="Paris-Brest"
+                                    data-price="6500"
+                                    data-image="images/products_images/paris_brest.png">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span data-translate="producto.agregar">Agregar al Carrito</span>
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -627,8 +1066,8 @@
         <section id="pedidos-especiales" class="section bg-cream product-category" data-category="especiales">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="text-gold">✨ Pedidos Especiales</h2>
-                    <p class="mb-2">Creamos tortas y arreglos personalizados para tus eventos</p>
+                    <h2 class="text-gold" data-translate="categoria.especiales.title">✨ Pedidos Especiales</h2>
+                    <p class="mb-2" data-translate="categoria.especiales.subtitle">Creamos tortas y arreglos personalizados para tus eventos</p>
                 </div>
                 <div class="special-orders-content">
                     <div class="special-orders-grid">
@@ -892,5 +1331,6 @@
     <script src="js/cart.js"></script>
     <script src="js/product-filters.js"></script>
     <script src="js/productos.js"></script>
+    <script src="js/translations.js"></script>
 </body>
 </html>

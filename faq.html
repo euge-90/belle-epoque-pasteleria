@@ -187,13 +187,13 @@
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#nosotros">Nosotros</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="promociones.html">Promociones</a></li>
-            <li><a href="faq.html" class="active">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="index.html" data-translate="nav.inicio">Inicio</a></li>
+            <li><a href="index.html#nosotros" data-translate="nav.nosotros">Nosotros</a></li>
+            <li><a href="productos.html" data-translate="nav.productos">Productos</a></li>
+            <li><a href="promociones.html" data-translate="nav.promociones">Promociones</a></li>
+            <li><a href="faq.html" class="active" data-translate="nav.faq">FAQ</a></li>
+            <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+            <li><a href="index.html#contacto" data-translate="nav.contacto">Contacto</a></li>
         </ul>
         <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
@@ -205,8 +205,8 @@
     <main>
         <!-- Hero -->
         <section class="faq-hero">
-            <h1>Preguntas Frecuentes</h1>
-            <p>Encuentra respuestas a las consultas más comunes</p>
+            <h1 data-translate="faq.hero.title">Preguntas Frecuentes</h1>
+            <p data-translate="faq.hero.subtitle">Encuentra respuestas a las consultas más comunes</p>
         </section>
 
         <!-- FAQ Container -->
@@ -430,6 +430,7 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/translations.js"></script>
 
     <!-- FAQ Accordion Script -->
     <script>

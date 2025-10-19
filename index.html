@@ -68,13 +68,13 @@
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="promociones.html">Promociones</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" data-translate="nav.inicio">Inicio</a></li>
+            <li><a href="#nosotros" data-translate="nav.nosotros">Nosotros</a></li>
+            <li><a href="productos.html" data-translate="nav.productos">Productos</a></li>
+            <li><a href="promociones.html" data-translate="nav.promociones">Promociones</a></li>
+            <li><a href="faq.html" data-translate="nav.faq">FAQ</a></li>
+            <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+            <li><a href="#contacto" data-translate="nav.contacto">Contacto</a></li>
         </ul>
         <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
@@ -86,8 +86,8 @@
     <main>
         <!-- Sección Hero: usa la foto del local como fondo -->
         <section id="inicio" class="hero hero-with-image">
-            <h1 class="fade-in">Belle Époque</h1>
-            <p class="fade-in">Auténtica pastelería francesa en el corazón de la galería.</p>
+            <h1 class="fade-in" data-translate="hero.title">Belle Époque</h1>
+            <p class="fade-in" data-translate="hero.subtitle">Auténtica pastelería francesa en el corazón de la galería.</p>
         </section>
 
         
@@ -96,22 +96,22 @@
         <section id="nosotros" class="section">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="text-gold">Nosotros</h2>
-                    <p>
+                    <h2 class="text-gold" data-translate="nosotros.title">Nosotros</h2>
+                    <p data-translate="nosotros.p1">
                         Belle Époque nació del amor por la pastelería francesa artesanal y el deseo de
                         compartirla en un lugar cercano, cálido y elegante. Cada madrugada trabajamos
                         la masa con paciencia para lograr ese hojaldre ligero y crujiente que perfuma la
                         galería con manteca francesa y vainilla.
                     </p>
-                    <blockquote class="highlight-quote">
-                        “Creemos en lo simple y bien hecho: ingredientes nobles, técnica clásica
-                        y un servicio amable en el corazón de la ciudad.”
+                    <blockquote class="highlight-quote" data-translate="nosotros.quote">
+                        "Creemos en lo simple y bien hecho: ingredientes nobles, técnica clásica
+                        y un servicio amable en el corazón de la ciudad."
                     </blockquote>
                     <p>
                         Estamos en <strong>Florida 165, San Martín 170, 1005 Buenos Aires</strong>, dentro de la galería.
-                        Un punto céntrico y práctico para pasar a buscar tu café con croissant, elegir una
+                        <span data-translate="nosotros.p2">Un punto céntrico y práctico para pasar a buscar tu café con croissant, elegir una
                         tarta para compartir o encargar una torta especial. Bienvenidos a nuestra esquina
-                        de París en Buenos Aires.
+                        de París en Buenos Aires.</span>
                     </p>
                 </div>
                 <div class="about-image">
@@ -122,8 +122,8 @@
 
         <section id="local" class="section local-section">
             <div class="text-center">
-                <h2 class="text-gold">Nuestro Local</h2>
-                <p>Ambiente elegante y productos recién hechos en el corazón de la galería.</p>
+                <h2 class="text-gold" data-translate="local.title">Nuestro Local</h2>
+                <p data-translate="local.subtitle">Ambiente elegante y productos recién hechos en el corazón de la galería.</p>
             </div>
             <div class="local-image-wrapper local-grid">
                 <img src="images/interior.png" alt="Interior del local Belle Époque - vista 1" loading="lazy">
@@ -135,7 +135,7 @@
         <section id="productos" class="section">
             <!-- Ver todos nuestros productos (galería expandida) -->
             <div class="text-center mt-3">
-                <h3 class="mb-2">Algunos de nuestros productos</h3>
+                <h3 class="mb-2" data-translate="productos.preview.title">Algunos de nuestros productos</h3>
             </div>
             <div class="product-gallery">
                 <!-- Nuevos items movidos desde "Especialidades" -->
@@ -189,7 +189,7 @@
                 </figure>
             </div>
             <div class="text-center mt-3">
-                <a href="productos.html" class="cta-button">Ver todos los productos</a>
+                <a href="productos.html" class="cta-button" data-translate="productos.ver.catalogo">Ver Catálogo Completo</a>
             </div>
         </section>
 
@@ -213,7 +213,7 @@
         <section id="contacto" class="section">
             <div class="contact-info">
                 <div class="contact-card">
-                    <h3>Ubicación</h3>
+                    <h3 data-translate="contacto.ubicacion">Ubicación</h3>
                     <a href="#inicio" class="contact-logo-link" aria-label="Ir al inicio">
                         <img src="images/logo.png" alt="Belle Époque Logo" class="contact-logo-img" />
                     </a>
@@ -229,7 +229,6 @@
                                                     id="mapIframe"
                           src="https://www.google.com/maps?q=Florida+165,+San+Mart%C3%ADn+170,+1005+Buenos+Aires&output=embed"
                           loading="lazy"
-                          referrerpolicy="no-referrer-when-downgrade"
                           allowfullscreen
                           aria-label="Mapa de ubicación Belle Époque en Florida 165 y San Martín 170, 1005 Buenos Aires">
                         </iframe>
@@ -259,13 +258,13 @@
                 </div>
 
                 <div class="contact-card">
-                    <h3>Horarios</h3>
+                    <h3 data-translate="contacto.horarios">Horarios</h3>
                     <div class="hours-list">
-                        <p><strong>LUNES A VIERNES</strong></p>
+                        <p><strong data-translate="contacto.lun.vie">LUNES A VIERNES</strong></p>
                         <p class="hours-time">8:30 a 19:30 hs</p>
-                        <p><strong>SÁBADOS</strong></p>
+                        <p><strong data-translate="contacto.sabado">SÁBADOS</strong></p>
                         <p class="hours-time">9:00 a 19:30 hs</p>
-                        <p><strong>DOMINGOS</strong></p>
+                        <p><strong data-translate="contacto.domingo">DOMINGOS</strong></p>
                         <p class="hours-time">Cerrado</p>
                     </div>
                 </div>
@@ -314,5 +313,6 @@
     <script src="js/cart.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/testimonials.js"></script>
+    <script src="js/translations.js"></script>
 </body>
 </html>

@@ -4513,8 +4513,168 @@ footer {
         max-width: none;
         transform: translateY(-100%);
     }
-    
+
     .promo-notification.show {
         transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   PRODUCT DETAILS - MEJORAS UX
+   =========================================== */
+
+.product-card .product-details {
+    margin-top: 15px;
+    padding: 18px 15px;
+    background: linear-gradient(135deg, #faf8f3 0%, #f5f5dc 100%);
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+}
+
+.price-portion {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-family: 'Georgia', serif;
+}
+
+.precio {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c1810;
+    letter-spacing: -0.5px;
+}
+
+.portion-separator {
+    font-size: 20px;
+    color: #d4af37;
+    opacity: 0.6;
+    margin: 0 4px;
+}
+
+.porcion {
+    font-size: 14px;
+    color: #8b4513;
+    font-weight: 500;
+}
+
+.allergen-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.allergen-label {
+    font-size: 13px;
+    color: #8b4513;
+    font-weight: 600;
+    font-family: 'Georgia', serif;
+}
+
+.allergen-icons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.allergen-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: white;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.allergen-icon:hover {
+    background: #d4af37;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Tooltip para alérgenos */
+.allergen-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: #2c1810;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-family: 'Georgia', serif;
+    z-index: 10;
+}
+
+.allergen-icon:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.add-to-cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942e 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #b8942e 0%, #d4af37 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.add-to-cart-btn i {
+    font-size: 18px;
+}
+
+/* Responsive para detalles de producto */
+@media (max-width: 768px) {
+    .price-portion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .portion-separator {
+        display: none;
+    }
+
+    .allergen-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .add-to-cart-btn {
+        padding: 12px 20px;
+        font-size: 15px;
     }
 }

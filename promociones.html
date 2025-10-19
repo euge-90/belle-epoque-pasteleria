@@ -27,13 +27,13 @@
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#nosotros">Nosotros</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="promociones.html" class="active">Promociones</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="index.html" data-translate="nav.inicio">Inicio</a></li>
+            <li><a href="index.html#nosotros" data-translate="nav.nosotros">Nosotros</a></li>
+            <li><a href="productos.html" data-translate="nav.productos">Productos</a></li>
+            <li><a href="promociones.html" class="active" data-translate="nav.promociones">Promociones</a></li>
+            <li><a href="faq.html" data-translate="nav.faq">FAQ</a></li>
+            <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+            <li><a href="index.html#contacto" data-translate="nav.contacto">Contacto</a></li>
         </ul>
         <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
             <span></span>
@@ -50,8 +50,8 @@
         <!-- Hero Section -->
         <section class="hero hero-promociones">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">Promociones Especiales</h1>
-                <p class="hero-description fade-in">Disfrutá de ofertas exclusivas en nuestra selección de productos artesanales franceses</p>
+                <h1 class="hero-title fade-in" data-translate="promociones.hero.title">Promociones Especiales</h1>
+                <p class="hero-description fade-in" data-translate="promociones.hero.subtitle">Disfrutá de ofertas exclusivas en nuestra selección de productos artesanales franceses</p>
             </div>
         </section>
 
@@ -2231,6 +2231,7 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/promociones.js"></script>
+    <script src="js/translations.js"></script>
 
 </body>
 </html>
