@@ -90,7 +90,21 @@ class TranslationSystem {
 
                 // FAQ
                 'faq.hero.title': 'Preguntas Frecuentes',
-                'faq.hero.subtitle': 'Todo lo que necesitas saber sobre Belle Époque',
+                'faq.hero.subtitle': 'Encuentra respuestas a las consultas más comunes',
+                'faq.search.placeholder': '🔍 Buscar en preguntas frecuentes...',
+                'faq.q1': '¿Hacen envíos a domicilio?',
+                'faq.q2': '¿Puedo encargar tortas personalizadas?',
+                'faq.q3': '¿Cuánto tiempo de anticipación necesitan para pedidos especiales?',
+                'faq.q4': '¿Tienen opciones veganas o sin gluten?',
+                'faq.q5': '¿Aceptan reservas para eventos?',
+                'faq.q6': '¿Cuáles son sus métodos de pago?',
+                'faq.q7': '¿Los productos son de elaboración diaria?',
+                'faq.q8': '¿Tienen programa de fidelidad o descuentos?',
+                'faq.contact.title': '¿No encontraste lo que buscabas?',
+                'faq.contact.subtitle': 'Estamos aquí para ayudarte. Contactanos por cualquiera de estos medios:',
+                'faq.contact.whatsapp': 'WhatsApp',
+                'faq.contact.email': 'Email',
+                'faq.contact.form': 'Formulario de contacto',
 
                 // Política de Privacidad
                 'privacidad.hero.title': 'Política de Privacidad y Términos Legales',
@@ -230,9 +244,27 @@ class TranslationSystem {
                 // FAQ
                 'faq.hero.title': 'Frequently Asked Questions',
                 'faq.hero.subtitle': 'Everything you need to know about Belle Époque',
+                'faq.search.placeholder': '🔍 Search frequently asked questions...',
+                'faq.q1': 'Do you offer home delivery?',
+                'faq.q2': 'Can I order custom cakes?',
+                'faq.q3': 'How much advance notice do you need for special orders?',
+                'faq.q4': 'Do you have vegan or gluten-free options?',
+                'faq.q5': 'Do you accept reservations for events?',
+                'faq.q6': 'What are your payment methods?',
+                'faq.q7': 'Are the products made fresh daily?',
+                'faq.q8': 'Do you have a loyalty program or discounts?',
+                'faq.contact.title': 'Didn\'t find what you were looking for?',
+                'faq.contact.subtitle': 'We are here to help you. Contact us through any of these channels:',
+                'faq.contact.whatsapp': 'WhatsApp',
+                'faq.contact.email': 'Email',
+                'faq.contact.form': 'Contact form',
 
                 // Privacy Policy
                 'privacidad.hero.title': 'Privacy Policy and Legal Terms',
+                'privacidad.politica.titulo': 'Privacy Policy',
+                'privacidad.terminos.titulo': 'Terms and Conditions',
+                'privacidad.contacto.titulo': 'Contact Information',
+                'privacidad.actualizado': 'Last updated:',
 
                 // Contact
                 'contacto.title': 'Contact',

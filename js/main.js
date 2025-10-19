@@ -71,32 +71,27 @@ function initHeaderScroll() {
 // 4. BOTÓN VOLVER ARRIBA
 // ============================================
 function initBackToTop() {
-    // Crear botón si no existe
-    let backToTopBtn = document.getElementById('back-to-top');
+    // Buscar botón(es) back-to-top en el DOM
+    const backToTopBtns = document.querySelectorAll('.back-to-top');
 
-    if (!backToTopBtn) {
-        backToTopBtn = document.createElement('button');
-        backToTopBtn.id = 'back-to-top';
-        backToTopBtn.className = 'back-to-top';
-        backToTopBtn.setAttribute('aria-label', 'Volver arriba');
-        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-        document.body.appendChild(backToTopBtn);
-    }
+    if (backToTopBtns.length === 0) return;
 
     // Mostrar/ocultar según scroll
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('show');
+            backToTopBtns.forEach(btn => btn.classList.add('visible', 'show'));
         } else {
-            backToTopBtn.classList.remove('show');
+            backToTopBtns.forEach(btn => btn.classList.remove('visible', 'show'));
         }
     });
 
-    // Scroll al hacer click
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // Scroll al hacer click (para los que no tienen onclick inline)
+    backToTopBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     });
 }
