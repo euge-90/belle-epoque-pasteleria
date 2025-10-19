@@ -518,12 +518,15 @@ body.promociones-page {
 }
 
 /* ===== TIPS Y CONSEJOS ===== */
+
 .tips-grid {
+    --carousel-gap: 2rem;
     display: flex;
-    gap: 2rem;
+    gap: var(--carousel-gap);
     margin-top: 3rem;
     transition: transform 0.5s ease;
     overflow: visible;
+    align-items: stretch;
 }
 
 .tip-card {
@@ -533,19 +536,24 @@ body.promociones-page {
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: all 0.3s ease;
     border-top: 4px solid var(--gold-primary);
-    min-width: 100%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
 }
 
 @media (min-width: 768px) {
     .tip-card {
-        min-width: calc(50% - 1rem);
+        flex: 0 0 calc(50% - (var(--carousel-gap) / 2));
     }
 }
 
 @media (min-width: 1024px) {
     .tip-card {
-        min-width: calc(33.333% - 1.34rem);
+        flex: 0 0 calc((100% - (2 * var(--carousel-gap))) / 3);
+    }
+}
+
+@media (min-width: 1400px) {
+    .tip-card {
+        flex: 0 0 calc((100% - (3 * var(--carousel-gap))) / 4);
     }
 }
 
@@ -593,11 +601,13 @@ body.promociones-page {
 
 /* ===== PRODUCTOS POPULARES ===== */
 .popular-products {
+    --carousel-gap: 2rem;
     display: flex;
-    gap: 2rem;
+    gap: var(--carousel-gap);
     margin-top: 3rem;
     transition: transform 0.5s ease;
     overflow: visible;
+    align-items: stretch;
 }
 
 .popular-item {
@@ -610,19 +620,24 @@ body.promociones-page {
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    min-width: 100%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
 }
 
 @media (min-width: 768px) {
     .popular-item {
-        min-width: calc(50% - 1rem);
+        flex: 0 0 calc(50% - (var(--carousel-gap) / 2));
     }
 }
 
 @media (min-width: 1200px) {
     .popular-item {
-        min-width: calc(33.333% - 1.34rem);
+        flex: 0 0 calc((100% - (2 * var(--carousel-gap))) / 3);
+    }
+}
+
+@media (min-width: 1400px) {
+    .popular-item {
+        flex: 0 0 calc((100% - (3 * var(--carousel-gap))) / 4);
     }
 }
 
@@ -2840,7 +2855,7 @@ select:focus {
 }
 
 .carousel-track {
-    overflow: hidden;
+    overflow: visible;
 }
 
 .carousel-btn {

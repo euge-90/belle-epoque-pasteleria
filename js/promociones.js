@@ -72,6 +72,21 @@ const promotions = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
     loadSavedCart();
+
+    // Inicializar carruseles
+    new Carousel(
+        '.popular-products',
+        'popular-prev',
+        'popular-next',
+        'popular-dots'
+    );
+
+    new Carousel(
+        '.tips-grid',
+        'tips-prev',
+        'tips-next',
+        'tips-dots'
+    );
 });
 
 // Event Listeners
@@ -317,23 +332,12 @@ class Carousel {
         this.nextBtn = document.getElementById(nextBtnId);
         this.dotsContainer = document.getElementById(dotsContainerId);
 
-        console.log('Carousel init:', {
-            trackSelector,
-            track: this.track,
-            prevBtn: this.prevBtn,
-            nextBtn: this.nextBtn,
-            dotsContainer: this.dotsContainer
-        });
-
         if (!this.track) {
-            console.error('Track not found:', trackSelector);
             return;
         }
 
         this.items = Array.from(this.track.children);
         this.currentIndex = 0;
-
-        console.log('Carousel items:', this.items.length);
 
         this.init();
     }
@@ -351,7 +355,7 @@ class Carousel {
         if (!this.dotsContainer) return;
 
         const itemsPerView = this.getItemsPerView();
-        const totalDots = this.items.length - itemsPerView + 1;
+        const totalDots = Math.max(1, this.items.length - itemsPerView + 1);
 
         this.dotsContainer.innerHTML = '';
 
@@ -376,30 +380,20 @@ class Carousel {
     getItemsPerView() {
         const width = window.innerWidth;
 
-        if (width >= 1200) return 3;
+        if (width >= 1400) return 4;
+        if (width >= 1024) return 3;
         if (width >= 768) return 2;
         return 1;
     }
 
     updateCarousel() {
         const itemsPerView = this.getItemsPerView();
-        const itemWidth = this.items[0] ? this.items[0].offsetWidth : 0;
 
-        // Obtener el gap del estilo computado
-        const gapStyle = getComputedStyle(this.track).gap;
-        const gap = gapStyle ? parseFloat(gapStyle) : 32; // gap en píxeles
+        // Usar offsetLeft del item objetivo para un posicionamiento más preciso
+        const targetItem = this.items[this.currentIndex];
+        const offset = targetItem ? -targetItem.offsetLeft : 0;
 
-        // Calcular el desplazamiento total en píxeles
-        const offset = -(this.currentIndex * (itemWidth + gap));
         this.track.style.transform = `translateX(${offset}px)`;
-
-        console.log('Carousel update:', {
-            currentIndex: this.currentIndex,
-            itemWidth,
-            gap,
-            offset,
-            itemsPerView
-        });
 
         // Actualizar botones
         this.updateButtons();
@@ -412,9 +406,10 @@ class Carousel {
         if (!this.prevBtn || !this.nextBtn) return;
 
         const itemsPerView = this.getItemsPerView();
+        const maxIndex = Math.max(0, this.items.length - itemsPerView);
 
         this.prevBtn.disabled = this.currentIndex === 0;
-        this.nextBtn.disabled = this.currentIndex >= this.items.length - itemsPerView;
+        this.nextBtn.disabled = this.currentIndex >= maxIndex;
     }
 
     updateDots() {
@@ -429,8 +424,9 @@ class Carousel {
 
     next() {
         const itemsPerView = this.getItemsPerView();
+        const maxIndex = Math.max(0, this.items.length - itemsPerView);
 
-        if (this.currentIndex < this.items.length - itemsPerView) {
+        if (this.currentIndex < maxIndex) {
             this.currentIndex += 1;
             this.updateCarousel();
         }
@@ -511,21 +507,4 @@ class Carousel {
     }
 }
 
-// Inicializar carruseles cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    // Carrusel de Productos Populares
-    new Carousel(
-        '.popular-products',
-        'popular-prev',
-        'popular-next',
-        'popular-dots'
-    );
-
-    // Carrusel de Tips
-    new Carousel(
-        '.tips-grid',
-        'tips-prev',
-        'tips-next',
-        'tips-dots'
-    );
-});
+// Los carruseles se inicializan en el listener principal de DOMContentLoaded (línea 72)

@@ -2056,7 +2056,10 @@
             elements.forEach(el => observer.observe(el));
         }
 
-        // ========== 13. INDICADORES DE STOCK DINÁMICOS ==========
+        // ========== 13. CARRUSELES DINÁMICOS ==========
+        // Los carruseles se manejan en js/promociones.js usando la clase Carousel
+
+        // ========== 14. INDICADORES DE STOCK DINÁMICOS ==========
         function initStockIndicators() {
             const stockIndicators = document.querySelectorAll('.stock-indicator:not(.unlimited)');
 
@@ -2102,6 +2105,7 @@
             initFavorites();
             initCountdowns();
             initModal();
+            // Los carruseles se inicializan automáticamente en js/promociones.js
             initScrollFeatures();
             initLazyLoading();
             initSkeletonLoader();
@@ -2117,6 +2121,9 @@
             }, 2000);
         });
     </script>
+
+    <!-- Script externo para carruseles y funcionalidad de promociones -->
+    <script src="js/promociones.js"></script>
 
 </body>
 </html>
