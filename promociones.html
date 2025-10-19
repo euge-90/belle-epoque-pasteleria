@@ -785,6 +785,10 @@
                         </div>
 
                         <div class="action-buttons">
+                            <button class="btn-action primary" id="add-to-cart-calculator">
+                                <i class="fas fa-shopping-cart"></i>
+                                Agregar al Carrito
+                            </button>
                             <button class="btn-action primary" id="whatsapp-order">
                                 <i class="fab fa-whatsapp"></i>
                                 Hacer Pedido por WhatsApp
@@ -1154,6 +1158,7 @@
             document.getElementById('add-product-btn').addEventListener('click', agregarProducto);
 
             // Event listeners para botones de acción
+            document.getElementById('add-to-cart-calculator').addEventListener('click', agregarCalculadoraAlCarrito);
             document.getElementById('whatsapp-order').addEventListener('click', enviarPorWhatsApp);
             document.getElementById('reset-calculator').addEventListener('click', resetearCalculadora);
 
@@ -1227,20 +1232,43 @@
             btnAgregar.disabled = !esValido;
         }
 
+        // Mapeo de productos a imágenes
+        const productImageMap = {
+            'Croissant Tradicional': 'images/croissants.png',
+            'Pain au Chocolat': 'images/croissants_2.png',
+            'Croissant de Almendra': 'images/croissants.png',
+            'Pain aux Raisins': 'images/danesa.png',
+            'Brioche': 'images/croissants.png',
+            'Chausson aux Pommes': 'images/manzanita.png',
+            'Macaron (unidad)': 'images/macarons.png',
+            'Caja x6 Macarons': 'images/macarons.png',
+            'Caja x12 Macarons': 'images/macarons.png',
+            'Opera Cake': 'images/torta.png',
+            'Tarte Tatin': 'images/torta.png',
+            'Fraisier': 'images/torta.png',
+            'Saint-Honoré': 'images/torta.png',
+            'Mille-feuille': 'images/hojaldre.png',
+            'Paris-Brest': 'images/torta.png',
+            'Éclair de Chocolate': 'images/eclairs.png',
+            'Éclair': 'images/eclairs.png'
+        };
+
         // Agregar producto al carrito
         function agregarProducto() {
             const select = document.getElementById('product-select');
             const cantidadInput = document.getElementById('quantity-select');
-            
+
             const selectedOption = select.selectedOptions[0];
             if (!selectedOption || !selectedOption.value) return;
 
+            const nombreProducto = selectedOption.dataset.name;
             const producto = {
                 id: Date.now(), // ID único
-                nombre: selectedOption.dataset.name,
+                nombre: nombreProducto,
                 precio: parseInt(selectedOption.value),
                 cantidad: parseInt(cantidadInput.value),
-                categoria: selectedOption.dataset.category
+                categoria: selectedOption.dataset.category,
+                imagen: productImageMap[nombreProducto] || 'images/torta.png'
             };
 
             calculadoraState.productos.push(producto);
@@ -1335,6 +1363,49 @@
         function actualizarVisualizacion() {
             actualizarListaProductos();
             actualizarResultados();
+        }
+
+        // Agregar productos de la calculadora al carrito global
+        function agregarCalculadoraAlCarrito() {
+            if (calculadoraState.productos.length === 0) {
+                showPromoNotification('Agregá productos antes de agregar al carrito');
+                return;
+            }
+
+            // Verificar que el carrito global esté disponible
+            if (typeof window.shoppingCart === 'undefined') {
+                showPromoNotification('Error: El sistema de carrito no está disponible');
+                return;
+            }
+
+            // Agregar cada producto al carrito global
+            let productosAgregados = 0;
+            calculadoraState.productos.forEach(producto => {
+                // Agregar el producto al carrito con la cantidad especificada
+                for (let i = 0; i < producto.cantidad; i++) {
+                    window.shoppingCart.addItem({
+                        id: producto.id,
+                        name: producto.nombre,
+                        price: producto.precio,
+                        image: producto.imagen || 'images/default.png',
+                        category: producto.categoria || 'Promociones'
+                    });
+                }
+                productosAgregados++;
+            });
+
+            // Mostrar confirmación
+            showPromoNotification(`¡${productosAgregados} producto(s) agregado(s) al carrito!`, 'success');
+
+            // Opcional: Limpiar la calculadora después de agregar al carrito
+            // resetearCalculadora();
+
+            // Opcional: Abrir el modal del carrito automáticamente
+            setTimeout(() => {
+                if (window.shoppingCart && window.shoppingCart.openCart) {
+                    window.shoppingCart.openCart();
+                }
+            }, 500);
         }
 
         // Enviar pedido por WhatsApp
@@ -1506,7 +1577,8 @@
                     nombre: nombre,
                     precio: parseInt(precio),
                     cantidad: 1,
-                    categoria: categoria
+                    categoria: categoria,
+                    imagen: productImageMap[nombre] || 'images/torta.png'
                 };
 
                 calculadoraState.productos.push(producto);
@@ -1552,7 +1624,8 @@
                             nombre: prod.nombre,
                             precio: prod.precio,
                             cantidad: 1,
-                            categoria: prod.categoria
+                            categoria: prod.categoria,
+                            imagen: productImageMap[prod.nombre] || 'images/torta.png'
                         };
                         calculadoraState.productos.push(producto);
                     });
