@@ -1,0 +1,326 @@
+/**
+ * BELLE ÉPOQUE - Estilos de Productos
+ * Estilos específicos para la página de productos y filtros
+ */
+
+/* ============================================
+   FILTROS DE PRODUCTOS
+   ============================================ */
+
+.productos-filters {
+    background: linear-gradient(135deg, var(--background-cream, #faf8f5) 0%, #fff 100%);
+    border-radius: var(--radius-lg, 12px);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.875rem 3rem 0.875rem 1.25rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-cream, #f5e6d3);
+    border-radius: var(--radius-md, 8px);
+    background: white;
+    transition: all var(--transition-normal, 0.3s ease);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--color-gold, #d4af37);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.search-bar button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-gold, #d4af37);
+    color: white;
+    border: none;
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius-sm, 6px);
+    cursor: pointer;
+    transition: all var(--transition-fast, 0.2s ease);
+}
+
+.search-bar button:hover {
+    background: var(--color-brown, #8b4513);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.search-bar button i {
+    font-size: 1rem;
+}
+
+/* Grid de filtros */
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Grupos de filtros */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--color-brown, #8b4513);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filter-group select {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 2px solid var(--color-cream, #f5e6d3);
+    border-radius: var(--radius-sm, 6px);
+    background: white;
+    color: var(--color-dark, #2c1810);
+    cursor: pointer;
+    transition: all var(--transition-normal, 0.3s ease);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filter-group select:hover {
+    border-color: var(--color-gold, #d4af37);
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--color-gold, #d4af37);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Checkboxes */
+.filter-checkboxes {
+    justify-content: flex-end;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm, 6px);
+    transition: background var(--transition-fast, 0.2s ease);
+}
+
+.checkbox-label:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: var(--color-gold, #d4af37);
+}
+
+.checkbox-label span {
+    font-size: 0.95rem;
+    color: var(--color-dark, #2c1810);
+    font-weight: 500;
+}
+
+/* Botón limpiar filtros */
+.btn-clear-filters {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    background: white;
+    border: 2px solid var(--color-gold, #d4af37);
+    color: var(--color-gold, #d4af37);
+    border-radius: var(--radius-md, 8px);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-normal, 0.3s ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: auto;
+}
+
+.btn-clear-filters:hover {
+    background: var(--color-gold, #d4af37);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-clear-filters i {
+    font-size: 1rem;
+}
+
+/* Resultados */
+.filter-results {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius-md, 8px);
+    border: 2px solid var(--color-cream, #f5e6d3);
+}
+
+.filter-results span {
+    color: var(--color-brown, #8b4513);
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+}
+
+.filter-results strong {
+    color: var(--color-gold, #d4af37);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+/* Mensaje sin resultados */
+.no-results-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--background-cream, #faf8f5);
+    border-radius: var(--radius-lg, 12px);
+    margin: 2rem 0;
+}
+
+.no-results-message i {
+    font-size: 3rem;
+    color: var(--color-gold, #d4af37);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.no-results-message h3 {
+    color: var(--color-brown, #8b4513);
+    margin-bottom: 0.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+.no-results-message p {
+    color: var(--color-dark, #2c1810);
+    opacity: 0.7;
+    font-family: 'Lora', serif;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInFilter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.productos-filters {
+    animation: fadeInFilter 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .productos-filters {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .search-bar input {
+        padding: 0.75rem 2.5rem 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .filter-group select {
+        font-size: 0.9rem;
+    }
+
+    .btn-clear-filters {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .productos-filters {
+        background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+        border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .search-bar input,
+    .filter-group select {
+        background: #1a0f08;
+        color: #f5e6d3;
+        border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .filter-results {
+        background: #1a0f08;
+        border-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .filter-results span {
+        color: #f5e6d3;
+    }
+
+    .checkbox-label span {
+        color: #f5e6d3;
+    }
+
+    .btn-clear-filters {
+        background: #1a0f08;
+        border-color: var(--color-gold, #d4af37);
+    }
+
+    .btn-clear-filters:hover {
+        background: var(--color-gold, #d4af37);
+        color: #1a0f08;
+    }
+
+    .no-results-message {
+        background: #2c1810;
+    }
+
+    .no-results-message h3 {
+        color: #f5e6d3;
+    }
+
+    .no-results-message p {
+        color: #f5e6d3;
+    }
+}
