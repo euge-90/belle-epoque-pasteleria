@@ -536,6 +536,10 @@ main {
 }
 
 /* ===== CONTACTO ===== */
+#contacto {
+    padding-top: 2rem;
+}
+
 .contact-info {
     display: flex;
     flex-wrap: wrap;
@@ -697,8 +701,8 @@ footer {
     /* Fondo sectorizado: el color va en el contenedor, no a pantalla completa */
     background: transparent;
     color: var(--text-dark);
-    padding: 3rem 5% 2.5rem;
-    margin-top: 3rem;
+    padding: 3rem 5% 1rem;
+    margin-top: 2rem;
 }
 .trusted-container {
     max-width: 1200px;
