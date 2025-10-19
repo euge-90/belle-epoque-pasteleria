@@ -1401,20 +1401,31 @@
                 }, 500);
             }
 
-            // Verificar que el carrito global esté disponible con retry
-            if (typeof window.cart === 'undefined') {
-                // Intentar de nuevo después de un breve momento
-                setTimeout(() => {
-                    if (typeof window.cart === 'undefined') {
-                        showPromoNotification('Error: El sistema de carrito no está disponible. Por favor, recargá la página.', 'error');
-                        console.error('window.cart no está definido después de retry');
-                        return;
-                    }
+            // Esperar a que window.cart esté disponible con polling
+            console.log('🔍 Buscando window.cart...');
+            let intentos = 0;
+            const maxIntentos = 20; // 20 intentos x 100ms = 2 segundos máximo
+
+            const esperarCarrito = setInterval(() => {
+                intentos++;
+                console.log(`⏳ Intento ${intentos}/${maxIntentos}, window.cart:`, typeof window.cart);
+
+                if (typeof window.cart !== 'undefined') {
+                    // Carrito encontrado!
+                    console.log('✅ Carrito encontrado en intento', intentos);
+                    clearInterval(esperarCarrito);
                     agregarAlCarrito();
-                }, 300);
-            } else {
-                agregarAlCarrito();
-            }
+                } else if (intentos >= maxIntentos) {
+                    // Timeout después de 2 segundos
+                    clearInterval(esperarCarrito);
+                    console.error('❌ window.cart no está definido después de', intentos * 100, 'ms');
+                    console.error('Estado de scripts:', {
+                        cartJs: !!document.querySelector('script[src*="cart.js"]'),
+                        mainJs: !!document.querySelector('script[src*="main.js"]')
+                    });
+                    showPromoNotification('Error: El sistema de carrito no está disponible. Por favor, recargá la página.', 'error');
+                }
+            }, 100); // Verificar cada 100ms
         }
 
         // Enviar pedido por WhatsApp

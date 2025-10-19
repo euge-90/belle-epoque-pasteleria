@@ -391,10 +391,14 @@ class ShoppingCart {
 // Inicializar carrito cuando el DOM esté listo
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
+        console.log('🛒 Inicializando carrito (DOMContentLoaded)...');
         window.cart = new ShoppingCart();
+        console.log('✅ window.cart creado:', typeof window.cart);
     });
 } else {
+    console.log('🛒 Inicializando carrito (inmediato)...');
     window.cart = new ShoppingCart();
+    console.log('✅ window.cart creado:', typeof window.cart);
 }
 
-console.log('🛒 Sistema de carrito inicializado');
+console.log('📦 cart.js cargado correctamente');
