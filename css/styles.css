@@ -1508,6 +1508,106 @@ footer {
     justify-content: space-between;
 }
 
+/* Badge de promoción en productos */
+.product-badge.promo-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 0.75rem;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(220, 38, 38, 0.4);
+    animation: badgePulse 2s infinite;
+}
+
+/* Enlace a promociones en productos */
+.promo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.promo-link:hover {
+    color: var(--secondary-color);
+    gap: 0.75rem;
+}
+
+.promo-link i {
+    font-size: 1rem;
+}
+
+/* Banner de alerta de promociones */
+.promo-alert-banner {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.promo-alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.promo-alert-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.promo-alert-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.promo-alert-text h3 {
+    color: var(--text-dark);
+    font-family: var(--font-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.promo-alert-text p {
+    color: #666;
+    margin: 0;
+}
+
+.promo-alert-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.promo-alert-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+    gap: 0.75rem;
+}
+
 /* Modal de vista rápida */
 .product-modal {
     display: none;
