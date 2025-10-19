@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add .)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nrefactor: mejorar accesibilidad y limpiar estilos inline del footer\n\n- Agregar aria-label al toggle de navegación para mejorar accesibilidad\n- Refactorizar estilos inline de enlaces legales del footer a clase CSS\n- Aplicar cambios consistentemente en todas las páginas\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
