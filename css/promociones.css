@@ -3014,3 +3014,229 @@ select:focus {
         height: 35px;
     }
 }
+
+/* =============================================
+   DARK MODE - PROMOCIONES
+   ============================================= */
+@media (prefers-color-scheme: dark) {
+    /* Body y fondos principales */
+    body.promociones-page {
+        background: linear-gradient(135deg, #1a1410 0%, #2c2420 100%);
+        color: #f5e6d3;
+    }
+
+    /* Banner promocional */
+    .banner-promocional {
+        background: linear-gradient(90deg, #b8941f 0%, #8b4513 50%, #b8941f 100%);
+        color: #ffffff;
+    }
+
+    /* Hero Promociones */
+    .hero-promociones {
+        background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+    }
+
+    .hero-promociones::before {
+        opacity: 0.15;
+        filter: brightness(0.8) contrast(1.1);
+    }
+
+    .hero-title {
+        color: #f4c542;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .hero-description {
+        color: #e7dcc8;
+    }
+
+    /* Secciones con fondo */
+    .section.bg-cream {
+        background: #2c2420;
+    }
+
+    /* Títulos y textos */
+    .text-gold {
+        color: #f4c542;
+    }
+
+    .mb-2 {
+        color: #f5e6d3;
+    }
+
+    /* Tarjetas de promociones */
+    .promo-card {
+        background: #342e28;
+        border-color: rgba(244, 197, 66, 0.3);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .promo-card:hover {
+        border-color: #f4c542;
+        box-shadow: 0 12px 40px rgba(244, 197, 66, 0.2);
+    }
+
+    .promo-image-container {
+        background: #1a1410;
+    }
+
+    .promo-badge {
+        background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    }
+
+    .promo-badge.nuevo {
+        background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+    }
+
+    .promo-content {
+        background: #342e28;
+    }
+
+    .promo-title {
+        color: #f4c542;
+    }
+
+    .promo-description {
+        color: #d4c4a8;
+    }
+
+    .promo-price {
+        color: #f5e6d3;
+    }
+
+    .promo-price .original-price {
+        color: #999;
+    }
+
+    .promo-price .discount-price {
+        color: #f4c542;
+    }
+
+    /* Countdown Timer */
+    .countdown-timer {
+        background: linear-gradient(135deg, #2c1810 0%, #3d2415 100%);
+        border-color: #f4c542;
+    }
+
+    .countdown-item {
+        background: rgba(244, 197, 66, 0.1);
+        border: 2px solid rgba(244, 197, 66, 0.3);
+    }
+
+    .countdown-number {
+        color: #f4c542;
+    }
+
+    .countdown-label {
+        color: #d4c4a8;
+    }
+
+    /* Botones */
+    .btn-promo,
+    .btn-promocion {
+        background: linear-gradient(135deg, #f4c542 0%, #d4a929 100%);
+        color: #1a1410;
+    }
+
+    .btn-promo:hover,
+    .btn-promocion:hover {
+        background: linear-gradient(135deg, #d4a929 0%, #f4c542 100%);
+        box-shadow: 0 8px 25px rgba(244, 197, 66, 0.3);
+    }
+
+    /* Carousel */
+    .carousel-container {
+        background: #2c2420;
+    }
+
+    .carousel-card {
+        background: #342e28;
+        border-color: rgba(244, 197, 66, 0.2);
+    }
+
+    .carousel-btn {
+        background: rgba(244, 197, 66, 0.2);
+        color: #f4c542;
+    }
+
+    .carousel-btn:hover {
+        background: #f4c542;
+        color: #1a1410;
+    }
+
+    /* Filtros de promociones */
+    .promo-filters {
+        background: linear-gradient(135deg, #2c1810 0%, #1a0f08 100%);
+        border-color: rgba(244, 197, 66, 0.3);
+    }
+
+    .filter-btn {
+        background: rgba(244, 197, 66, 0.1);
+        color: #d4c4a8;
+        border-color: rgba(244, 197, 66, 0.3);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background: #f4c542;
+        color: #1a1410;
+        border-color: #f4c542;
+    }
+
+    /* Grid de productos en promoción */
+    .promo-grid {
+        background: transparent;
+    }
+
+    /* Info boxes */
+    .info-box {
+        background: #342e28;
+        border-color: rgba(244, 197, 66, 0.3);
+    }
+
+    .info-box h3 {
+        color: #f4c542;
+    }
+
+    .info-box p {
+        color: #d4c4a8;
+    }
+
+    /* Tabs de categorías */
+    .category-tabs {
+        background: #2c2420;
+        border-bottom-color: rgba(244, 197, 66, 0.2);
+    }
+
+    .tab-btn {
+        color: #d4c4a8;
+        border-bottom-color: transparent;
+    }
+
+    .tab-btn:hover {
+        color: #f4c542;
+        border-bottom-color: rgba(244, 197, 66, 0.5);
+    }
+
+    .tab-btn.active {
+        color: #f4c542;
+        border-bottom-color: #f4c542;
+    }
+
+    /* Mensaje sin resultados */
+    .no-promos-message {
+        background: #2c2420;
+        color: #d4c4a8;
+    }
+
+    /* Imágenes - ajuste de brillo */
+    .promo-image,
+    .carousel-card img {
+        opacity: 0.95;
+    }
+
+    .promo-image:hover,
+    .carousel-card:hover img {
+        opacity: 1;
+    }
+}
