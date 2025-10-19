@@ -4,30 +4,52 @@
 
 ## Descripción
 
-Sitio web estático para **Belle Époque**, una pastelería francesa artesanal ubicada en una galería del microcentro de Buenos Aires. El sitio comunica la identidad de marca, presenta productos, muestra clientes destacados ("Nos Eligen") y facilita la ubicación y horarios, todo con un enfoque accesible, responsive y sin JavaScript.
+Sitio web profesional para **Belle Époque**, una pastelería francesa artesanal ubicada en una galería del microcentro de Buenos Aires. El sitio comunica la identidad de marca, presenta productos, incluye un sistema completo de carrito de compras, filtros avanzados, formularios de contacto validados, y múltiples funcionalidades interactivas, todo con un enfoque accesible, responsive y optimizado para SEO.
 
 ## Características principales
 
-- **100% HTML + CSS** (sin JavaScript): menú móvil resuelto con checkbox + label (el input está oculto visualmente)
+### Funcionalidades Core
+- **Sistema de carrito de compras**: Agregar/quitar productos, gestión de cantidades, persistencia con localStorage, checkout por WhatsApp
+- **Filtros de productos avanzados**: Por categoría, rango de precios, opciones dietarias y búsqueda en tiempo real
+- **Formularios validados**: Contacto y newsletter con validación en tiempo real (email, teléfono, campos requeridos)
+- **Slider de testimonios**: Rotación automática con controles, soporte para gestos táctiles en móviles
+- **Animaciones y efectos**: Scroll reveal, efectos de hover, transiciones suaves, parallax
+- **Botón flotante de WhatsApp**: Acceso directo para consultas
+- **Banner de cookies**: Gestión de consentimiento con localStorage
+
+### Diseño y UX
 - **Responsive completo** (mobile-first) con Flexbox y CSS Grid
 - **Modo oscuro automático** con `prefers-color-scheme`
-- **Tipografía profesional**: Cinzel, Lora y Montserrat (Google Fonts) + Avenir auto-hospedada con fallbacks seguros
+- **Tipografía profesional**: Cinzel, Lora y Montserrat (Google Fonts) + Avenir auto-hospedada
 - **Variables CSS** para paleta de colores y consistencia visual
-- **Hero con imagen de fondo**: foto del local con overlay
-- **Sección "Nosotros"**: historia, cita destacada y foto del frente del local
-- **Sección "Nuestro Local"**: 2 fotos del interior en grilla responsive
+- **Animaciones CSS personalizadas**: fadeIn, slideIn, pulse, bounce, glow y más
+- **Efectos visuales**: Shimmer en banners, ripple en botones, skeleton loaders
+
+### SEO y Accesibilidad
+- **Meta tags completos**: Description, keywords, favicon en todas las páginas
+- **Open Graph y Twitter Cards**: Optimización para compartir en redes sociales
+- **Datos estructurados (Schema.org)**: Markup de tipo Bakery para mejor indexación
+- **Accesibilidad WCAG**: Aria-labels, navegación por teclado, contraste adecuado
+- **Lazy loading**: Carga diferida de imágenes para mejor rendimiento
+
+### Contenido
 - **Galería de productos**: 12 productos con imágenes reales en tarjetas equilibradas
-- **Sección "Nos Eligen"**: logos de empresas clientes (Mercado Libre, Santander, FarmaPlus, L'Occitane, Lucullus, CCI France)
-- **Mapa de ubicación**: Google Maps iframe con fallback estático (OpenStreetMap) y bloque `<noscript>`
-- **Footer renovado**: gradiente suave, franja dorada superior, marca "Belle Époque" con subrayado dorado de ancho completo
-- **Redes sociales**: Facebook, Instagram, TripAdvisor, TikTok, X (Twitter), Threads con iconos en botones dorados
+- **Sección "Nos Eligen"**: Logos de empresas clientes destacadas
+- **Página FAQ**: 8 preguntas frecuentes con acordeón interactivo
+- **Blog**: 3 artículos sobre pastelería francesa
+- **Política de privacidad**: Documento legal completo con términos y condiciones
+- **Mapa de ubicación**: Google Maps iframe con fallback estático
 
 ## Estructura del sitio
 
 ### Páginas
 
-- **index.html**: Página principal con todas las secciones
-- **productos.html**: Página dedicada con la galería completa de productos
+- **index.html**: Página principal con hero, nosotros, local, productos, testimonios y contacto
+- **productos.html**: Catálogo completo con filtros avanzados y sistema de carrito
+- **promociones.html**: Ofertas especiales, calculadora de descuentos y carruseles interactivos
+- **faq.html**: Preguntas frecuentes con sistema de acordeón y búsqueda
+- **blog.html**: Artículos sobre pastelería francesa y consejos
+- **politica-privacidad.html**: Política de privacidad y términos y condiciones
 - **documentacion-proyecto.html**: Documentación técnica del proyecto
 
 ### Secciones de index.html
@@ -35,22 +57,36 @@ Sitio web estático para **Belle Époque**, una pastelería francesa artesanal u
 1. **Inicio (Hero)**: Imagen del local de fondo con superposición, título y subtítulo
 2. **Nosotros**: Historia breve, cita destacada con detalles dorados, y foto del frente del local
 3. **Nuestro Local**: Dos imágenes del interior en grilla responsive
-4. **Productos**: Preview de 12 productos con botón "Ver todos los productos"
-5. **Nos Eligen**: Grilla de logos de empresas clientes
-6. **Contacto**: Tarjetas de Ubicación (con mapa embebido + botón "Ver en Google Maps") y Horarios
-7. **Footer**: Bloque de marca + redes sociales + datos de contacto
+4. **Productos**: Preview de 12 productos con sistema de carrito y botón "Ver todos los productos"
+5. **Testimonios**: Slider automático con 5 testimonios de clientes, navegación y soporte táctil
+6. **Nos Eligen**: Grilla de logos de empresas clientes destacadas
+7. **Contacto**: Formulario validado de contacto + mapa embebido + horarios de atención
+8. **Footer**: Marca, navegación, redes sociales, contacto y enlaces legales
 
 ## Tecnologías
 
-- HTML5 semántico
-- CSS3 con variables, Flexbox, Grid y media queries
-- Preferencias de color del sistema (`prefers-color-scheme`) para modo oscuro
-- **Fuentes**:
-  - Google Fonts: Cinzel, Lora, Montserrat
-  - Avenir auto-hospedada (fonts/avenir/)
-- **Iconografía**:
-  - Font Awesome 6.5.0 (brands)
-  - Simple Icons (TripAdvisor SVG)
+### Frontend
+- **HTML5 semántico**: Estructura clara y accesible
+- **CSS3 avanzado**: Variables, Flexbox, Grid, animaciones y media queries
+- **JavaScript vanilla (ES6+)**: Clases, async/await, modules, destructuring
+- **APIs del navegador**: localStorage, Intersection Observer, Fetch API
+
+### Estilos y Diseño
+- **CSS custom properties**: Paleta de colores consistente y theming
+- **Animaciones CSS**: Keyframes personalizados (fadeIn, slideIn, pulse, shimmer, etc.)
+- **Responsive design**: Mobile-first con breakpoints adaptativos
+- **Modo oscuro**: Detección automática con `prefers-color-scheme`
+
+### Fuentes e Iconografía
+- **Google Fonts**: Cinzel (títulos), Lora (texto destacado), Montserrat (UI)
+- **Avenir auto-hospedada**: Sistema de fallbacks robusto
+- **Font Awesome 6.5.0**: Iconos de redes sociales y UI
+- **Simple Icons**: SVG de TripAdvisor
+
+### Integraciones
+- **WhatsApp Business API**: Checkout y consultas directas
+- **Google Maps**: Iframe embebido con fallback estático
+- **Schema.org**: Datos estructurados para SEO
 
 ## Estructura de archivos
 
@@ -58,12 +94,27 @@ Sitio web estático para **Belle Époque**, una pastelería francesa artesanal u
 belle-epoque-pasteleria/
 ├── index.html
 ├── productos.html
+├── promociones.html
+├── faq.html
+├── blog.html
+├── politica-privacidad.html
 ├── documentacion-proyecto.html
 ├── INSTRUCCIONES-GITHUB.md
 ├── README.md
 ├── .gitignore
 ├── css/
-│   └── styles.css
+│   ├── styles.css              # Estilos principales
+│   ├── animations.css          # Animaciones y efectos
+│   ├── productos.css           # Estilos específicos de productos
+│   └── promociones.css         # Estilos de promociones
+├── js/
+│   ├── main.js                 # Funcionalidades core (scroll, navbar, whatsapp, cookies)
+│   ├── cart.js                 # Sistema de carrito de compras
+│   ├── contact.js              # Validación de formularios
+│   ├── product-filters.js      # Filtros de productos
+│   ├── testimonials.js         # Slider de testimonios
+│   ├── productos.js            # Lógica específica de página de productos
+│   └── promociones.js          # Carruseles y calculadora de promociones
 ├── fonts/
 │   ├── avenir/
 │   │   └── [archivos de fuente]
@@ -73,24 +124,8 @@ belle-epoque-pasteleria/
 │   ├── local.png
 │   ├── interior.png
 │   ├── interiorr.png
-│   ├── eclairs.png
-│   ├── cookies.png
-│   ├── profiterol-de-banana.png
-│   ├── croissants.png
-│   ├── croissants_2.png
-│   ├── medialuna.png
-│   ├── danesa.png
-│   ├── hojaldre.png
-│   ├── manzanita.png
-│   ├── desayuno.png
-│   ├── torta.png
-│   ├── macarons.png
-│   ├── mercado_libre.png
-│   ├── santander.png
-│   ├── farmaplus.png
-│   ├── loccitane.png
-│   ├── LUCULLUS.png
-│   └── CCI_FRANCE.png
+│   ├── [productos: eclairs, cookies, croissants, macarons, tortas, etc.]
+│   └── [logos clientes: mercado_libre, santander, farmaplus, etc.]
 └── .github/
     └── workflows/
 ```
@@ -109,15 +144,64 @@ belle-epoque-pasteleria/
 - **UI/navegación**: Montserrat (sans-serif moderna)
 - **Fuente de sistema (auto-hospedada)**: Avenir con fallbacks: `Avenir, Avenir Next, Segoe UI, Helvetica Neue, Arial, sans-serif`
 
+## JavaScript: Funcionalidades Implementadas
+
+### main.js - Funcionalidades Core
+- **Smooth scroll**: Navegación suave entre secciones
+- **Navbar dinámica**: Cambio de estilo al hacer scroll
+- **Botón back-to-top**: Aparece automáticamente después de scroll
+- **Scroll reveal**: Animaciones al hacer visible elementos
+- **WhatsApp flotante**: Botón persistente con animación pulse
+- **Cookie banner**: Gestión de consentimiento con localStorage
+- **Business hours**: Indicador dinámico de horario abierto/cerrado
+- **Toast notifications**: Sistema de notificaciones no invasivo
+
+### cart.js - Sistema de Carrito
+- **Clase ShoppingCart**: Gestión completa del carrito
+- **Persistencia**: localStorage para mantener carrito entre sesiones
+- **Modal del carrito**: Interfaz completa para gestionar productos
+- **Cálculo automático**: Subtotal, descuentos y total
+- **Checkout WhatsApp**: Envío automático de pedido formateado
+- **Validaciones**: Cantidades mínimas/máximas, stock disponible
+
+### contact.js - Validación de Formularios
+- **Clase ContactForm**: Validación en tiempo real
+- **Regex patterns**: Validación de email, teléfono, formatos
+- **Mensajes de error**: Feedback inmediato al usuario
+- **Newsletter**: Formulario de suscripción con validación
+- **Prevención de spam**: Límites y validaciones de seguridad
+
+### product-filters.js - Filtros Avanzados
+- **Clase ProductFilters**: Sistema completo de filtrado
+- **Múltiples criterios**: Categoría, precio, opciones dietarias, búsqueda
+- **Actualización dinámica**: Resultados en tiempo real
+- **Contador de resultados**: Feedback visual de productos encontrados
+- **Estado persistente**: Mantiene filtros seleccionados
+
+### testimonials.js - Slider de Testimonios
+- **Clase TestimonialsSlider**: Carrusel automático
+- **Auto-play**: Rotación cada 5 segundos con pausa en hover
+- **Touch support**: Gestos de swipe en dispositivos táctiles
+- **Navegación completa**: Flechas, dots, teclado
+- **5 testimonios reales**: Clientes de diferentes zonas de Buenos Aires
+
 ## Accesibilidad y rendimiento
 
-- Contraste reforzado en modo oscuro para navegación, productos y contacto
-- Imágenes con `loading="lazy"` para carga diferida
-- Menú móvil sin JS usando checkbox oculto (solo label visible)
-- Estructura semántica HTML5
-- Navegación por teclado funcional
-- Textos alternativos en todas las imágenes
-- Etiquetas ARIA donde corresponde
+### Accesibilidad (WCAG 2.1)
+- **Contraste**: Ratios adecuados en todos los modos (claro/oscuro)
+- **Navegación por teclado**: Tab, Enter, Escape funcionales
+- **ARIA labels**: Etiquetas descriptivas en elementos interactivos
+- **Estructura semántica**: HTML5 con roles correctos
+- **Textos alternativos**: Todas las imágenes con alt descriptivo
+- **Focus visible**: Indicadores claros de elemento activo
+
+### Rendimiento
+- **Lazy loading**: Carga diferida de imágenes fuera del viewport
+- **Debouncing**: En búsqueda y filtros para reducir procesamiento
+- **LocalStorage**: Cache de preferencias y carrito
+- **CSS optimizado**: Variables y clases reutilizables
+- **JavaScript modular**: Carga condicional según página
+- **Minificación**: CSS y JS optimizados para producción
 
 ## Publicación (GitHub Pages)
 
@@ -144,28 +228,38 @@ Para más detalles sobre el flujo de trabajo con Git, consultar `INSTRUCCIONES-G
 
 ## Características técnicas destacadas
 
-### Menú móvil sin JavaScript
+### Sistema de Carrito de Compras
+- **Arquitectura modular**: Clase JavaScript independiente y reutilizable
+- **Persistencia local**: Carrito guardado en localStorage, sobrevive a recargas
+- **Integración WhatsApp**: Checkout directo con mensaje formateado automáticamente
+- **UX optimizada**: Modal responsive, animaciones suaves, feedback visual
+- **Validaciones**: Control de stock, cantidades mínimas/máximas
 
-- Implementado con `<input type="checkbox">` oculto + `<label>` visible
-- Navegación accesible por teclado
-- Animaciones CSS para apertura/cierre suave
+### Filtrado Avanzado de Productos
+- **Multi-criterio**: Categoría, rango de precios, opciones dietarias, búsqueda de texto
+- **Tiempo real**: Actualización instantánea sin recargar página
+- **Contador dinámico**: Muestra cantidad de resultados encontrados
+- **Performance**: Debouncing en búsqueda para optimizar rendimiento
 
-### Mapa interactivo con fallback
+### Validación de Formularios
+- **Regex personalizado**: Validación robusta de email, teléfono, campos de texto
+- **Feedback inmediato**: Mensajes de error inline, iconos de estado
+- **Prevención de errores**: Desactivación de submit hasta validación correcta
+- **Accesible**: Mensajes asociados con aria-describedby
 
-- Google Maps iframe como opción principal
-- Imagen estática de OpenStreetMap como fallback
-- Bloque `<noscript>` para usuarios sin JavaScript
-- Botón "Ver en Google Maps" visible y accesible en mobile
+### Animaciones y Efectos
+- **Scroll reveal**: Intersection Observer API para animaciones al scroll
+- **Shimmer effect**: Banner promocional con gradiente animado
+- **Ripple effect**: Feedback táctil en botones
+- **Skeleton loaders**: Placeholders durante carga de contenido
+- **Parallax**: Efectos de profundidad en secciones hero
 
-### Modo oscuro
-
-- Detección automática con `@media (prefers-color-scheme: dark)`
-- Ajustes de contraste en:
-  - Enlaces de navegación
-  - Tarjetas de productos (figcaption)
-  - Tarjetas de contacto
-  - Elementos del mapa
-- Gradientes neutros en footer con acento dorado
+### SEO y Metadatos
+- **Open Graph**: Tarjetas enriquecidas para Facebook, LinkedIn
+- **Twitter Cards**: Preview optimizado para compartir en Twitter
+- **Schema.org**: Datos estructurados tipo Bakery para Google
+- **Favicon dinámico**: SVG inline con emoji de croissant
+- **Meta tags completos**: Description, keywords, author en todas las páginas
 
 ## Créditos
 
@@ -176,7 +270,18 @@ Para más detalles sobre el flujo de trabajo con Git, consultar `INSTRUCCIONES-G
 
 ## Nota sobre el desarrollo
 
-Este proyecto fue desarrollado utilizando [Claude Code](https://claude.com/claude-code) en Visual Studio Code como herramienta de asistencia para optimizar el flujo de trabajo. Claude Code se empleó exclusivamente para agilizar tareas repetitivas como la automatización de commits y gestión de cambios en el repositorio, permitiendo reducir significativamente el tiempo de desarrollo sin comprometer la calidad del código ni las decisiones de diseño del proyecto.
+Este proyecto fue desarrollado utilizando [Claude Code](https://claude.com/claude-code) en Visual Studio Code como herramienta de asistencia integral. Claude Code contribuyó en:
+
+- **Arquitectura JavaScript**: Diseño e implementación de clases modulares (ShoppingCart, ProductFilters, TestimonialsSlider, ContactForm)
+- **Sistema de carrito**: Lógica completa con persistencia, validaciones y checkout por WhatsApp
+- **Validaciones**: Implementación de regex patterns y validación en tiempo real de formularios
+- **Animaciones CSS**: Keyframes personalizados y efectos visuales (shimmer, ripple, scroll reveal)
+- **SEO**: Meta tags, Open Graph, Twitter Cards y datos estructurados Schema.org
+- **Páginas adicionales**: FAQ con acordeón, Blog, Política de Privacidad
+- **Git workflow**: Commits semánticos y gestión de repositorio
+- **Documentación**: README completo con detalles técnicos
+
+El uso de Claude Code permitió implementar funcionalidades profesionales de manera eficiente, manteniendo código limpio, modular y bien documentado, mientras se siguieron las mejores prácticas de desarrollo web moderno.
 
 ---
 
