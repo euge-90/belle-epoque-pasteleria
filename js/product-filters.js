@@ -10,8 +10,6 @@ class ProductFilters {
         this.currentFilters = {
             category: 'todos',
             price: 'todos',
-            vegano: false,
-            singluten: false,
             search: ''
         };
 
@@ -40,8 +38,6 @@ class ProductFilters {
                 name: card.querySelector('.product-name')?.textContent || '',
                 category: card.getAttribute('data-category') || 'todos',
                 price: this.extractPrice(card),
-                vegano: card.hasAttribute('data-vegano'),
-                singluten: card.hasAttribute('data-singluten'),
                 visible: true
             };
 
@@ -107,20 +103,6 @@ class ProductFilters {
                         </select>
                     </div>
 
-                    <div class="filter-group filter-checkboxes">
-                        <label>Opciones:</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="filter-vegano">
-                                <span>🌱 Vegano</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="filter-singluten">
-                                <span>🚫 Sin Gluten</span>
-                            </label>
-                        </div>
-                    </div>
-
                     <div class="filter-group">
                         <button id="clear-filters" class="btn-clear-filters">
                             <i class="fas fa-times"></i>
@@ -173,24 +155,6 @@ class ProductFilters {
             });
         }
 
-        // Filtro vegano
-        const veganoFilter = document.getElementById('filter-vegano');
-        if (veganoFilter) {
-            veganoFilter.addEventListener('change', (e) => {
-                this.currentFilters.vegano = e.target.checked;
-                this.applyFilters();
-            });
-        }
-
-        // Filtro sin gluten
-        const singlutenFilter = document.getElementById('filter-singluten');
-        if (singlutenFilter) {
-            singlutenFilter.addEventListener('change', (e) => {
-                this.currentFilters.singluten = e.target.checked;
-                this.applyFilters();
-            });
-        }
-
         // Limpiar filtros
         const clearBtn = document.getElementById('clear-filters');
         if (clearBtn) {
@@ -231,16 +195,6 @@ class ProductFilters {
                         if (price <= 6000) return false;
                         break;
                 }
-            }
-
-            // Filtro vegano
-            if (this.currentFilters.vegano && !product.vegano) {
-                return false;
-            }
-
-            // Filtro sin gluten
-            if (this.currentFilters.singluten && !product.singluten) {
-                return false;
             }
 
             return true;
@@ -322,8 +276,6 @@ class ProductFilters {
         this.currentFilters = {
             category: 'todos',
             price: 'todos',
-            vegano: false,
-            singluten: false,
             search: ''
         };
 
@@ -336,12 +288,6 @@ class ProductFilters {
 
         const priceFilter = document.getElementById('filter-precio');
         if (priceFilter) priceFilter.value = 'todos';
-
-        const veganoFilter = document.getElementById('filter-vegano');
-        if (veganoFilter) veganoFilter.checked = false;
-
-        const singlutenFilter = document.getElementById('filter-singluten');
-        if (singlutenFilter) singlutenFilter.checked = false;
 
         this.applyFilters();
 
