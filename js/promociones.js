@@ -317,10 +317,23 @@ class Carousel {
         this.nextBtn = document.getElementById(nextBtnId);
         this.dotsContainer = document.getElementById(dotsContainerId);
 
-        if (!this.track) return;
+        console.log('Carousel init:', {
+            trackSelector,
+            track: this.track,
+            prevBtn: this.prevBtn,
+            nextBtn: this.nextBtn,
+            dotsContainer: this.dotsContainer
+        });
+
+        if (!this.track) {
+            console.error('Track not found:', trackSelector);
+            return;
+        }
 
         this.items = Array.from(this.track.children);
         this.currentIndex = 0;
+
+        console.log('Carousel items:', this.items.length);
 
         this.init();
     }
@@ -338,7 +351,7 @@ class Carousel {
         if (!this.dotsContainer) return;
 
         const itemsPerView = this.getItemsPerView();
-        const totalDots = Math.ceil(this.items.length / itemsPerView);
+        const totalDots = this.items.length - itemsPerView + 1;
 
         this.dotsContainer.innerHTML = '';
 
@@ -352,7 +365,7 @@ class Carousel {
             }
 
             dot.addEventListener('click', () => {
-                this.currentIndex = i * itemsPerView;
+                this.currentIndex = i;
                 this.updateCarousel();
             });
 
@@ -370,12 +383,23 @@ class Carousel {
 
     updateCarousel() {
         const itemsPerView = this.getItemsPerView();
-        const itemWidth = 100 / itemsPerView;
-        const gap = 2; // 2rem gap
-        const gapInPercent = (gap * itemsPerView) / this.track.offsetWidth * 100;
+        const itemWidth = this.items[0] ? this.items[0].offsetWidth : 0;
 
-        const offset = -(this.currentIndex * (itemWidth + gapInPercent / itemsPerView));
-        this.track.style.transform = `translateX(${offset}%)`;
+        // Obtener el gap del estilo computado
+        const gapStyle = getComputedStyle(this.track).gap;
+        const gap = gapStyle ? parseFloat(gapStyle) : 32; // gap en píxeles
+
+        // Calcular el desplazamiento total en píxeles
+        const offset = -(this.currentIndex * (itemWidth + gap));
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        console.log('Carousel update:', {
+            currentIndex: this.currentIndex,
+            itemWidth,
+            gap,
+            offset,
+            itemsPerView
+        });
 
         // Actualizar botones
         this.updateButtons();
@@ -397,11 +421,9 @@ class Carousel {
         if (!this.dotsContainer) return;
 
         const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
-        const itemsPerView = this.getItemsPerView();
-        const activeDotIndex = Math.floor(this.currentIndex / itemsPerView);
 
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeDotIndex);
+            dot.classList.toggle('active', index === this.currentIndex);
         });
     }
 
@@ -409,16 +431,14 @@ class Carousel {
         const itemsPerView = this.getItemsPerView();
 
         if (this.currentIndex < this.items.length - itemsPerView) {
-            this.currentIndex += itemsPerView;
+            this.currentIndex += 1;
             this.updateCarousel();
         }
     }
 
     prev() {
-        const itemsPerView = this.getItemsPerView();
-
         if (this.currentIndex > 0) {
-            this.currentIndex -= itemsPerView;
+            this.currentIndex -= 1;
             this.updateCarousel();
         }
     }
@@ -483,7 +503,7 @@ class Carousel {
             if (this.currentIndex >= this.items.length - itemsPerView) {
                 this.currentIndex = 0;
             } else {
-                this.currentIndex += itemsPerView;
+                this.currentIndex += 1;
             }
 
             this.updateCarousel();
