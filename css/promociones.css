@@ -519,10 +519,11 @@ body.promociones-page {
 
 /* ===== TIPS Y CONSEJOS ===== */
 .tips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
     gap: 2rem;
     margin-top: 3rem;
+    transition: transform 0.5s ease;
+    overflow: visible;
 }
 
 .tip-card {
@@ -532,6 +533,20 @@ body.promociones-page {
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: all 0.3s ease;
     border-top: 4px solid var(--gold-primary);
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .tip-card {
+        min-width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tip-card {
+        min-width: calc(33.333% - 1.34rem);
+    }
 }
 
 .tip-card:hover {
@@ -578,10 +593,11 @@ body.promociones-page {
 
 /* ===== PRODUCTOS POPULARES ===== */
 .popular-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
     gap: 2rem;
     margin-top: 3rem;
+    transition: transform 0.5s ease;
+    overflow: visible;
 }
 
 .popular-item {
@@ -594,6 +610,20 @@ body.promociones-page {
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .popular-item {
+        min-width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .popular-item {
+        min-width: calc(33.333% - 1.34rem);
+    }
 }
 
 .popular-item:hover {
@@ -2797,4 +2827,116 @@ select:focus {
 .combo-image img {
     will-change: transform;
     backface-visibility: hidden;
+}
+
+/* ========== 20. CARRUSELES ========== */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    overflow: hidden;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: var(--gold-primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-btn i {
+    font-size: 1.2rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--gold-primary);
+    width: 30px;
+    border-radius: 6px;
+}
+
+.carousel-dot:hover {
+    background: var(--gold-dark);
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 50px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: 0 40px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
 }
