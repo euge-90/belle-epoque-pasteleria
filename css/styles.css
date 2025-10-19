@@ -537,15 +537,16 @@ main {
 
 /* ===== CONTACTO ===== */
 #contacto {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 0 !important;
 }
 
 .contact-info {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .contact-card {
@@ -702,8 +703,9 @@ footer {
     /* Fondo sectorizado: el color va en el contenedor, no a pantalla completa */
     background: transparent;
     color: var(--text-dark);
-    padding: 3rem 5% 1rem;
-    margin-top: 2rem;
+    padding: 2rem 5% 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
 .trusted-container {
     max-width: 1200px;
