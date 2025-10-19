@@ -1372,41 +1372,49 @@
                 return;
             }
 
-            // Verificar que el carrito global esté disponible
-            if (typeof window.cart === 'undefined') {
-                showPromoNotification('Error: El sistema de carrito no está disponible');
-                console.error('window.cart no está definido');
-                return;
+            // Función auxiliar para agregar al carrito
+            function agregarAlCarrito() {
+                // Agregar cada producto al carrito global
+                let productosAgregados = 0;
+                calculadoraState.productos.forEach(producto => {
+                    // Agregar el producto al carrito con la cantidad especificada
+                    for (let i = 0; i < producto.cantidad; i++) {
+                        window.cart.addItem({
+                            id: producto.id,
+                            name: producto.nombre,
+                            price: producto.precio,
+                            image: producto.imagen || 'images/torta.png',
+                            category: producto.categoria || 'Promociones'
+                        });
+                    }
+                    productosAgregados++;
+                });
+
+                // Mostrar confirmación
+                showPromoNotification(`¡${productosAgregados} producto(s) agregado(s) al carrito!`, 'success');
+
+                // Abrir el modal del carrito automáticamente
+                setTimeout(() => {
+                    if (window.cart && window.cart.openCart) {
+                        window.cart.openCart();
+                    }
+                }, 500);
             }
 
-            // Agregar cada producto al carrito global
-            let productosAgregados = 0;
-            calculadoraState.productos.forEach(producto => {
-                // Agregar el producto al carrito con la cantidad especificada
-                for (let i = 0; i < producto.cantidad; i++) {
-                    window.cart.addItem({
-                        id: producto.id,
-                        name: producto.nombre,
-                        price: producto.precio,
-                        image: producto.imagen || 'images/torta.png',
-                        category: producto.categoria || 'Promociones'
-                    });
-                }
-                productosAgregados++;
-            });
-
-            // Mostrar confirmación
-            showPromoNotification(`¡${productosAgregados} producto(s) agregado(s) al carrito!`, 'success');
-
-            // Opcional: Limpiar la calculadora después de agregar al carrito
-            // resetearCalculadora();
-
-            // Opcional: Abrir el modal del carrito automáticamente
-            setTimeout(() => {
-                if (window.cart && window.cart.openCart) {
-                    window.cart.openCart();
-                }
-            }, 500);
+            // Verificar que el carrito global esté disponible con retry
+            if (typeof window.cart === 'undefined') {
+                // Intentar de nuevo después de un breve momento
+                setTimeout(() => {
+                    if (typeof window.cart === 'undefined') {
+                        showPromoNotification('Error: El sistema de carrito no está disponible. Por favor, recargá la página.', 'error');
+                        console.error('window.cart no está definido después de retry');
+                        return;
+                    }
+                    agregarAlCarrito();
+                }, 300);
+            } else {
+                agregarAlCarrito();
+            }
         }
 
         // Enviar pedido por WhatsApp
