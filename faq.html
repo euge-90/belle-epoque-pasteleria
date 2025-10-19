@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Belle Époque</title>
+
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Preguntas frecuentes sobre Belle Époque. Información sobre envíos, pedidos especiales, horarios y más.">
+    <meta name="keywords" content="FAQ Belle Époque, preguntas frecuentes, pastelería francesa, envíos, pedidos especiales">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥐</text></svg>">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Estilos específicos para FAQ */
+        .faq-hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--background-cream) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .faq-hero h1 {
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .faq-search {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .faq-search input {
+            width: 100%;
+            max-width: 600px;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--color-cream);
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--color-cream);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .faq-item.active {
+            border-color: var(--color-gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-brown);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            background: var(--color-cream);
+        }
+
+        .faq-question .icon {
+            width: 30px;
+            height: 30px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all var(--transition-normal);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(45deg);
+            background: var(--color-brown);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+
+        .faq-contact {
+            background: var(--color-cream);
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .faq-contact h3 {
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+
+        .faq-contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .faq-hero {
+                padding: 3rem 1rem;
+            }
+
+            .faq-hero h1 {
+                font-size: 2rem;
+            }
+
+            .faq-container {
+                padding: 2rem 1rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.25rem;
+            }
+
+            .faq-contact-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Belle Époque Logo" class="logo-img">
+            <span class="logo-text">Belle Époque</span>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+        <label class="menu-toggle" for="nav-toggle" aria-label="Alternar menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="faq-hero">
+            <h1>Preguntas Frecuentes</h1>
+            <p>Encuentra respuestas a las consultas más comunes</p>
+        </section>
+
+        <!-- FAQ Container -->
+        <div class="faq-container">
+            <!-- Búsqueda -->
+            <div class="faq-search">
+                <input type="text"
+                       id="faq-search-input"
+                       placeholder="🔍 Buscar en preguntas frecuentes..."
+                       aria-label="Buscar preguntas">
+            </div>
+
+            <!-- Lista de FAQs -->
+            <div class="faq-list" id="faq-list">
+                <div class="faq-item" data-category="envios">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Hacen envíos a domicilio?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, realizamos envíos a domicilio en toda CABA y GBA. Los pedidos deben realizarse con al menos 24 horas de anticipación. El costo del envío varía según la zona de entrega. Pedidos superiores a $15.000 tienen envío sin cargo en CABA.</p>
+                            <p><strong>Zonas de envío:</strong></p>
+                            <ul>
+                                <li>CABA: $1.500</li>
+                                <li>GBA Zona Norte: $2.000</li>
+                                <li>GBA Zona Sur: $2.000</li>
+                                <li>GBA Zona Oeste: $2.500</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pedidos">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Puedo encargar tortas personalizadas?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>¡Por supuesto! Nos especializamos en tortas personalizadas para todo tipo de eventos: bodas, cumpleaños, aniversarios, eventos corporativos, etc.</p>
+                            <p><strong>Proceso de pedido:</strong></p>
+                            <ol>
+                                <li>Contactanos por WhatsApp o email con tu idea</li>
+                                <li>Coordinamos una consulta personalizada</li>
+                                <li>Te enviamos presupuesto y opciones de diseño</li>
+                                <li>Confirmás con una seña del 50%</li>
+                                <li>¡Creamos tu torta soñada!</li>
+                            </ol>
+                            <p><em>Tiempo mínimo requerido: 72 horas de anticipación</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="tiempo">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Cuánto tiempo de anticipación necesitan para pedidos especiales?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Los tiempos de anticipación varían según el tipo de pedido:</p>
+                            <ul>
+                                <li><strong>Productos del día:</strong> Sin anticipación, comprás en el local</li>
+                                <li><strong>Croissants y viennoiseries:</strong> 24 horas</li>
+                                <li><strong>Tortas pequeñas (hasta 2kg):</strong> 48 horas</li>
+                                <li><strong>Tortas grandes y personalizadas:</strong> 72 horas</li>
+                                <li><strong>Eventos corporativos/catering:</strong> 1 semana</li>
+                                <li><strong>Bodas:</strong> 2-3 semanas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="dieta">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Tienen opciones veganas o sin gluten?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, ofrecemos opciones especiales para distintas necesidades dietarias:</p>
+                            <p><strong>Opciones Veganas:</strong> Tenemos una línea de macarons veganos y algunas tartas que podemos adaptar. Consultá disponibilidad.</p>
+                            <p><strong>Sin Gluten:</strong> Elaboramos productos sin gluten bajo pedido con 48hs de anticipación. Usamos ingredientes certificados sin TACC.</p>
+                            <p><strong>⚠️ Importante:</strong> Nuestros productos se elaboran en un espacio donde se manipulan todos los alérgenos. Si tenés alergias severas, consultá antes de ordenar para evaluar tu caso particular.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="eventos">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Aceptan reservas para eventos?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, ofrecemos servicio completo para eventos:</p>
+                            <ul>
+                                <li><strong>Mesas dulces:</strong> Diseño y montaje completo</li>
+                                <li><strong>Catering dulce:</strong> Selección de productos franceses</li>
+                                <li><strong>Coffee break:</strong> Perfecto para eventos corporativos</li>
+                                <li><strong>Torta de casamiento:</strong> Diseño personalizado</li>
+                            </ul>
+                            <p>Coordinamos reunión presencial para definir todos los detalles. Enviamos propuesta con menú y presupuesto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pago">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Cuáles son sus métodos de pago?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Aceptamos las siguientes formas de pago:</p>
+                            <ul>
+                                <li>💳 <strong>Tarjetas de débito y crédito:</strong> Todas las tarjetas (1 pago o cuotas)</li>
+                                <li>💵 <strong>Efectivo:</strong> En nuestro local</li>
+                                <li>📱 <strong>Transferencia bancaria:</strong> CBU y Alias disponibles</li>
+                                <li>🏪 <strong>Mercado Pago:</strong> QR o link de pago</li>
+                            </ul>
+                            <p><em>Para pedidos especiales requerimos seña del 50% al confirmar</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="productos">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Los productos son de elaboración diaria?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, todos nuestros productos son de elaboración artesanal diaria. Cada madrugada comenzamos a trabajar la masa para tener croissants y viennoiseries recién horneados.</p>
+                            <p><strong>Horarios de productos frescos:</strong></p>
+                            <ul>
+                                <li>🥐 Croissants: Desde las 8:00 AM</li>
+                                <li>🍪 Macarons: Lunes, Miércoles y Viernes (elaboración fresh)</li>
+                                <li>🎂 Tartas: Según pedido</li>
+                            </ul>
+                            <p>Usamos ingredientes premium importados y de proveedores locales seleccionados.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="fidelidad">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>¿Tienen programa de fidelidad o descuentos?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Sí, tenemos varias formas de ahorro:</p>
+                            <ul>
+                                <li>🎁 <strong>Tarjeta de fidelidad:</strong> Acumulá sellos y el décimo croissant es gratis</li>
+                                <li>🏷️ <strong>Promociones semanales:</strong> Consulta nuestra página de <a href="promociones.html">promociones</a></li>
+                                <li>📧 <strong>Newsletter:</strong> Suscribite y recibí ofertas exclusivas</li>
+                                <li>🎂 <strong>Cumpleañeros:</strong> 15% de descuento en tu semana de cumpleaños</li>
+                            </ul>
+                            <p>Preguntá en el local por tu tarjeta de fidelidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de contacto -->
+            <div class="faq-contact">
+                <h3>¿No encontraste lo que buscabas?</h3>
+                <p>Estamos aquí para ayudarte. Contactanos por cualquiera de estos medios:</p>
+                <div class="faq-contact-buttons">
+                    <a href="https://wa.me/5491145678900" class="btn-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:info@belleepoque.com.ar" class="btn-primary">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="index.html#contacto" class="btn-secondary">
+                        <i class="fas fa-comments"></i> Formulario de contacto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Belle Époque</h4>
+                <p>Pastelería francesa artesanal desde 1920</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="promociones.html">Promociones</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <p>📍 Florida 165, San Martín 170<br>1005 Buenos Aires</p>
+                <p>📞 +54 11 4567-8900</p>
+                <p>✉️ info@belleepoque.com.ar</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Horarios</h4>
+                <p>Lunes a Viernes: 8:00 - 20:00</p>
+                <p>Sábados: 9:00 - 21:00</p>
+                <p>Domingos: 10:00 - 18:00</p>
+                <div id="open-status" style="margin-top: 0.5rem;"></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Belle Époque. Todos los derechos reservados.</p>
+            <p>
+                <a href="politica-privacidad.html">Política de Privacidad</a> |
+                <a href="politica-privacidad.html#terminos">Términos y Condiciones</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        // Acordeón FAQ
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Cerrar todos los items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Abrir el clickeado si no estaba activo
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Búsqueda en FAQ
+        const searchInput = document.getElementById('faq-search-input');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
