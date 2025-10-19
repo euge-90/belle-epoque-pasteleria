@@ -6,6 +6,13 @@
 class ShoppingCart {
     constructor() {
         this.items = this.loadCart();
+
+        // Validación de seguridad: asegurar que items es un array
+        if (!Array.isArray(this.items)) {
+            console.error('❌ CRITICAL: this.items no es un array, forzando []');
+            this.items = [];
+        }
+
         this.init();
     }
 
@@ -362,8 +369,31 @@ class ShoppingCart {
     }
 
     loadCart() {
-        const saved = localStorage.getItem('belleEpoqueCart');
-        return saved ? JSON.parse(saved) : [];
+        try {
+            const saved = localStorage.getItem('belleEpoqueCart');
+            if (!saved) {
+                console.log('📦 Carrito vacío - iniciando nuevo');
+                return [];
+            }
+
+            const parsed = JSON.parse(saved);
+
+            // Validar que sea un array
+            if (!Array.isArray(parsed)) {
+                console.warn('⚠️ Datos de carrito inválidos (no es array), limpiando...');
+                localStorage.removeItem('belleEpoqueCart');
+                return [];
+            }
+
+            console.log('✅ Carrito cargado correctamente:', parsed.length, 'items');
+            return parsed;
+
+        } catch (error) {
+            console.error('❌ Error al cargar carrito desde localStorage:', error);
+            // Limpiar localStorage corrupto
+            localStorage.removeItem('belleEpoqueCart');
+            return [];
+        }
     }
 
     // ============================================
