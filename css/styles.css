@@ -537,14 +537,15 @@ main {
 
 /* ===== CONTACTO ===== */
 #contacto {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
 }
 
 .contact-info {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .contact-card {
