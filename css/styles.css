@@ -2292,8 +2292,11 @@ footer {
 /* Removido - ahora está en la sección de elementos corregidos */
 
 .premium-badge {
-    background: var(--gradient-brown);
-    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #ffd700 0%, #f0e68c 100%);
+    color: #654321;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+    border: 2px solid #d4af37;
 }
 
 /* Removido - ahora está en la sección de elementos corregidos */
@@ -3862,8 +3865,11 @@ footer {
 }
 
 .promo-badge.premium-badge {
-    background: var(--gradient-brown);
-    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #ffd700 0%, #f0e68c 100%);
+    color: #654321;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+    border: 2px solid #d4af37;
 }
 
 .pulse-animation {
