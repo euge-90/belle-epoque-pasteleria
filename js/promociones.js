@@ -603,18 +603,26 @@ function actualizarListaProductos() {
         return;
     }
 
-    lista.innerHTML = calculadoraState.productos.map(producto => `
-        <div class="product-item" data-id="${producto.id}">
+    lista.innerHTML = calculadoraState.productos.map(producto => {
+        const esDescuento = producto.categoria === 'descuento';
+        const precioTotal = producto.precio * producto.cantidad;
+        const claseAdicional = esDescuento ? 'product-item-descuento' : '';
+
+        return `
+        <div class="product-item ${claseAdicional}" data-id="${producto.id}">
             <div class="product-details">
                 <div class="product-name">${producto.nombre}</div>
-                <div class="product-info">Cantidad: ${producto.cantidad} | Precio unitario: $${producto.precio.toLocaleString()}</div>
+                <div class="product-info">Cantidad: ${producto.cantidad} | Precio unitario: $${Math.abs(producto.precio).toLocaleString()}</div>
             </div>
-            <div class="product-price">$${(producto.precio * producto.cantidad).toLocaleString()}</div>
+            <div class="product-price" style="color: ${esDescuento ? '#10b981' : 'inherit'}">
+                ${esDescuento ? '-' : ''}$${Math.abs(precioTotal).toLocaleString()}
+            </div>
             <button class="remove-product" onclick="eliminarProducto(${producto.id})">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-    `).join('');
+    `;
+    }).join('');
 }
 
 // Eliminar producto del carrito
@@ -967,31 +975,43 @@ function irACalculadoraConCombo(tipoCombo) {
     }
 
     setTimeout(() => {
-        // Definir los combos completos
+        // Definir los combos completos con descuentos
         const combos = {
-            'desayuno-parisino': [
-                { precio: 4000, nombre: 'Croissant Tradicional', categoria: 'viennoiserie' },
-                { precio: 2000, nombre: 'Café Premium', categoria: 'bebidas' },
-                { precio: 1500, nombre: 'Jugo de Naranja Natural', categoria: 'bebidas' }
-            ],
-            'dulce-frances': [
-                { precio: 14000, nombre: 'Caja x6 Macarons', categoria: 'macarons' },
-                { precio: 4200, nombre: 'Pain aux Raisins', categoria: 'viennoiserie' },
-                { precio: 1200, nombre: 'Té Premium', categoria: 'bebidas' }
-            ],
-            'celebracion-elegante': [
-                { precio: 7200, nombre: 'Tarte Tatin', categoria: 'pasteles' },
-                { precio: 27000, nombre: 'Caja x12 Macarons', categoria: 'macarons' },
-                { precio: 7800, nombre: 'Champagne Francés', categoria: 'bebidas' }
-            ]
+            'desayuno-parisino': {
+                productos: [
+                    { precio: 4000, nombre: 'Croissant Tradicional', categoria: 'viennoiserie' },
+                    { precio: 2000, nombre: 'Café Premium', categoria: 'bebidas' },
+                    { precio: 1500, nombre: 'Jugo de Naranja Natural', categoria: 'bebidas' }
+                ],
+                descuento: 1300,
+                nombreCombo: 'Desayuno Parisino'
+            },
+            'dulce-frances': {
+                productos: [
+                    { precio: 14000, nombre: 'Caja x6 Macarons', categoria: 'macarons' },
+                    { precio: 4200, nombre: 'Pain aux Raisins', categoria: 'viennoiserie' },
+                    { precio: 1200, nombre: 'Té Premium', categoria: 'bebidas' }
+                ],
+                descuento: 2900,
+                nombreCombo: 'Dulce Francés'
+            },
+            'celebracion-elegante': {
+                productos: [
+                    { precio: 7200, nombre: 'Tarte Tatin', categoria: 'pasteles' },
+                    { precio: 27000, nombre: 'Caja x12 Macarons', categoria: 'macarons' },
+                    { precio: 7800, nombre: 'Champagne Francés', categoria: 'bebidas' }
+                ],
+                descuento: 6300,
+                nombreCombo: 'Celebración Elegante'
+            }
         };
 
-        // Obtener productos del combo
-        const productosCombo = combos[tipoCombo];
+        // Obtener combo
+        const combo = combos[tipoCombo];
 
-        if (productosCombo) {
+        if (combo) {
             // Agregar cada producto del combo
-            productosCombo.forEach(prod => {
+            combo.productos.forEach(prod => {
                 const producto = {
                     id: Date.now() + Math.random(),
                     nombre: prod.nombre,
@@ -1002,6 +1022,17 @@ function irACalculadoraConCombo(tipoCombo) {
                 };
                 calculadoraState.productos.push(producto);
             });
+
+            // Agregar descuento del combo como producto con precio negativo
+            const descuentoProducto = {
+                id: Date.now() + Math.random() + 0.999,
+                nombre: `🎁 Descuento Combo ${combo.nombreCombo}`,
+                precio: -combo.descuento,
+                cantidad: 1,
+                categoria: 'descuento',
+                imagen: 'images/torta.png'
+            };
+            calculadoraState.productos.push(descuentoProducto);
 
             // Seleccionar la promoción adecuada
             if (tipoCombo === 'dulce-frances') {
