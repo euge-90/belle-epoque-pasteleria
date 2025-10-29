@@ -280,26 +280,49 @@ const promociones = {
     },
     'festival-macarons': {
         nombre: 'Festival de Macarons',
-        explicacion: 'Comprá 3 macarons de cualquier sabor y pagá solo 2. El descuento se aplica al macaron de menor valor.',
+        explicacion: 'Comprá 3 macarons individuales y pagá solo 2. El descuento se aplica al macaron de menor valor. No aplica a cajas.',
         categorias: ['macarons'],
         calcular: (productos) => {
-            const macarons = productos.filter(p => p.categoria === 'macarons');
-            if (macarons.length < 3) return 0;
+            console.log('🍪 Festival Macarons - Productos recibidos:', productos);
+
+            // Filtrar SOLO macarons individuales (excluir cajas)
+            const macarons = productos.filter(p =>
+                p.categoria === 'macarons' &&
+                p.nombre === 'Macaron (unidad)'
+            );
+            console.log('🍪 Macarons INDIVIDUALES filtrados:', macarons);
+
+            if (macarons.length === 0) {
+                console.log('❌ No hay macarons individuales');
+                return 0;
+            }
 
             let cantidadTotal = macarons.reduce((sum, p) => sum + p.cantidad, 0);
+            console.log('🍪 Cantidad total de macarons:', cantidadTotal);
+
+            // Verificar cantidad total, NO macarons.length
+            if (cantidadTotal < 3) {
+                console.log('❌ cantidadTotal < 3, retornando 0');
+                return 0;
+            }
+
             let gruposDe3 = Math.floor(cantidadTotal / 3);
+            console.log('🍪 Grupos de 3:', gruposDe3);
 
             // Ordenar por precio para descontar los más baratos
             const macaronsOrdenados = macarons.sort((a, b) => a.precio - b.precio);
+            console.log('🍪 Macarons ordenados por precio:', macaronsOrdenados);
 
             let descuento = 0;
             for (let i = 0; i < gruposDe3; i++) {
                 // Descontar el más barato de cada grupo de 3
                 if (macaronsOrdenados[0]) {
                     descuento += macaronsOrdenados[0].precio;
+                    console.log(`🍪 Grupo ${i + 1}: descuento += ${macaronsOrdenados[0].precio}`);
                 }
             }
 
+            console.log('🍪 Descuento total festival-macarons:', descuento);
             return descuento;
         }
     },
@@ -535,7 +558,17 @@ function agregarProducto() {
         imagen: productImageMap[nombreProducto] || 'images/torta.png'
     };
 
+    console.log('📝 Producto completo:', {
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        cantidad: producto.cantidad,
+        categoria: producto.categoria
+    });
+
     calculadoraState.productos.push(producto);
+    console.log('🛒 Producto agregado:', producto);
+    console.log('📦 Productos en calculadora:', calculadoraState.productos);
 
     // Reset formulario
     select.value = '';
@@ -589,15 +622,24 @@ function eliminarProducto(id) {
 
 // Calcular totales
 function calcularTotales() {
+    console.log('💰 calcularTotales() ejecutado');
+    console.log('📊 Productos:', calculadoraState.productos);
+    console.log('🎯 Promoción activa:', calculadoraState.promocionActiva);
+
     // Calcular subtotal
     calculadoraState.subtotal = calculadoraState.productos.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
+    console.log('💵 Subtotal calculado:', calculadoraState.subtotal);
 
     // Calcular descuento según promoción activa
     const promocion = promociones[calculadoraState.promocionActiva];
+    console.log('🎁 Función de cálculo:', promocion);
+
     calculadoraState.descuento = promocion.calcular(calculadoraState.productos, calculadoraState.subtotal);
+    console.log('🎉 Descuento calculado:', calculadoraState.descuento);
 
     // Calcular total
     calculadoraState.total = calculadoraState.subtotal - calculadoraState.descuento;
+    console.log('✅ Total final:', calculadoraState.total);
 
     // Actualizar visualización
     actualizarResultados();
