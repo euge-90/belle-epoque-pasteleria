@@ -4911,15 +4911,22 @@ footer {
 
 /* Modal del carrito - dimensiones compactas */
 .cart-modal-content {
-    max-width: 700px !important;
+    max-width: 860px !important;
     width: 90%;
     padding: 0;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    max-height: 90vh;
+    max-height: 94vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+/* Modal más ancho en pantallas grandes */
+@media (min-width: 1400px) {
+    .cart-modal-content {
+        max-width: 960px !important;
+    }
 }
 
 .cart-modal .modal-header {
