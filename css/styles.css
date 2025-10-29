@@ -4933,11 +4933,16 @@ footer {
 }
 
 /* Items del carrito - layout de 3 columnas expandido */
-.cart-items {
+.cart-items,
+#cart-items {
     display: flex;
     flex-direction: column;
     gap: 0;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .cart-item {
@@ -4948,6 +4953,8 @@ footer {
     padding: 1.2rem 0;
     border-bottom: 1px solid #eee;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .cart-item:last-child {
