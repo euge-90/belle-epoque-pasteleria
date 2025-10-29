@@ -4840,3 +4840,93 @@ footer {
         font-size: 15px;
     }
 }
+
+/* ============================================
+   ESTILOS DEL CARRITO Y DESCUENTOS
+   ============================================ */
+
+.cart-summary {
+    width: 100%;
+    padding: 20px 0;
+    border-top: 2px solid #f0f0f0;
+    margin-top: 20px;
+}
+
+.cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.cart-discounts {
+    display: none;
+    padding: 15px 0;
+    border-top: 1px dashed #e0e0e0;
+    border-bottom: 1px dashed #e0e0e0;
+    margin: 10px 0;
+}
+
+.cart-discount-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.discount-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.discount-name i {
+    font-size: 16px;
+}
+
+.discount-amount {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.cart-total .total-amount {
+    color: #d4af37;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .cart-summary {
+        padding: 15px 0;
+    }
+
+    .cart-total {
+        font-size: 18px;
+    }
+
+    .cart-total .total-amount {
+        font-size: 20px;
+    }
+
+    .discount-name {
+        font-size: 13px;
+    }
+
+    .discount-amount {
+        font-size: 14px;
+    }
+}

@@ -1,6 +1,6 @@
 /**
  * BELLE ÉPOQUE - Carrito de Compras
- * Sistema de carrito con localStorage
+ * Sistema de carrito con localStorage y descuentos automáticos
  */
 
 class ShoppingCart {
@@ -12,6 +12,27 @@ class ShoppingCart {
             console.error('❌ CRITICAL: this.items no es un array, forzando []');
             this.items = [];
         }
+
+        // Mapeo de productos a categorías para aplicar descuentos automáticos
+        this.productCategories = {
+            // Viennoiserie
+            'croissant-tradicional': 'viennoiserie',
+            'pain-au-chocolat': 'viennoiserie',
+            'croissant-almendras': 'viennoiserie',
+            'pain-aux-raisins': 'viennoiserie',
+            'brioche': 'viennoiserie',
+            'chausson-aux-pommes': 'viennoiserie',
+
+            // Macarons
+            'macaron-frambuesa': 'macarons',
+            'macaron-pistacho': 'macarons',
+            'macaron-chocolate': 'macarons',
+            'macaron-vainilla': 'macarons',
+            'macaron-lavanda': 'macarons',
+            'macaron-limon': 'macarons',
+            'macaron-rosa': 'macarons',
+            'macaron-caramelo': 'macarons'
+        };
 
         this.init();
     }
@@ -85,9 +106,16 @@ class ShoppingCart {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="cart-total">
-                        <strong>Total:</strong>
-                        <span id="cart-total-amount" class="total-amount">$0</span>
+                    <div class="cart-summary">
+                        <div class="cart-subtotal">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal-amount">$0</span>
+                        </div>
+                        <div id="cart-discounts" class="cart-discounts"></div>
+                        <div class="cart-total">
+                            <strong>Total:</strong>
+                            <span id="cart-total-amount" class="total-amount">$0</span>
+                        </div>
                     </div>
                     <div class="cart-actions">
                         <button id="cart-checkout" class="btn-primary">
@@ -118,6 +146,9 @@ class ShoppingCart {
     addItem(product) {
         const existingItem = this.items.find(item => item.id === product.id);
 
+        // Obtener categoría del producto
+        const category = this.productCategories[product.id] || 'otros';
+
         if (existingItem) {
             existingItem.quantity += product.quantity || 1;
         } else {
@@ -126,7 +157,8 @@ class ShoppingCart {
                 name: product.name,
                 price: product.price,
                 quantity: product.quantity || 1,
-                image: product.image || ''
+                image: product.image || '',
+                category: category
             });
         }
 
@@ -188,9 +220,88 @@ class ShoppingCart {
     }
 
     // ============================================
+    // CALCULAR DESCUENTOS
+    // ============================================
+    calculateDiscount() {
+        let totalDiscount = 0;
+        const appliedPromos = [];
+
+        // Promoción 1: Mañana Francesa (2x1 en viennoiserie - 50% en el segundo)
+        const viennoiserie = this.items.filter(item => item.category === 'viennoiserie');
+        if (viennoiserie.length >= 2) {
+            // Ordenar por precio descendente
+            const sorted = [...viennoiserie].sort((a, b) => (b.price * b.quantity) - (a.price * a.quantity));
+
+            let totalProducts = sorted.reduce((sum, item) => sum + item.quantity, 0);
+            let pairs = Math.floor(totalProducts / 2);
+
+            // Por cada par, descontar 50% del más barato
+            // Simplificación: descontar 50% del precio más bajo por cada par
+            const cheapestPrice = Math.min(...sorted.map(item => item.price));
+            const discountAmount = cheapestPrice * 0.5 * pairs;
+
+            totalDiscount += discountAmount;
+            if (discountAmount > 0) {
+                appliedPromos.push({
+                    name: 'Mañana Francesa (2x1)',
+                    discount: discountAmount
+                });
+            }
+        }
+
+        // Promoción 2: Festival de Macarons (3x2 - el 3ro gratis)
+        const macarons = this.items.filter(item => item.category === 'macarons');
+        if (macarons.length > 0) {
+            let totalMacarons = macarons.reduce((sum, item) => sum + item.quantity, 0);
+            let groupsOf3 = Math.floor(totalMacarons / 3);
+
+            if (groupsOf3 > 0) {
+                // Por cada grupo de 3, descontar el más barato
+                const cheapestMacaron = Math.min(...macarons.map(item => item.price));
+                const discountAmount = cheapestMacaron * groupsOf3;
+
+                totalDiscount += discountAmount;
+                appliedPromos.push({
+                    name: 'Festival de Macarons (3x2)',
+                    discount: discountAmount
+                });
+            }
+        }
+
+        // Promoción 3: Cliente Premium (10% en compras > $30,000)
+        const subtotal = this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+        if (subtotal >= 30000) {
+            const premiumDiscount = subtotal * 0.1;
+            totalDiscount += premiumDiscount;
+            appliedPromos.push({
+                name: 'Cliente Premium (-10%)',
+                discount: premiumDiscount
+            });
+        }
+
+        return {
+            totalDiscount,
+            appliedPromos
+        };
+    }
+
+    // ============================================
     // CALCULAR TOTAL
     // ============================================
     calculateTotal() {
+        const subtotal = this.items.reduce((total, item) => {
+            return total + (item.price * item.quantity);
+        }, 0);
+
+        const { totalDiscount } = this.calculateDiscount();
+
+        return subtotal - totalDiscount;
+    }
+
+    // ============================================
+    // CALCULAR SUBTOTAL (sin descuentos)
+    // ============================================
+    calculateSubtotal() {
         return this.items.reduce((total, item) => {
             return total + (item.price * item.quantity);
         }, 0);
@@ -267,8 +378,35 @@ class ShoppingCart {
             </div>
         `).join('');
 
-        // Actualizar total
-        const total = this.calculateTotal();
+        // Actualizar subtotal, descuentos y total
+        const subtotal = this.calculateSubtotal();
+        const { totalDiscount, appliedPromos } = this.calculateDiscount();
+        const total = subtotal - totalDiscount;
+
+        const subtotalElement = document.getElementById('cart-subtotal-amount');
+        const discountsElement = document.getElementById('cart-discounts');
+
+        if (subtotalElement) {
+            subtotalElement.textContent = `$${subtotal.toLocaleString('es-AR')}`;
+        }
+
+        // Mostrar descuentos aplicados
+        if (discountsElement) {
+            if (appliedPromos.length > 0) {
+                discountsElement.innerHTML = appliedPromos.map(promo => `
+                    <div class="cart-discount-item">
+                        <span class="discount-name">
+                            <i class="fas fa-tag"></i> ${promo.name}
+                        </span>
+                        <span class="discount-amount">-$${promo.discount.toLocaleString('es-AR')}</span>
+                    </div>
+                `).join('');
+                discountsElement.style.display = 'block';
+            } else {
+                discountsElement.style.display = 'none';
+            }
+        }
+
         if (totalElement) {
             totalElement.textContent = `$${total.toLocaleString('es-AR')}`;
         }
@@ -341,8 +479,21 @@ class ShoppingCart {
             message += `   Subtotal: $${(item.price * item.quantity).toLocaleString('es-AR')}\n\n`;
         });
 
-        const total = this.calculateTotal();
-        message += `TOTAL: $${total.toLocaleString('es-AR')}\n\n`;
+        const subtotal = this.calculateSubtotal();
+        const { totalDiscount, appliedPromos } = this.calculateDiscount();
+        const total = subtotal - totalDiscount;
+
+        message += `SUBTOTAL: $${subtotal.toLocaleString('es-AR')}\n`;
+
+        // Agregar descuentos si aplican
+        if (appliedPromos.length > 0) {
+            message += '\n✨ PROMOCIONES APLICADAS:\n';
+            appliedPromos.forEach(promo => {
+                message += `   ${promo.name}: -$${promo.discount.toLocaleString('es-AR')}\n`;
+            });
+        }
+
+        message += `\nTOTAL: $${total.toLocaleString('es-AR')}\n\n`;
         message += '¿Podrían confirmar disponibilidad y tiempo de preparación?';
 
         // Codificar mensaje para URL
