@@ -356,7 +356,12 @@ const productImageMap = {
     'Mille-feuille': 'images/hojaldre.png',
     'Paris-Brest': 'images/torta.png',
     'Éclair de Chocolate': 'images/eclairs.png',
-    'Éclair': 'images/eclairs.png'
+    'Éclair': 'images/eclairs.png',
+    // Bebidas para combos
+    'Café Premium': 'images/desayuno.png',
+    'Jugo de Naranja Natural': 'images/desayuno.png',
+    'Té Premium': 'images/cookies.png',
+    'Champagne Francés': 'images/eclairs.png'
 };
 
 // ==================== INICIALIZACIÓN ====================
@@ -962,18 +967,22 @@ function irACalculadoraConCombo(tipoCombo) {
     }
 
     setTimeout(() => {
-        // Definir los combos
+        // Definir los combos completos
         const combos = {
             'desayuno-parisino': [
-                { precio: 4000, nombre: 'Croissant Tradicional', categoria: 'viennoiserie' }
+                { precio: 4000, nombre: 'Croissant Tradicional', categoria: 'viennoiserie' },
+                { precio: 2000, nombre: 'Café Premium', categoria: 'bebidas' },
+                { precio: 1500, nombre: 'Jugo de Naranja Natural', categoria: 'bebidas' }
             ],
             'dulce-frances': [
                 { precio: 14000, nombre: 'Caja x6 Macarons', categoria: 'macarons' },
-                { precio: 2200, nombre: 'Éclair de Chocolate', categoria: 'especialidades' }
+                { precio: 4200, nombre: 'Pain aux Raisins', categoria: 'viennoiserie' },
+                { precio: 1200, nombre: 'Té Premium', categoria: 'bebidas' }
             ],
             'celebracion-elegante': [
                 { precio: 7200, nombre: 'Tarte Tatin', categoria: 'pasteles' },
-                { precio: 27000, nombre: 'Caja x12 Macarons', categoria: 'macarons' }
+                { precio: 27000, nombre: 'Caja x12 Macarons', categoria: 'macarons' },
+                { precio: 7800, nombre: 'Champagne Francés', categoria: 'bebidas' }
             ]
         };
 

@@ -146,8 +146,8 @@ class ShoppingCart {
     addItem(product) {
         const existingItem = this.items.find(item => item.id === product.id);
 
-        // Obtener categoría del producto
-        const category = this.productCategories[product.id] || 'otros';
+        // Obtener categoría: usar la proporcionada o buscar en el mapa
+        const category = product.category || this.productCategories[product.id] || 'otros';
 
         if (existingItem) {
             existingItem.quantity += product.quantity || 1;
