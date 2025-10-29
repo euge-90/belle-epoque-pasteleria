@@ -4911,7 +4911,7 @@ footer {
 
 /* Modal del carrito - dimensiones compactas */
 .cart-modal-content {
-    max-width: 550px !important;
+    max-width: 700px !important;
     width: 90%;
     padding: 0;
     border-radius: 15px;
@@ -4930,6 +4930,8 @@ footer {
     margin-bottom: 0;
     border-bottom: 2px solid #d4af37;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .cart-modal .modal-header h2 {
@@ -4939,9 +4941,11 @@ footer {
 }
 
 .cart-modal .modal-body {
+    /* Override generic modal grid to use full width in cart */
+    display: block;
     flex: 1;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     min-height: 0;
     width: 100%;
     box-sizing: border-box;
@@ -4967,15 +4971,14 @@ footer {
 
 .cart-item {
     display: grid;
-    grid-template-columns: 70px 1fr 110px 90px;
-    grid-template-areas: 
-        "image details quantity subtotal";
-    gap: 1rem;
+    grid-template-columns: 70px minmax(0, 1fr) max-content max-content 36px;
+    grid-template-areas:
+        "image details quantity subtotal remove";
+    gap: 0.8rem;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid #eee;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -5077,11 +5080,28 @@ footer {
     font-weight: 700;
     color: #8b4513;
     font-size: 1rem;
-    min-width: 90px;
+    white-space: nowrap;
 }
 
 .cart-item-remove {
-    display: none;
+    grid-area: remove;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #999;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.cart-item-remove:hover {
+    background: #fee;
+    color: #e74c3c;
 }
 
 /* Resumen del carrito */
