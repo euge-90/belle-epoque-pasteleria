@@ -44,7 +44,7 @@
     <main>
         <!-- Banner Promocional -->
         <div class="banner-promocional">
-            <p>🎉 ¡Ofertas especiales disponibles! - Válidas hasta fin de mes 🛍️</p>
+            <p data-translate="promociones.banner">🎉 ¡Ofertas especiales disponibles! - Válidas hasta fin de mes 🛍️</p>
         </div>
 
         <!-- Hero Section -->
@@ -63,11 +63,11 @@
                         <i class="fas fa-store"></i>
                     </div>
                     <div class="promo-alert-text">
-                        <h3>¿Buscás algo específico?</h3>
-                        <p>Explorá nuestro catálogo completo con todos los productos disponibles</p>
+                        <h3 data-translate="promociones.catalogo.titulo">¿Buscás algo específico?</h3>
+                        <p data-translate="promociones.catalogo.desc">Explorá nuestro catálogo completo con todos los productos disponibles</p>
                     </div>
                     <a href="productos.html" class="promo-alert-btn">
-                        Ver Todos los Productos
+                        <span data-translate="promociones.catalogo.btn">Ver Todos los Productos</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -77,8 +77,8 @@
         <!-- Sección de Promociones Destacadas -->
         <section id="promociones-destacadas" class="section">
             <div class="text-center">
-                <h2 class="text-gold">🎉 Ofertas Vigentes</h2>
-                <p class="mb-2">Aprovechá nuestras promociones especiales y llevate lo mejor de la pastelería francesa 🥐✨</p>
+                <h2 class="text-gold" data-translate="promociones.vigentes.titulo">🎉 Ofertas Vigentes</h2>
+                <p class="mb-2" data-translate="promociones.vigentes.desc">Aprovechá nuestras promociones especiales y llevate lo mejor de la pastelería francesa 🥐✨</p>
             </div>
 
             <!-- Barra de Búsqueda y Filtros -->
@@ -86,8 +86,8 @@
                 <div class="search-box-wrapper">
                     <div class="search-box">
                         <i class="fas fa-search search-icon"></i>
-                        <input type="text" id="promo-search" class="search-input" placeholder="Buscar promociones...">
-                        <button class="search-clear" id="search-clear" title="Limpiar búsqueda">
+                        <input type="text" id="promo-search" class="search-input" data-translate-placeholder="promociones.buscar" placeholder="Buscar promociones...">
+                        <button class="search-clear" id="search-clear" data-translate-title="promociones.limpiar" title="Limpiar búsqueda">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -96,37 +96,37 @@
                 <div class="filter-buttons-wrapper">
                     <button class="filter-btn active" data-filter="all">
                         <i class="fas fa-th"></i>
-                        <span>Todas</span>
+                        <span data-translate="promociones.filtro.todas">Todas</span>
                         <span class="filter-count" id="count-all">3</span>
                     </button>
                     <button class="filter-btn" data-filter="viennoiserie">
                         <i class="fas fa-bread-slice"></i>
-                        <span>Viennoiserie</span>
+                        <span data-translate="promociones.filtro.viennoiserie">Viennoiserie</span>
                         <span class="filter-count" id="count-viennoiserie">1</span>
                     </button>
                     <button class="filter-btn" data-filter="macarons">
                         <i class="fas fa-cookie"></i>
-                        <span>Macarons</span>
+                        <span data-translate="promociones.filtro.macarons">Macarons</span>
                         <span class="filter-count" id="count-macarons">1</span>
                     </button>
                     <button class="filter-btn" data-filter="premium">
                         <i class="fas fa-crown"></i>
-                        <span>Premium</span>
+                        <span data-translate="promociones.filtro.premium">Premium</span>
                         <span class="filter-count" id="count-premium">1</span>
                     </button>
                 </div>
             </div>
 
             <div class="results-info" id="results-info">
-                <p><span id="results-count">0</span> promociones encontradas</p>
+                <p><span id="results-count">0</span> <span data-translate="promociones.encontradas">promociones encontradas</span></p>
             </div>
 
             <div class="promotions-gallery" id="promotions-gallery">
                 <!-- Promoción Principal - 2x1 -->
                 <article class="promo-card featured animate-on-scroll" data-category="viennoiserie" data-promo-id="manana-francesa" data-end-date="2025-10-23" data-search-terms="croissant pain chocolat brioche viennoiserie desayuno frances">
-                    <div class="promo-badge badge-popular pulse-animation">¡MÁS POPULAR!</div>
+                    <div class="promo-badge badge-popular pulse-animation" data-translate="promociones.badge.popular">¡MÁS POPULAR!</div>
                     <div class="promo-discount">50% OFF</div>
-                    <button class="favorite-btn" data-promo="manana-francesa" aria-label="Agregar a favoritos">
+                    <button class="favorite-btn" data-promo="manana-francesa" data-translate-aria="promociones.favoritos" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
                     <div class="countdown-timer" data-end="2025-10-23"></div>
@@ -134,13 +134,13 @@
                         <img src="images/croissants.png" alt="Promoción Mañana Francesa - Croissants" loading="lazy" class="lazy-load">
                     </div>
                     <div class="promo-content">
-                        <h3>Mañana Francesa Perfecta</h3>
+                        <h3 data-translate="promo.manana.titulo">Mañana Francesa Perfecta</h3>
 
                         <!-- Social Proof y Stock -->
                         <div class="social-proof-container">
                             <div class="viewing-counter">
                                 <i class="fas fa-eye"></i>
-                                <span class="viewers-count" data-base="12">12</span> personas viendo
+                                <span class="viewers-count" data-base="12">12</span> <span data-translate="promociones.personas.viendo">personas viendo</span>
                             </div>
                             <div class="rating-display">
                                 <div class="stars">
@@ -150,7 +150,7 @@
                             </div>
                         </div>
 
-                        <p class="promo-description">
+                        <p class="promo-description" data-translate="promo.manana.desc">
                             Llevá <strong>2 productos de viennoiserie</strong> y obtené <strong>50% de descuento en el segundo</strong>
                             de menor o igual valor. Ideal para compartir un desayuno auténtico.
                         </p>
@@ -160,36 +160,36 @@
                             <div class="stock-bar-container">
                                 <div class="stock-bar" data-width="70"></div>
                             </div>
-                            <p class="stock-text">Solo quedan <strong>35 unidades</strong> disponibles hoy</p>
+                            <p class="stock-text"><span data-translate="promociones.stock.quedan">Solo quedan</span> <strong>35</strong> <span data-translate="promociones.stock.disponibles">unidades disponibles hoy</span></p>
                         </div>
 
                         <div class="promo-details">
                             <div class="promo-validity">
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>Válido todos los días</span>
+                                <span><span data-translate="promociones.valido">Válido</span> <span data-translate="promociones.valido.dias">todos los días</span></span>
                             </div>
                             <div class="promo-products">
                                 <i class="fas fa-bread-slice"></i>
-                                <span>Croissants, Pain au Chocolat, Brioche</span>
+                                <span data-translate="promo.manana.productos">Croissants, Pain au Chocolat, Brioche</span>
                             </div>
                         </div>
                         <div class="promo-example">
-                            <strong>Ejemplo:</strong> Croissant ($4.000) + Pain au Chocolat ($4.700) = <span class="price-before">$8.700</span>
-                            <span class="price-after">$6.700</span> <span class="savings">¡Ahorrás $2.000!</span>
+                            <strong data-translate="promociones.ejemplo">Ejemplo:</strong> Croissant ($4.000) + Pain au Chocolat ($4.700) = <span class="price-before">$8.700</span>
+                            <span class="price-after">$6.700</span> <span class="savings"><span data-translate="promociones.ahorras">¡Ahorrás</span> $2.000!</span>
                         </div>
                         <div class="promo-actions">
                             <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('manana-francesa')">
                                 <i class="fas fa-shopping-cart"></i>
-                                <span class="btn-text">¡Quiero esta promo!</span>
+                                <span class="btn-text" data-translate="promociones.btn.quiero">¡Quiero esta promo!</span>
                                 <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Mañana Francesa Perfecta')">
                                 <i class="fab fa-whatsapp"></i>
-                                Consultar
+                                <span data-translate="promociones.btn.consultar">Consultar</span>
                             </button>
                             <button class="promo-btn details-btn ripple-effect" onclick="openPromoModal('manana-francesa')">
                                 <i class="fas fa-info-circle"></i>
-                                Ver detalles
+                                <span data-translate="promociones.btn.detalles">Ver detalles</span>
                             </button>
                         </div>
                     </div>
@@ -197,9 +197,9 @@
 
                 <!-- Promoción Macarons -->
                 <article class="promo-card animate-on-scroll" data-category="macarons" data-promo-id="festival-macarons" data-end-date="2025-10-20" data-search-terms="macarons dulces postres parisinos colores sabores">
-                    <div class="promo-badge badge-new pulse-animation">NUEVO</div>
+                    <div class="promo-badge badge-new pulse-animation" data-translate="promociones.badge.nuevo">NUEVO</div>
                     <div class="promo-discount">3x2</div>
-                    <button class="favorite-btn" data-promo="festival-macarons" aria-label="Agregar a favoritos">
+                    <button class="favorite-btn" data-promo="festival-macarons" data-translate-aria="promociones.favoritos" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
                     <div class="countdown-timer" data-end="2025-10-20"></div>
@@ -207,13 +207,13 @@
                         <img src="images/macarons.png" alt="Promoción Festival de Macarons" loading="lazy" class="lazy-load">
                     </div>
                     <div class="promo-content">
-                        <h3>Festival de Macarons</h3>
+                        <h3 data-translate="promo.macarons.titulo">Festival de Macarons</h3>
 
                         <!-- Social Proof y Stock -->
                         <div class="social-proof-container">
                             <div class="viewing-counter">
                                 <i class="fas fa-eye"></i>
-                                <span class="viewers-count" data-base="18">18</span> personas viendo
+                                <span class="viewers-count" data-base="18">18</span> <span data-translate="promociones.personas.viendo">personas viendo</span>
                             </div>
                             <div class="rating-display">
                                 <div class="stars">
@@ -223,7 +223,7 @@
                             </div>
                         </div>
 
-                        <p class="promo-description">
+                        <p class="promo-description" data-translate="promo.macarons.desc">
                             Comprá <strong>3 macarons</strong> de cualquier sabor y <strong>pagá solo 2</strong>.
                             Perfecto para probar nuevos sabores parisinos.
                         </p>
@@ -233,36 +233,36 @@
                             <div class="stock-bar-container">
                                 <div class="stock-bar" data-width="47"></div>
                             </div>
-                            <p class="stock-text">Solo quedan <strong>28 unidades</strong> disponibles hoy</p>
+                            <p class="stock-text"><span data-translate="promociones.stock.quedan">Solo quedan</span> <strong>28</strong> <span data-translate="promociones.stock.disponibles">unidades disponibles hoy</span></p>
                         </div>
 
                         <div class="promo-details">
                             <div class="promo-validity">
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>Lunes a Viernes</span>
+                                <span><span data-translate="promociones.valido">Válido</span> <span data-translate="promociones.valido.lunes.viernes">Lunes a Viernes</span></span>
                             </div>
                             <div class="promo-products">
                                 <i class="fas fa-cookie"></i>
-                                <span>Todos los sabores de macarons</span>
+                                <span data-translate="promo.macarons.productos">Todos los sabores de macarons</span>
                             </div>
                         </div>
                         <div class="promo-example">
-                            <strong>Ejemplo:</strong> 3 Macarons = <span class="price-before">$7.500</span>
-                            <span class="price-after">$5.000</span> <span class="savings">¡Ahorrás $2.500!</span>
+                            <strong data-translate="promociones.ejemplo">Ejemplo:</strong> 3 Macarons = <span class="price-before">$7.500</span>
+                            <span class="price-after">$5.000</span> <span class="savings"><span data-translate="promociones.ahorras">¡Ahorrás</span> $2.500!</span>
                         </div>
                         <div class="promo-actions">
                             <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('festival-macarons')">
                                 <i class="fas fa-cookie"></i>
-                                <span class="btn-text">¡Elegir macarons!</span>
+                                <span class="btn-text" data-translate="promociones.btn.quiero">¡Elegir macarons!</span>
                                 <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Festival de Macarons')">
                                 <i class="fab fa-whatsapp"></i>
-                                Consultar
+                                <span data-translate="promociones.btn.consultar">Consultar</span>
                             </button>
                             <button class="promo-btn details-btn ripple-effect" onclick="openPromoModal('festival-macarons')">
                                 <i class="fas fa-info-circle"></i>
-                                Ver detalles
+                                <span data-translate="promociones.btn.detalles">Ver detalles</span>
                             </button>
                         </div>
                     </div>
@@ -270,9 +270,9 @@
 
                 <!-- Promoción Cliente Premium -->
                 <article class="promo-card premium animate-on-scroll" data-category="premium" data-promo-id="cliente-premium" data-end-date="2025-10-21" data-search-terms="premium descuento todos productos exclusivo vip">
-                    <div class="promo-badge premium-badge pulse-animation">PREMIUM</div>
+                    <div class="promo-badge premium-badge pulse-animation" data-translate="promociones.badge.premium">PREMIUM</div>
                     <div class="promo-discount">-10%</div>
-                    <button class="favorite-btn" data-promo="cliente-premium" aria-label="Agregar a favoritos">
+                    <button class="favorite-btn" data-promo="cliente-premium" data-translate-aria="promociones.favoritos" aria-label="Agregar a favoritos">
                         <i class="far fa-heart"></i>
                     </button>
                     <div class="countdown-timer" data-end="2025-10-21"></div>
@@ -280,13 +280,13 @@
                         <img src="images/torta.png" alt="Promoción Cliente Premium - Pasteles" loading="lazy" class="lazy-load">
                     </div>
                     <div class="promo-content">
-                        <h3>Cliente Premium</h3>
+                        <h3 data-translate="promo.premium.titulo">Cliente Premium</h3>
 
                         <!-- Social Proof y Stock -->
                         <div class="social-proof-container">
                             <div class="viewing-counter">
                                 <i class="fas fa-eye"></i>
-                                <span class="viewers-count" data-base="8">8</span> personas viendo
+                                <span class="viewers-count" data-base="8">8</span> <span data-translate="promociones.personas.viendo">personas viendo</span>
                             </div>
                             <div class="rating-display">
                                 <div class="stars">
@@ -296,7 +296,7 @@
                             </div>
                         </div>
 
-                        <p class="promo-description">
+                        <p class="promo-description" data-translate="promo.premium.desc">
                             <strong>10% de descuento</strong> en compras superiores a <strong>$30.000</strong>.
                             Aplicable a toda nuestra línea de productos.
                         </p>
@@ -309,30 +309,30 @@
                         <div class="promo-details">
                             <div class="promo-validity">
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>Todos los días</span>
+                                <span><span data-translate="promociones.valido">Válido</span> <span data-translate="promociones.valido.dias">todos los días</span></span>
                             </div>
                             <div class="promo-products">
                                 <i class="fas fa-star"></i>
-                                <span>Todos los productos</span>
+                                <span data-translate="promo.premium.productos">Todos los productos</span>
                             </div>
                         </div>
                         <div class="promo-example">
-                            <strong>Ejemplo:</strong> Compra $35.000 = <span class="price-after">$31.500</span>
-                            <span class="savings">¡Ahorrás $3.500!</span>
+                            <strong data-translate="promociones.ejemplo">Ejemplo:</strong> Compra $35.000 = <span class="price-after">$31.500</span>
+                            <span class="savings"><span data-translate="promociones.ahorras">¡Ahorrás</span> $3.500!</span>
                         </div>
                         <div class="promo-actions">
                             <button class="promo-btn primary ripple-effect" onclick="agregarPromocion('cliente-premium')">
                                 <i class="fas fa-crown"></i>
-                                <span class="btn-text">¡Ser Premium!</span>
+                                <span class="btn-text" data-translate="promociones.btn.quiero">¡Ser Premium!</span>
                                 <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                             <button class="promo-btn secondary ripple-effect" onclick="consultarPromocion('Cliente Premium')">
                                 <i class="fab fa-whatsapp"></i>
-                                Consultar
+                                <span data-translate="promociones.btn.consultar">Consultar</span>
                             </button>
                             <button class="promo-btn details-btn ripple-effect" onclick="openPromoModal('cliente-premium')">
                                 <i class="fas fa-info-circle"></i>
-                                Ver detalles
+                                <span data-translate="promociones.btn.detalles">Ver detalles</span>
                             </button>
                         </div>
                     </div>
