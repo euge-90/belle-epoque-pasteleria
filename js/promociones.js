@@ -255,24 +255,45 @@ const calculadoraState = {
 const promociones = {
     'manana-francesa': {
         nombre: 'Mañana Francesa',
-        explicacion: 'Agregá productos de viennoiserie y obtené 50% de descuento en el segundo producto de menor o igual valor.',
+        explicacion: 'Agregá 2 o más productos de viennoiserie y obtené 50% de descuento en el segundo de menor o igual valor.',
         categorias: ['viennoiserie'],
         calcular: (productos) => {
             const productosElegibles = productos.filter(p => p.categoria === 'viennoiserie');
-            if (productosElegibles.length < 2) return 0;
+            if (productosElegibles.length === 0) return 0;
+
+            // Contar cantidad total de productos viennoiserie
+            let cantidadTotal = productosElegibles.reduce((sum, p) => sum + p.cantidad, 0);
+
+            // Necesitamos al menos 2 productos para la promo
+            if (cantidadTotal < 2) return 0;
+
+            // Calcular cuántos pares podemos formar
+            let pares = Math.floor(cantidadTotal / 2);
+
+            // Crear un array con todos los productos expandidos por cantidad
+            let productosExpandidos = [];
+            productosElegibles.forEach(p => {
+                for (let i = 0; i < p.cantidad; i++) {
+                    productosExpandidos.push({ precio: p.precio, nombre: p.nombre });
+                }
+            });
 
             // Ordenar por precio descendente
-            productosElegibles.sort((a, b) => (b.precio * b.cantidad) - (a.precio * a.cantidad));
+            productosExpandidos.sort((a, b) => b.precio - a.precio);
 
+            // Calcular descuento: 50% del más barato de cada par
             let descuento = 0;
-            let productosRestantes = [...productosElegibles];
+            for (let i = 0; i < pares; i++) {
+                const indice1 = i * 2;
+                const indice2 = i * 2 + 1;
 
-            while (productosRestantes.length >= 2) {
-                const primero = productosRestantes.shift();
-                const segundo = productosRestantes.shift();
+                if (indice2 < productosExpandidos.length) {
+                    const precio1 = productosExpandidos[indice1].precio;
+                    const precio2 = productosExpandidos[indice2].precio;
+                    const precioMenor = Math.min(precio1, precio2);
 
-                const precioMenor = Math.min(primero.precio, segundo.precio);
-                descuento += precioMenor * 0.5;
+                    descuento += precioMenor * 0.5;
+                }
             }
 
             return descuento;
@@ -280,25 +301,29 @@ const promociones = {
     },
     'festival-macarons': {
         nombre: 'Festival de Macarons',
-        explicacion: 'Comprá 3 macarons de cualquier sabor y pagá solo 2. El descuento se aplica al macaron de menor valor.',
+        explicacion: 'Comprá 3 macarons individuales y pagá solo 2. El descuento se aplica al macaron de menor valor. No aplica a cajas.',
         categorias: ['macarons'],
         calcular: (productos) => {
-            const macarons = productos.filter(p => p.categoria === 'macarons');
-            if (macarons.length < 3) return 0;
+            // Filtrar SOLO macarons individuales (excluir cajas)
+            const macaronsIndividuales = productos.filter(p =>
+                p.categoria === 'macarons' &&
+                p.nombre === 'Macaron (unidad)'
+            );
 
-            let cantidadTotal = macarons.reduce((sum, p) => sum + p.cantidad, 0);
+            if (macaronsIndividuales.length === 0) return 0;
+
+            // Contar cantidad total de macarons individuales
+            let cantidadTotal = macaronsIndividuales.reduce((sum, p) => sum + p.cantidad, 0);
+
+            // Calcular grupos de 3 (el tercero es gratis)
             let gruposDe3 = Math.floor(cantidadTotal / 3);
 
-            // Ordenar por precio para descontar los más baratos
-            const macaronsOrdenados = macarons.sort((a, b) => a.precio - b.precio);
+            if (gruposDe3 === 0) return 0;
 
-            let descuento = 0;
-            for (let i = 0; i < gruposDe3; i++) {
-                // Descontar el más barato de cada grupo de 3
-                if (macaronsOrdenados[0]) {
-                    descuento += macaronsOrdenados[0].precio;
-                }
-            }
+            // El descuento es el precio de 1 macaron por cada grupo de 3
+            // Asumiendo que todos los macarons individuales cuestan lo mismo
+            const precioMacaron = macaronsIndividuales[0].precio;
+            const descuento = precioMacaron * gruposDe3;
 
             return descuento;
         }

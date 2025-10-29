@@ -228,37 +228,70 @@ class ShoppingCart {
 
         // Promoción 1: Mañana Francesa (2x1 en viennoiserie - 50% en el segundo)
         const viennoiserie = this.items.filter(item => item.category === 'viennoiserie');
-        if (viennoiserie.length >= 2) {
-            // Ordenar por precio descendente
-            const sorted = [...viennoiserie].sort((a, b) => (b.price * b.quantity) - (a.price * a.quantity));
+        if (viennoiserie.length > 0) {
+            // Contar cantidad total de productos viennoiserie
+            let totalProducts = viennoiserie.reduce((sum, item) => sum + item.quantity, 0);
 
-            let totalProducts = sorted.reduce((sum, item) => sum + item.quantity, 0);
-            let pairs = Math.floor(totalProducts / 2);
+            // Necesitamos al menos 2 productos para la promo
+            if (totalProducts >= 2) {
+                let pairs = Math.floor(totalProducts / 2);
 
-            // Por cada par, descontar 50% del más barato
-            // Simplificación: descontar 50% del precio más bajo por cada par
-            const cheapestPrice = Math.min(...sorted.map(item => item.price));
-            const discountAmount = cheapestPrice * 0.5 * pairs;
-
-            totalDiscount += discountAmount;
-            if (discountAmount > 0) {
-                appliedPromos.push({
-                    name: 'Mañana Francesa (2x1)',
-                    discount: discountAmount
+                // Crear un array con todos los productos expandidos por cantidad
+                let expandedProducts = [];
+                viennoiserie.forEach(item => {
+                    for (let i = 0; i < item.quantity; i++) {
+                        expandedProducts.push({ price: item.price, name: item.name });
+                    }
                 });
+
+                // Ordenar por precio descendente
+                expandedProducts.sort((a, b) => b.price - a.price);
+
+                // Calcular descuento: 50% del más barato de cada par
+                let discountAmount = 0;
+                for (let i = 0; i < pairs; i++) {
+                    const idx1 = i * 2;
+                    const idx2 = i * 2 + 1;
+
+                    if (idx2 < expandedProducts.length) {
+                        const price1 = expandedProducts[idx1].price;
+                        const price2 = expandedProducts[idx2].price;
+                        const cheaperPrice = Math.min(price1, price2);
+
+                        discountAmount += cheaperPrice * 0.5;
+                    }
+                }
+
+                totalDiscount += discountAmount;
+                if (discountAmount > 0) {
+                    appliedPromos.push({
+                        name: 'Mañana Francesa (2x1)',
+                        discount: discountAmount
+                    });
+                }
             }
         }
 
         // Promoción 2: Festival de Macarons (3x2 - el 3ro gratis)
-        const macarons = this.items.filter(item => item.category === 'macarons');
-        if (macarons.length > 0) {
-            let totalMacarons = macarons.reduce((sum, item) => sum + item.quantity, 0);
+        // Solo aplica a macarons individuales, no a cajas
+        const macaronsIndividuales = this.items.filter(item =>
+            item.category === 'macarons' &&
+            (item.name.includes('Macaron de') || item.name === 'Macaron de Frambuesa' ||
+             item.name === 'Macaron de Pistacho' || item.name === 'Macaron de Chocolate' ||
+             item.name === 'Macaron de Vainilla' || item.name === 'Macaron de Lavanda' ||
+             item.name === 'Macaron de Limón' || item.name === 'Macaron de Rosa' ||
+             item.name === 'Macaron de Caramelo')
+        );
+
+        if (macaronsIndividuales.length > 0) {
+            let totalMacarons = macaronsIndividuales.reduce((sum, item) => sum + item.quantity, 0);
             let groupsOf3 = Math.floor(totalMacarons / 3);
 
             if (groupsOf3 > 0) {
-                // Por cada grupo de 3, descontar el más barato
-                const cheapestMacaron = Math.min(...macarons.map(item => item.price));
-                const discountAmount = cheapestMacaron * groupsOf3;
+                // Por cada grupo de 3, descontar 1 macaron
+                // Asumiendo que todos los macarons individuales cuestan lo mismo
+                const precioMacaron = macaronsIndividuales[0].price;
+                const discountAmount = precioMacaron * groupsOf3;
 
                 totalDiscount += discountAmount;
                 appliedPromos.push({
