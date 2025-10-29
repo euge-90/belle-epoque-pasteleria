@@ -4866,34 +4866,63 @@ footer {
    ESTILOS DEL CARRITO Y DESCUENTOS
    ============================================ */
 
-/* Modal del carrito - dimensiones compactas */
-.cart-modal-content {
-    max-width: 450px !important;
-    width: 90%;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+/* Modal del carrito - posicionamiento y estructura */
+.modal.cart-modal,
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
-.modal-header {
+.modal.cart-modal.active,
+.cart-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal del carrito - dimensiones compactas */
+.cart-modal-content {
+    max-width: 550px !important;
+    width: 90%;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 0;
     border-bottom: 2px solid #d4af37;
+    flex-shrink: 0;
 }
 
-.modal-header h2 {
+.cart-modal .modal-header h2 {
     font-size: 1.5rem;
     color: #8b4513;
     margin: 0;
 }
 
-.modal-body {
-    max-height: 50vh;
+.cart-modal .modal-body {
+    flex: 1;
     overflow-y: auto;
-    padding-right: 0.5rem;
+    padding: 1rem 1.5rem;
+    min-height: 0;
 }
 
 /* Items del carrito - layout de 3 columnas */
@@ -4999,10 +5028,10 @@ footer {
 }
 
 /* Resumen del carrito */
-.cart-summary {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 2px solid #d4af37;
+.cart-modal .cart-summary {
+    margin-top: 1rem;
+    padding-top: 0;
+    border-top: none;
 }
 
 .cart-subtotal {
@@ -5051,14 +5080,25 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-/* Botones de acción */
-.modal-footer {
+/* Footer del modal del carrito */
+.cart-modal .modal-footer {
     display: flex;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0;
+    padding: 1.5rem;
+    margin-top: 0;
+    border-top: 2px solid #d4af37;
+    flex-shrink: 0;
+    background: #fafafa;
 }
 
-.modal-footer button {
+.cart-modal .cart-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.cart-modal .modal-footer button {
     flex: 1;
     padding: 0.8rem;
     border-radius: 8px;
@@ -5091,17 +5131,41 @@ footer {
     color: white;
 }
 
-/* Responsive */
+/* Desktop - asegurar visualización óptima */
+@media (min-width: 769px) {
+    .cart-modal-content {
+        max-width: 550px !important;
+        width: 550px;
+    }
+
+    .cart-modal .modal-body {
+        max-height: 55vh;
+    }
+}
+
+/* Responsive móvil */
 @media (max-width: 768px) {
     .cart-modal-content {
         width: 95%;
         max-width: none;
+    }
+
+    .cart-modal .modal-header {
+        padding: 1rem;
+    }
+
+    .cart-modal .modal-body {
+        padding: 0.75rem 1rem;
+    }
+
+    .cart-modal .modal-footer {
         padding: 1rem;
     }
 
     .cart-item {
         grid-template-columns: 60px 1fr 80px;
         gap: 0.7rem;
+        padding: 0.75rem 0;
     }
 
     .cart-item-image {
@@ -5117,7 +5181,7 @@ footer {
         font-size: 0.85rem;
     }
 
-    .modal-header h2 {
+    .cart-modal .modal-header h2 {
         font-size: 1.3rem;
     }
 
