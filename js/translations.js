@@ -57,6 +57,10 @@ class TranslationSystem {
                 'productos.filtros.macarons': 'Macarons',
                 'productos.filtros.pasteles': 'Pasteles & Tartas',
                 'productos.filtros.especiales': 'Pedidos Especiales',
+                'productos.buscar.placeholder': '🔍 Buscar productos...',
+                'productos.resultados': 'Mostrando {count} productos',
+                'productos.sinresultados.titulo': 'No se encontraron productos',
+                'productos.sinresultados.texto': 'Intenta cambiar los filtros o realizar otra búsqueda',
 
                 // Product Cards
                 'producto.vista.rapida': 'Vista Rápida',
@@ -605,6 +609,10 @@ class TranslationSystem {
                 'productos.filtros.macarons': 'Macarons',
                 'productos.filtros.pasteles': 'Pastries & Tarts',
                 'productos.filtros.especiales': 'Special Orders',
+                'productos.buscar.placeholder': '🔍 Search products...',
+                'productos.resultados': 'Showing {count} products',
+                'productos.sinresultados.titulo': 'No products found',
+                'productos.sinresultados.texto': 'Try changing the filters or performing another search',
 
                 // Product Cards
                 'producto.vista.rapida': 'Quick View',
