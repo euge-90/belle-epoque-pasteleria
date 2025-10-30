@@ -1236,12 +1236,10 @@ class TranslationSystem {
         const modal = document.getElementById('cart-modal');
         if (!modal) return;
 
-        // Título del modal
-        const title = modal.querySelector('.modal-header h2');
-        if (title) {
-            const icon = title.querySelector('i');
-            title.textContent = ' ' + this.translate('carrito.tu.pedido');
-            if (icon) title.prepend(icon);
+        // Título del modal: actualizar solo la etiqueta, preservando ícono y contador
+        const titleLabel = modal.querySelector('.modal-header h2 .cart-title-label');
+        if (titleLabel) {
+            titleLabel.textContent = this.translate('carrito.tu.pedido');
         }
 
         // Carrito vacío

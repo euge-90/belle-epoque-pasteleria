@@ -94,7 +94,11 @@ class ShoppingCart {
             <div class="modal-overlay"></div>
             <div class="modal-content cart-modal-content">
                 <div class="modal-header">
-                    <h2><i class="fas fa-shopping-cart"></i> Tu Pedido</h2>
+                    <h2>
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-title-label" data-translate="carrito.tu.pedido">Tu Pedido</span>
+                        <span class="cart-title-count" aria-live="polite"></span>
+                    </h2>
                     <button class="modal-close" aria-label="Cerrar">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -226,7 +230,7 @@ class ShoppingCart {
         let totalDiscount = 0;
         const appliedPromos = [];
 
-        // Promoción 1: Mañana Francesa (2x1 en viennoiserie - 50% en el segundo)
+        // Promoción 1: Mañana Francesa (50% en el segundo item)
         const viennoiserie = this.items.filter(item => item.category === 'viennoiserie');
         if (viennoiserie.length > 0) {
             // Contar cantidad total de productos viennoiserie
@@ -265,7 +269,7 @@ class ShoppingCart {
                 totalDiscount += discountAmount;
                 if (discountAmount > 0) {
                     appliedPromos.push({
-                        name: 'Mañana Francesa (2x1)',
+                        name: 'Mañana Francesa (2do al 50%)',
                         discount: discountAmount
                     });
                 }
@@ -354,6 +358,12 @@ class ShoppingCart {
             // Animación de pulso
             countElement.classList.add('pulse');
             setTimeout(() => countElement.classList.remove('pulse'), 300);
+        }
+
+        // Actualizar contador en el título del modal si existe
+        const modalTitleCount = document.querySelector('#cart-modal .cart-title-count');
+        if (modalTitleCount) {
+            modalTitleCount.textContent = count > 0 ? ` (${count})` : '';
         }
     }
 
@@ -482,6 +492,8 @@ class ShoppingCart {
             this.renderCartItems();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            // Asegurar que el título muestre la cantidad actual al abrir
+            this.updateCartCount();
         }
     }
 
