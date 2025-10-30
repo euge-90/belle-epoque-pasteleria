@@ -104,7 +104,13 @@ class ShoppingCart {
                 <div class="modal-body">
                     <div class="cart-sticky-total" role="region" aria-live="polite">
                         <span class="label" data-translate="carrito.total">Total:</span>
-                        <span id="cart-sticky-total-amount" class="amount">$0</span>
+                        <div class="sticky-amount-group">
+                            <span id="cart-sticky-total-amount" class="amount">$0</span>
+                            <span id="cart-sticky-savings" class="promo-savings" style="display:none;" data-translate-aria="carrito.promos.aplicadas" aria-label="Promociones aplicadas">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                <span class="savings-amount">-$0</span>
+                            </span>
+                        </div>
                     </div>
                     <div id="cart-items" class="cart-items"></div>
                     <div id="empty-cart" class="empty-cart" style="display: none;">
@@ -431,7 +437,7 @@ class ShoppingCart {
 
         // Actualizar subtotal, descuentos y total
         const subtotal = this.calculateSubtotal();
-        const { totalDiscount, appliedPromos } = this.calculateDiscount();
+    const { totalDiscount, appliedPromos } = this.calculateDiscount();
         const total = subtotal - totalDiscount;
 
         const subtotalElement = document.getElementById('cart-subtotal-amount');
@@ -465,6 +471,18 @@ class ShoppingCart {
         const stickyTotal = document.getElementById('cart-sticky-total-amount');
         if (stickyTotal) {
             stickyTotal.textContent = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        // Mostrar/ocultar ahorro total en la barra sticky si hay promociones
+        const savingsEl = document.getElementById('cart-sticky-savings');
+        if (savingsEl) {
+            if (totalDiscount > 0 && appliedPromos.length > 0) {
+                savingsEl.style.display = 'inline-flex';
+                const amountEl = savingsEl.querySelector('.savings-amount');
+                if (amountEl) amountEl.textContent = `-$${totalDiscount.toLocaleString('es-AR')}`;
+            } else {
+                savingsEl.style.display = 'none';
+            }
         }
 
         // Eventos de cantidad

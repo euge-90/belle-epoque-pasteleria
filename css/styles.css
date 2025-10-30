@@ -4988,6 +4988,29 @@ footer {
     font-size: 1.1rem;
 }
 
+.cart-modal .cart-sticky-total .sticky-amount-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-modal .cart-sticky-total .promo-savings {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #eefaf3;
+    color: #27ae60;
+    border: 1px solid #c9f0db;
+    border-radius: 999px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.cart-modal .cart-sticky-total .promo-savings i {
+    font-size: 0.85rem;
+}
+
 /* Items del carrito - layout de 3 columnas expandido */
 .cart-items,
 #cart-items {
@@ -5311,6 +5334,11 @@ footer {
 
     .cart-modal .cart-sticky-total .amount {
         font-size: 1rem;
+    }
+
+    .cart-modal .cart-sticky-total .promo-savings {
+        font-size: 0.8rem;
+        padding: 0.15rem 0.45rem;
     }
 
     .qty-btn {

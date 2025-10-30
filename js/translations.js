@@ -417,6 +417,7 @@ class TranslationSystem {
                 'carrito.confirmar.vaciar': '¿Estás seguro de que quieres vaciar el carrito?',
                 'carrito.confirmar.eliminar': '¿Deseas vaciar el carrito?',
                 'carrito.vacio.alert': 'Tu carrito está vacío',
+                'carrito.promos.aplicadas': 'Promociones aplicadas',
 
                 // Status
                 'status.abierto': '🟢 Abierto ahora',
@@ -968,6 +969,7 @@ class TranslationSystem {
                 'carrito.confirmar.vaciar': 'Are you sure you want to clear the cart?',
                 'carrito.confirmar.eliminar': 'Do you want to clear the cart?',
                 'carrito.vacio.alert': 'Your cart is empty',
+                'carrito.promos.aplicadas': 'Discounts applied',
 
                 // Status
                 'status.abierto': '🟢 Open now',
