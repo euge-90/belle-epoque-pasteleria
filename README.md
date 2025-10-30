@@ -1559,4 +1559,4 @@ Este proyecto puede ser utilizado como referencia educativa citando apropiadamen
 
 **Belle Époque** · Pastelería Francesa Artesanal ✨🥐
 
-*Desarrollado con dedicación por Eugenia Ojeda para UADE - 2024*
+*Desarrollado con dedicación por Eugenia Ojeda para UADE - 2025*
