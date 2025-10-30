@@ -218,12 +218,13 @@ class TranslationSystem {
                 'especiales.corporativos.feat3': 'Presentación elegante',
                 'especiales.corporativos.feat4': 'Entrega puntual',
 
-                'especiales.bodas.titulo': 'Bodas & Celebraciones',
-                'especiales.bodas.desc': 'Hacemos realidad el pastel de tus sueños para el día más importante. Trabajamos contigo en cada detalle.',
-                'especiales.bodas.feat1': 'Consulta personalizada',
-                'especiales.bodas.feat2': 'Degustación previa',
-                'especiales.bodas.feat3': 'Múltiples niveles',
-                'especiales.bodas.feat4': 'Decoración artística',
+                'especiales.bodas.titulo': 'Torta Nupcial de Autor',
+                'especiales.bodas.desc': 'Diseñamos tu torta de boda a medida: paleta, flores y acabados, con entrega y montaje en salón.',
+                'especiales.bodas.feat1': 'Diseño y boceto personalizados',
+                'especiales.bodas.feat2': 'Degustación para 2 personas',
+                'especiales.bodas.feat3': 'Topper y flores a elección',
+                'especiales.bodas.feat4': 'Entrega y montaje en salón',
+                'especiales.bodas.alt': 'Torta nupcial de autor con acabado elegante',
 
                 // Especiales - Mesas Dulces & Coffee Break
                 'especiales.mesas.titulo': 'Mesas Dulces & Coffee Break',
@@ -778,12 +779,13 @@ class TranslationSystem {
                 'especiales.corporativos.feat3': 'Elegant presentation',
                 'especiales.corporativos.feat4': 'Punctual delivery',
 
-                'especiales.bodas.titulo': 'Weddings & Celebrations',
-                'especiales.bodas.desc': 'We bring your dream cake to life for the most important day. We work with you on every detail.',
-                'especiales.bodas.feat1': 'Personalized consultation',
-                'especiales.bodas.feat2': 'Prior tasting',
-                'especiales.bodas.feat3': 'Multiple tiers',
-                'especiales.bodas.feat4': 'Artistic decoration',
+                'especiales.bodas.titulo': 'Signature Wedding Cake',
+                'especiales.bodas.desc': 'We craft your bespoke wedding cake: palette, florals and finishes, with on-site delivery and setup.',
+                'especiales.bodas.feat1': 'Custom design and sketch',
+                'especiales.bodas.feat2': 'Tasting for two',
+                'especiales.bodas.feat3': 'Topper and florals of choice',
+                'especiales.bodas.feat4': 'Delivery and on-site setup',
+                'especiales.bodas.alt': 'Signature wedding cake with elegant finish',
 
                 // Specials - Dessert Tables & Coffee Break
                 'especiales.mesas.titulo': 'Dessert Tables & Coffee Break',
