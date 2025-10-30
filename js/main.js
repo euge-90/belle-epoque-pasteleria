@@ -9,6 +9,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initHeaderScroll();
+    initScrollProgress();
     initBackToTop();
     initScrollReveal();
     initWhatsAppButton();
@@ -65,6 +66,36 @@ function initHeaderScroll() {
 
         lastScroll = currentScroll;
     });
+}
+
+// ============================================
+// 3.1. BARRA DE PROGRESO DE SCROLL (GENÉRICA)
+// ============================================
+function initScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+
+    const update = () => {
+        const scrolled = window.pageYOffset || document.documentElement.scrollTop || 0;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.body.clientHeight,
+            document.documentElement.clientHeight
+        );
+
+        const denom = Math.max(1, docHeight - windowHeight);
+        const percent = Math.min(100, Math.max(0, (scrolled / denom) * 100));
+        progressBar.style.width = percent + '%';
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    // Inicializar
+    update();
 }
 
 // ============================================
