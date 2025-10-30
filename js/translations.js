@@ -225,6 +225,14 @@ class TranslationSystem {
                 'especiales.bodas.feat3': 'Múltiples niveles',
                 'especiales.bodas.feat4': 'Decoración artística',
 
+                // Especiales - Mesas Dulces & Coffee Break
+                'especiales.mesas.titulo': 'Mesas Dulces & Coffee Break',
+                'especiales.mesas.desc': 'Montamos mesas dulces francesas para eventos, cumples, showers y más.',
+                'especiales.mesas.feat1': 'Montaje elegante',
+                'especiales.mesas.feat2': 'Miniaturas francesas',
+                'especiales.mesas.feat3': 'Menú a medida',
+                'especiales.mesas.feat4': 'Servicio integral',
+
                 'especiales.como.titulo': '¿Cómo hacer tu pedido especial?',
                 'especiales.paso1.titulo': 'Contactanos',
                 'especiales.paso1.desc': 'Llámanos o escribinos para contarnos tu idea',
@@ -776,6 +784,14 @@ class TranslationSystem {
                 'especiales.bodas.feat2': 'Prior tasting',
                 'especiales.bodas.feat3': 'Multiple tiers',
                 'especiales.bodas.feat4': 'Artistic decoration',
+
+                // Specials - Dessert Tables & Coffee Break
+                'especiales.mesas.titulo': 'Dessert Tables & Coffee Break',
+                'especiales.mesas.desc': 'We set up French-style dessert tables for events, birthdays, showers and more.',
+                'especiales.mesas.feat1': 'Elegant setup',
+                'especiales.mesas.feat2': 'French miniatures',
+                'especiales.mesas.feat3': 'Custom menu',
+                'especiales.mesas.feat4': 'Full service',
 
                 'especiales.como.titulo': 'How to place your special order?',
                 'especiales.paso1.titulo': 'Contact us',
