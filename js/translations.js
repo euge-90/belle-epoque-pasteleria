@@ -1259,6 +1259,12 @@ class TranslationSystem {
             totalLabel.textContent = this.translate('carrito.total');
         }
 
+        // Total sticky (barra bajo el header)
+        const stickyTotalLabel = modal.querySelector('.cart-sticky-total .label');
+        if (stickyTotalLabel) {
+            stickyTotalLabel.textContent = this.translate('carrito.total');
+        }
+
         // Botón finalizar
         const checkoutBtn = modal.querySelector('#cart-checkout');
         if (checkoutBtn) {

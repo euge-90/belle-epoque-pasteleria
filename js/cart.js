@@ -102,6 +102,10 @@ class ShoppingCart {
                     <button class="modal-close" aria-label="Cerrar">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <div class="cart-sticky-total" role="region" aria-live="polite">
+                        <span class="label" data-translate="carrito.total">Total:</span>
+                        <span id="cart-sticky-total-amount" class="amount">$0</span>
+                    </div>
                     <div id="cart-items" class="cart-items"></div>
                     <div id="empty-cart" class="empty-cart" style="display: none;">
                         <i class="fas fa-shopping-cart"></i>
@@ -381,11 +385,15 @@ class ShoppingCart {
             container.style.display = 'none';
             if (emptyCart) emptyCart.style.display = 'flex';
             if (totalElement) totalElement.textContent = '$0';
+            const stickyBar = document.getElementById('cart-sticky-total-amount')?.closest('.cart-sticky-total');
+            if (stickyBar) stickyBar.style.display = 'none';
             return;
         }
 
         container.style.display = 'block';
         if (emptyCart) emptyCart.style.display = 'none';
+        const stickyBar = document.getElementById('cart-sticky-total-amount')?.closest('.cart-sticky-total');
+        if (stickyBar) stickyBar.style.display = 'flex';
 
         container.innerHTML = this.items.map(item => `
             <div class="cart-item" data-id="${item.id}">
@@ -452,6 +460,11 @@ class ShoppingCart {
 
         if (totalElement) {
             totalElement.textContent = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        const stickyTotal = document.getElementById('cart-sticky-total-amount');
+        if (stickyTotal) {
+            stickyTotal.textContent = `$${total.toLocaleString('es-AR')}`;
         }
 
         // Eventos de cantidad

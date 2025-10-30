@@ -4963,6 +4963,31 @@ footer {
     box-sizing: border-box;
 }
 
+/* Barra de total fija dentro del área scrolleable */
+.cart-modal .cart-sticky-total {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 0; /* respeta padding lateral de .modal-body */
+    border-bottom: 1px solid #eee;
+}
+
+.cart-modal .cart-sticky-total .label {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.cart-modal .cart-sticky-total .amount {
+    color: #d4af37;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
 /* Items del carrito - layout de 3 columnas expandido */
 .cart-items,
 #cart-items {
@@ -5278,6 +5303,14 @@ footer {
         min-width: auto;
         text-align: right;
         margin-top: 0.5rem;
+    }
+
+    .cart-modal .cart-sticky-total {
+        padding: 0.6rem 0;
+    }
+
+    .cart-modal .cart-sticky-total .amount {
+        font-size: 1rem;
     }
 
     .qty-btn {
