@@ -5174,6 +5174,11 @@ footer {
     border-top: 2px solid #d4af37;
     flex-shrink: 0;
     background: #fafafa;
+    /* Mantener los botones siempre visibles mientras se desplaza el contenido */
+    position: sticky;
+    bottom: 0;
+    z-index: 1; /* por encima del contenido que scrollea */
+    box-shadow: 0 -6px 10px rgba(0,0,0,0.06);
 }
 
 .cart-modal .cart-actions {
@@ -5215,17 +5220,7 @@ footer {
     color: white;
 }
 
-/* Desktop - asegurar visualización óptima */
-@media (min-width: 769px) {
-    .cart-modal-content {
-        max-width: 550px !important;
-        width: 550px;
-    }
-
-    .cart-modal .modal-body {
-        max-height: 55vh;
-    }
-}
+/* Desktop - ancho y alto manejados en reglas globales para mantener el modal amplio */
 
 /* Responsive móvil */
 @media (max-width: 768px) {
