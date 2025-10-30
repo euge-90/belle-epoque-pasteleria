@@ -4964,52 +4964,7 @@ footer {
 }
 
 /* Barra de total fija dentro del área scrolleable */
-.cart-modal .cart-sticky-total {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.75rem 0; /* respeta padding lateral de .modal-body */
-    border-bottom: 1px solid #eee;
-}
-
-.cart-modal .cart-sticky-total .label {
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-.cart-modal .cart-sticky-total .amount {
-    color: #d4af37;
-    font-weight: 800;
-    font-size: 1.1rem;
-}
-
-.cart-modal .cart-sticky-total .sticky-amount-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.cart-modal .cart-sticky-total .promo-savings {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    background: #eefaf3;
-    color: #27ae60;
-    border: 1px solid #c9f0db;
-    border-radius: 999px;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.cart-modal .cart-sticky-total .promo-savings i {
-    font-size: 0.85rem;
-}
+/* (removida) barra de total sticky bajo el header */
 
 /* Items del carrito - layout de 3 columnas expandido */
 .cart-items,
@@ -5328,18 +5283,7 @@ footer {
         margin-top: 0.5rem;
     }
 
-    .cart-modal .cart-sticky-total {
-        padding: 0.6rem 0;
-    }
-
-    .cart-modal .cart-sticky-total .amount {
-        font-size: 1rem;
-    }
-
-    .cart-modal .cart-sticky-total .promo-savings {
-        font-size: 0.8rem;
-        padding: 0.15rem 0.45rem;
-    }
+    /* (removida) barra de total sticky en mobile */
 
     .qty-btn {
         width: 24px;

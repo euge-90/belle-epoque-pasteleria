@@ -102,16 +102,6 @@ class ShoppingCart {
                     <button class="modal-close" aria-label="Cerrar">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="cart-sticky-total" role="region" aria-live="polite">
-                        <span class="label" data-translate="carrito.total">Total:</span>
-                        <div class="sticky-amount-group">
-                            <span id="cart-sticky-total-amount" class="amount">$0</span>
-                            <span id="cart-sticky-savings" class="promo-savings" style="display:none;" data-translate-aria="carrito.promos.aplicadas" aria-label="Promociones aplicadas">
-                                <i class="fas fa-tag" aria-hidden="true"></i>
-                                <span class="savings-amount">-$0</span>
-                            </span>
-                        </div>
-                    </div>
                     <div id="cart-items" class="cart-items"></div>
                     <div id="empty-cart" class="empty-cart" style="display: none;">
                         <i class="fas fa-shopping-cart"></i>
@@ -391,15 +381,11 @@ class ShoppingCart {
             container.style.display = 'none';
             if (emptyCart) emptyCart.style.display = 'flex';
             if (totalElement) totalElement.textContent = '$0';
-            const stickyBar = document.getElementById('cart-sticky-total-amount')?.closest('.cart-sticky-total');
-            if (stickyBar) stickyBar.style.display = 'none';
             return;
         }
 
         container.style.display = 'block';
         if (emptyCart) emptyCart.style.display = 'none';
-        const stickyBar = document.getElementById('cart-sticky-total-amount')?.closest('.cart-sticky-total');
-        if (stickyBar) stickyBar.style.display = 'flex';
 
         container.innerHTML = this.items.map(item => `
             <div class="cart-item" data-id="${item.id}">
@@ -468,22 +454,6 @@ class ShoppingCart {
             totalElement.textContent = `$${total.toLocaleString('es-AR')}`;
         }
 
-        const stickyTotal = document.getElementById('cart-sticky-total-amount');
-        if (stickyTotal) {
-            stickyTotal.textContent = `$${total.toLocaleString('es-AR')}`;
-        }
-
-        // Mostrar/ocultar ahorro total en la barra sticky si hay promociones
-        const savingsEl = document.getElementById('cart-sticky-savings');
-        if (savingsEl) {
-            if (totalDiscount > 0 && appliedPromos.length > 0) {
-                savingsEl.style.display = 'inline-flex';
-                const amountEl = savingsEl.querySelector('.savings-amount');
-                if (amountEl) amountEl.textContent = `-$${totalDiscount.toLocaleString('es-AR')}`;
-            } else {
-                savingsEl.style.display = 'none';
-            }
-        }
 
         // Eventos de cantidad
         container.querySelectorAll('.qty-minus').forEach(btn => {
