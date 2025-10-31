@@ -220,7 +220,7 @@ function initCookieBanner() {
                     <p>🍪 Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.</p>
                     <div class="cookie-actions">
                         <button id="accept-cookies" class="btn-primary">Aceptar</button>
-                        <a href="politica-privacidad.html" class="btn-link">Más información</a>
+                        
                     </div>
                 </div>
             `;

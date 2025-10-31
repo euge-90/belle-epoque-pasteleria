@@ -16,13 +16,17 @@ class TranslationSystem {
     getTranslations() {
         return {
             es: {
+                // Testimonios
+                'testimonios.titulo': 'Lo que dicen nuestros clientes',
+                'testimonios.subtitulo': 'Experiencias reales de quienes nos eligen',
+                'testimonios.anterior': 'Testimonio anterior',
+                'testimonios.siguiente': 'Siguiente testimonio',
+                'testimonios.ir': 'Ir al testimonio',
                 // Navegación
                 'nav.inicio': 'Inicio',
                 'nav.nosotros': 'Nosotros',
                 'nav.productos': 'Productos',
                 'nav.promociones': 'Promociones',
-                'nav.faq': 'FAQ',
-                'nav.blog': 'Blog',
                 'nav.contacto': 'Contacto',
                 'nav.carrito': 'Carrito',
 
@@ -368,29 +372,13 @@ class TranslationSystem {
                 'promo.premium.productos': 'Todos los productos de la tienda',
 
                 // Blog
-                'blog.hero.title': 'Blog',
-                'blog.hero.subtitle': 'Historias, recetas y secretos de la pastelería francesa',
+                
 
                 // FAQ
-                'faq.hero.title': 'Preguntas Frecuentes',
-                'faq.hero.subtitle': 'Encuentra respuestas a las consultas más comunes',
-                'faq.search.placeholder': '🔍 Buscar en preguntas frecuentes...',
-                'faq.q1': '¿Hacen envíos a domicilio?',
-                'faq.q2': '¿Puedo encargar tortas personalizadas?',
-                'faq.q3': '¿Cuánto tiempo de anticipación necesitan para pedidos especiales?',
-                'faq.q4': '¿Tienen opciones veganas o sin gluten?',
-                'faq.q5': '¿Aceptan reservas para eventos?',
-                'faq.q6': '¿Cuáles son sus métodos de pago?',
-                'faq.q7': '¿Los productos son de elaboración diaria?',
-                'faq.q8': '¿Tienen programa de fidelidad o descuentos?',
-                'faq.contact.title': '¿No encontraste lo que buscabas?',
-                'faq.contact.subtitle': 'Estamos aquí para ayudarte. Contactanos por cualquiera de estos medios:',
-                'faq.contact.whatsapp': 'WhatsApp',
-                'faq.contact.email': 'Email',
-                'faq.contact.form': 'Formulario de contacto',
+                
 
                 // Política de Privacidad
-                'privacidad.hero.title': 'Política de Privacidad y Términos Legales',
+                
 
                 // Contacto
                 'contacto.title': 'Contacto',
@@ -409,8 +397,7 @@ class TranslationSystem {
                 // Footer
                 'footer.enlaces.rapidos': 'Enlaces Rápidos',
                 'footer.sobre.nosotros': 'Sobre Nosotros',
-                'footer.politica.privacidad': 'Política de Privacidad',
-                'footer.terminos': 'Términos y Condiciones',
+                
                 'footer.contacto': 'Contacto',
                 'footer.redes': 'Síguenos',
                 'footer.copyright': '© 2025 Belle Époque. Todos los derechos reservados.',
@@ -573,17 +560,20 @@ class TranslationSystem {
                 // Footer adicional
                 'footer.derechos': '© 2024 Belle Époque - Pastelería Francesa Artesanal. Todos los derechos reservados.',
                 'footer.direccion': 'Florida 165, San Martín 170, 1005 Buenos Aires | Teléfono: +54 11 4567-8900',
-                'footer.politica_privacidad': 'Política de Privacidad',
-                'footer.terminos': 'Términos y Condiciones'
+                
             },
             en: {
+                // Testimonials
+                'testimonios.titulo': 'What our customers say',
+                'testimonios.subtitulo': 'Real experiences from our customers',
+                'testimonios.anterior': 'Previous testimonial',
+                'testimonios.siguiente': 'Next testimonial',
+                'testimonios.ir': 'Go to testimonial',
                 // Navigation
                 'nav.inicio': 'Home',
                 'nav.nosotros': 'About Us',
                 'nav.productos': 'Products',
                 'nav.promociones': 'Promotions',
-                'nav.faq': 'FAQ',
-                'nav.blog': 'Blog',
                 'nav.contacto': 'Contact',
                 'nav.carrito': 'Cart',
 
@@ -929,33 +919,13 @@ class TranslationSystem {
                 'promo.premium.productos': 'All store products',
 
                 // Blog
-                'blog.hero.title': 'Blog',
-                'blog.hero.subtitle': 'Stories, recipes and secrets of French pastry',
+                
 
                 // FAQ
-                'faq.hero.title': 'Frequently Asked Questions',
-                'faq.hero.subtitle': 'Everything you need to know about Belle Époque',
-                'faq.search.placeholder': '🔍 Search frequently asked questions...',
-                'faq.q1': 'Do you offer home delivery?',
-                'faq.q2': 'Can I order custom cakes?',
-                'faq.q3': 'How much advance notice do you need for special orders?',
-                'faq.q4': 'Do you have vegan or gluten-free options?',
-                'faq.q5': 'Do you accept reservations for events?',
-                'faq.q6': 'What are your payment methods?',
-                'faq.q7': 'Are the products made fresh daily?',
-                'faq.q8': 'Do you have a loyalty program or discounts?',
-                'faq.contact.title': 'Didn\'t find what you were looking for?',
-                'faq.contact.subtitle': 'We are here to help you. Contact us through any of these channels:',
-                'faq.contact.whatsapp': 'WhatsApp',
-                'faq.contact.email': 'Email',
-                'faq.contact.form': 'Contact form',
+                
 
                 // Privacy Policy
-                'privacidad.hero.title': 'Privacy Policy and Legal Terms',
-                'privacidad.politica.titulo': 'Privacy Policy',
-                'privacidad.terminos.titulo': 'Terms and Conditions',
-                'privacidad.contacto.titulo': 'Contact Information',
-                'privacidad.actualizado': 'Last updated:',
+                
 
                 // Contact
                 'contacto.title': 'Contact',
@@ -974,8 +944,7 @@ class TranslationSystem {
                 // Footer
                 'footer.enlaces.rapidos': 'Quick Links',
                 'footer.sobre.nosotros': 'About Us',
-                'footer.politica.privacidad': 'Privacy Policy',
-                'footer.terminos': 'Terms and Conditions',
+                
                 'footer.contacto': 'Contact',
                 'footer.redes': 'Follow Us',
                 'footer.copyright': '© 2025 Belle Époque. All rights reserved.',
@@ -1138,8 +1107,7 @@ class TranslationSystem {
                 // Additional Footer
                 'footer.derechos': '© 2024 Belle Époque - Artisanal French Pastry. All rights reserved.',
                 'footer.direccion': 'Florida 165, San Martín 170, 1005 Buenos Aires | Phone: +54 11 4567-8900',
-                'footer.politica_privacidad': 'Privacy Policy',
-                'footer.terminos': 'Terms and Conditions'
+                
             }
         };
     }

@@ -4564,6 +4564,121 @@ footer {
     box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
 }
 
+/* ==============================
+   Testimonios (mínimo necesario)
+   ============================== */
+.testimonios-section {
+    padding: 3rem 1rem;
+}
+
+.testimonials-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonials-track {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-content {
+    background: var(--background-cream, #faf7f2);
+    border: 1px solid rgba(44, 24, 16, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.testimonial-quote {
+    color: var(--color-gold, #d4af37);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-rating i {
+    color: #f5c518;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #eee;
+    display: grid;
+    place-items: center;
+    color: #888;
+}
+
+.testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(44, 24, 16, 0.15);
+    display: grid;
+    place-items: center;
+    color: var(--color-brown, #2c1810);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.testimonial-arrow:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.testimonial-prev { left: -8px; }
+.testimonial-next { right: -8px; }
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.75rem;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(44, 24, 16, 0.25);
+    border: none;
+    cursor: pointer;
+}
+
+.testimonial-dot.active {
+    background: var(--color-gold, #d4af37);
+}
+
+@media (min-width: 768px) {
+    .testimonial-prev { left: -16px; }
+    .testimonial-next { right: -16px; }
+}
+
 /* ===== SKELETON LOADER ===== */
 .skeleton-overlay {
     position: fixed;

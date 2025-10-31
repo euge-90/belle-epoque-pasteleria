@@ -216,9 +216,6 @@ belle-epoque-pasteleria/
 ├── index.html              # Página principal
 ├── productos.html          # Catálogo de productos
 ├── promociones.html        # Ofertas y calculadora de promociones
-├── blog.html              # Blog de la pastelería
-├── faq.html               # Preguntas frecuentes
-├── politica-privacidad.html # Política de privacidad y términos
 ├── css/
 │   ├── styles.css         # Estilos principales (1200+ líneas)
 │   ├── animations.css     # Animaciones y transiciones
@@ -560,55 +557,6 @@ showFieldError(field, message)
 - Carruseles interactivos
 - Toast notifications
 - Stock indicators
-
-### 4. Blog (blog.html) - 380+ líneas
-
-**Artículos:**
-- Historia de productos franceses clásicos
-- Recetas y consejos de repostería
-- Noticias de la pastelería
-- Técnicas de elaboración artesanal
-
-**Características:**
-- Grid de tarjetas de artículos
-- Sistema de categorías
-- Fechas de publicación
-- Tiempo de lectura estimado
-- Botones de compartir en redes sociales
-
-### 5. FAQ (faq.html) - 320+ líneas
-
-**Preguntas frecuentes (8 temas):**
-1. Envíos a domicilio (CABA y GBA)
-2. Tortas personalizadas (anticipación 72hs)
-3. Tiempos de anticipación según producto
-4. Opciones veganas y sin gluten
-5. Eventos y catering (capacidad 100+ personas)
-6. Métodos de pago (efectivo, tarjetas, transferencia)
-7. Elaboración diaria (horarios de producción)
-8. Programa de fidelidad
-
-**Características:**
-- Sistema de acordeón (collapse/expand)
-- Búsqueda en tiempo real
-- Categorización por tema
-- Smooth scroll a pregunta seleccionada
-- Iconografía descriptiva
-
-### 6. Política de Privacidad (politica-privacidad.html) - 280+ líneas
-
-**Secciones:**
-- Política de Privacidad completa
-- Términos y Condiciones de uso
-- Información de cookies
-- Datos de contacto legal
-- Derechos del usuario
-
-**Características:**
-- Navegación por anclas
-- Estructura con títulos jerárquicos (h2, h3)
-- Última actualización visible
-- Lenguaje claro y profesional
 
 ---
 
@@ -992,18 +940,15 @@ class TestimonialsCarousel {
 
 | Categoría | Líneas | Archivos |
 |-----------|--------|----------|
-| **HTML** | ~3,200 | 6 páginas |
+| **HTML** | ~2,200 | 3 páginas |
 | **CSS** | ~1,800 | 4 archivos |
 | **JavaScript** | ~3,800 | 7 archivos |
-| **Total** | **~8,800** | **17 archivos** |
+| **Total** | **~7,900** | **14 archivos** |
 
 **Desglose detallado:**
 - `index.html`: 450 líneas
 - `productos.html`: 520 líneas
 - `promociones.html`: 1,060 líneas (sin JS embebido)
-- `blog.html`: 380 líneas
-- `faq.html`: 320 líneas
-- `politica-privacidad.html`: 280 líneas
 - `styles.css`: 1,200 líneas
 - `promociones.css`: 350 líneas
 - `productos.css`: 180 líneas

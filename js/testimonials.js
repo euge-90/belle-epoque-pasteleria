@@ -69,8 +69,8 @@ class TestimonialsSlider {
     render() {
         this.container.innerHTML = `
             <div class="testimonials-wrapper">
-                <button class="testimonial-arrow testimonial-prev" aria-label="Testimonio anterior">
-                    <i class="fas fa-chevron-left"></i>
+                <button class="testimonial-arrow testimonial-prev" data-translate-aria="testimonios.anterior" aria-label="Testimonio anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
 
                 <div class="testimonials-track">
@@ -78,7 +78,7 @@ class TestimonialsSlider {
                         <div class="testimonial-slide ${index === 0 ? 'active' : ''}" data-index="${index}">
                             <div class="testimonial-content">
                                 <div class="testimonial-quote">
-                                    <i class="fas fa-quote-left"></i>
+                                    <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                                 </div>
                                 <p class="testimonial-text">"${testimonial.text}"</p>
                                 <div class="testimonial-rating">
@@ -88,7 +88,7 @@ class TestimonialsSlider {
                                     <div class="author-avatar">
                                         ${testimonial.image ?
                                             `<img src="${testimonial.image}" alt="${testimonial.name}">` :
-                                            `<i class="fas fa-user"></i>`
+                                            `<i class="fa-solid fa-user" aria-hidden="true"></i>`
                                         }
                                     </div>
                                     <div class="author-info">
@@ -101,8 +101,8 @@ class TestimonialsSlider {
                     `).join('')}
                 </div>
 
-                <button class="testimonial-arrow testimonial-next" aria-label="Siguiente testimonio">
-                    <i class="fas fa-chevron-right"></i>
+                <button class="testimonial-arrow testimonial-next" data-translate-aria="testimonios.siguiente" aria-label="Siguiente testimonio">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
 
@@ -110,7 +110,8 @@ class TestimonialsSlider {
                 ${this.testimonials.map((_, index) => `
                     <button class="testimonial-dot ${index === 0 ? 'active' : ''}"
                             data-index="${index}"
-                            aria-label="Ir al testimonio ${index + 1}"></button>
+                            data-translate-aria="testimonios.ir"
+                            aria-label="Ir al testimonio"></button>
                 `).join('')}
             </div>
         `;
@@ -123,9 +124,9 @@ class TestimonialsSlider {
         let stars = '';
         for (let i = 0; i < 5; i++) {
             if (i < rating) {
-                stars += '<i class="fas fa-star"></i>';
+                stars += '<i class="fa-solid fa-star" aria-hidden="true"></i>';
             } else {
-                stars += '<i class="far fa-star"></i>';
+                stars += '<i class="fa-regular fa-star" aria-hidden="true"></i>';
             }
         }
         return stars;
@@ -305,8 +306,8 @@ function createTestimonialsSection() {
         <section id="testimonios" class="section testimonios-section animate-on-scroll">
             <div class="container">
                 <div class="text-center mb-3">
-                    <h2 class="text-gold">Lo que dicen nuestros clientes</h2>
-                    <p>Experiencias reales de quienes nos eligen</p>
+                    <h2 class="text-gold" data-translate="testimonios.titulo">Lo que dicen nuestros clientes</h2>
+                    <p data-translate="testimonios.subtitulo">Experiencias reales de quienes nos eligen</p>
                 </div>
                 <div id="testimonials-slider" class="testimonios-slider"></div>
             </div>
@@ -318,6 +319,12 @@ function createTestimonialsSection() {
     } else if (productosSection) {
         productosSection.insertAdjacentHTML('afterend', testimonialsHTML);
     }
+
+    // Asegurar que no quede oculto por animate-on-scroll
+    const section = document.getElementById('testimonios');
+    if (section && section.classList.contains('animate-on-scroll')) {
+        section.classList.add('animated');
+    }
 }
 
 // ============================================
@@ -325,24 +332,20 @@ function createTestimonialsSection() {
 // ============================================
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        // Crear sección solo en index.html
-        if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-            createTestimonialsSection();
-        }
+        // Crear sección si existen los anclajes típicos de la home
+        createTestimonialsSection();
 
-        // Inicializar slider
+        // Inicializar slider si el contenedor fue insertado
         const sliderContainer = document.getElementById('testimonials-slider');
         if (sliderContainer) {
             window.testimonialsSlider = new TestimonialsSlider('#testimonials-slider');
         }
     });
 } else {
-    // Crear sección solo en index.html
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-        createTestimonialsSection();
-    }
+    // Crear sección si existen los anclajes típicos de la home
+    createTestimonialsSection();
 
-    // Inicializar slider
+    // Inicializar slider si el contenedor fue insertado
     const sliderContainer = document.getElementById('testimonials-slider');
     if (sliderContainer) {
         window.testimonialsSlider = new TestimonialsSlider('#testimonials-slider');
